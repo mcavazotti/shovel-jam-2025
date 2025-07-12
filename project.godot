@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Shovel Jam 2025"
+run/main_scene="res://Scenes/testing.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-ItemsInstanciate="*res://Scripts/itemsInstanciate.gd"
+ItemsInstanciate="*res://Scripts/itemsLoadStart.gd"
 
 [dotnet]
 
