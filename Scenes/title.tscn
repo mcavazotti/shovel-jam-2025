@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://chkp5ltal2l4n"]
+
+[ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scripts/buttons_and_title.gd" id="1_ekrfg"]
+[ext_resource type="AudioStream" uid="uid://cugeal0jeimrg" path="res://Assets/Sounds/Ping.wav" id="2_fp2oq"]
+[ext_resource type="AudioStream" uid="uid://c1t5vysankjok" path="res://Assets/Sounds/Select.wav" id="2_q2qps"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4obfb"]
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+outline_size = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4obfb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4obfb"]
+size = Vector2(400, 100)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w31pl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekrfg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -0.384033
+offset_bottom = -0.216064
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.712129, 0.712129, 0.712129, 1)
+
+[node name="Buttons and Title" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/separation = 40
+alignment = 1
+script = ExtResource("1_ekrfg")
+
+[node name="Title" type="Label" parent="Buttons and Title"]
+layout_mode = 2
+text = "You're the Mom
+"
+label_settings = SubResource("LabelSettings_4obfb")
+horizontal_alignment = 1
+vertical_alignment = 1
+paragraph_separator = "\\"
+
+[node name="Start" type="Button" parent="Buttons and Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4obfb")
+text = "Start"
+icon = SubResource("PlaceholderTexture2D_4obfb")
+flat = true
+icon_alignment = 1
+
+[node name="Endings" type="Button" parent="Buttons and Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w31pl")
+text = "View Endings"
+icon = SubResource("PlaceholderTexture2D_4obfb")
+flat = true
+icon_alignment = 1
+
+[node name="Options" type="Button" parent="Buttons and Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrfg")
+text = "Settings"
+icon = SubResource("PlaceholderTexture2D_4obfb")
+flat = true
+icon_alignment = 1
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q2qps")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fp2oq")
+
+[connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]
+[connection signal="pressed" from="Buttons and Title/Options" to="Buttons and Title" method="_on_options_pressed"]
