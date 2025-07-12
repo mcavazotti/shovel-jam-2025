@@ -1,8 +1,13 @@
 extends VBoxContainer
 
 @onready var SFX_streamer = $"../SFX"
+@onready var Music_streamer = $"../Music"
 
-func SFX (type): # Manages all menu sounds
+func _ready():
+	#Music_streamer.play()
+	pass
+
+func SFX (type): # Manages all menu sounds, the usage of type allows for more sounds to be used (e.g. back, confirm)
 	if type == "select":
 		SFX_streamer.stream = load("res://Assets/Sounds/Select.wav")
 		
@@ -13,6 +18,7 @@ func SFX (type): # Manages all menu sounds
 		
 	SFX_streamer.play()
 
+
 func _on_start_pressed():
 	SFX("select")
 
@@ -20,5 +26,14 @@ func _on_start_pressed():
 func _on_endings_pressed():
 	SFX("select")
 
+
 func _on_options_pressed():
 	SFX("select")
+
+func _on_bgm_pressed() -> void:
+	SFX("select")
+	
+	if Music_streamer.playing == true: # toggle bgm
+		Music_streamer.stop()
+	elif Music_streamer.playing == false:
+		Music_streamer.play()

@@ -1,40 +1,40 @@
 [
   {
-    "name" : "apple",
-    "id" : 1001,
-    "category" :  1,
-    "tags" : ["healthy food"],
-    "shape" : [[1,1,1],
-               [1,0,1],
-               [1,0,1]],
-    "description" : "good for your health",
-    "image": "path"
+	"name" : "apple",
+	"id" : 1001,
+	"category" :  1,
+	"tags" : ["healthy food"],
+	"shape" : [[1,1,1],
+			   [1,0,1],
+			   [1,0,1]],
+	"description" : "good for your health",
+	"image": "path"
   },
   {
-    "name" : "sword",
-    "id" : 2001,
-    "category" :  2,
-    "tags" : ["attack", "sword"],
-    "shape" : [[0,1,0],
-               [0,1,0],
-               [0,1,0],
-               [1,1,1],
-               [0,1,0]],
-    "description" : "normal steel sword",
-    "image": "path"
+	"name" : "sword",
+	"id" : 2001,
+	"category" :  2,
+	"tags" : ["attack", "sword"],
+	"shape" : [[0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [1,1,1],
+			   [0,1,0]],
+	"description" : "normal steel sword",
+	"image": "path"
   },
   {
-    "name" : "cloak",
-    "id" : 3001,
-    "category" :  3,
-    "tags" : ["defensive"],
-    "shape" : [[1,1,1],
-               [1,1,1],
-               [1,1,1],
-               [1,1,1],
-              [1,1,1,1]],
-    "description" : "cloak is nice",
-    "image": "path"
+	"name" : "cloak",
+	"id" : 3001,
+	"category" :  3,
+	"tags" : ["defensive"],
+	"shape" : [[1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			  [1,1,1,1]],
+	"description" : "cloak is nice",
+	"image": "path"
   }
 ]
   

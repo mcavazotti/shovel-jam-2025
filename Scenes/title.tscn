@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://chkp5ltal2l4n"]
+[gd_scene load_steps=10 format=3 uid="uid://chkp5ltal2l4n"]
 
 [ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scripts/buttons_and_title.gd" id="1_ekrfg"]
-[ext_resource type="AudioStream" uid="uid://cugeal0jeimrg" path="res://Assets/Sounds/Ping.wav" id="2_fp2oq"]
 [ext_resource type="AudioStream" uid="uid://c1t5vysankjok" path="res://Assets/Sounds/Select.wav" id="2_q2qps"]
+[ext_resource type="PackedScene" uid="uid://3hso8cn4h0xh" path="res://options.tscn" id="2_yosvi"]
+[ext_resource type="AudioStream" uid="uid://dw4umkddbmc5y" path="res://Assets/Sounds/Main-Theme-Draft.wav" id="3_fp2oq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4obfb"]
 font_size = 128
 font_color = Color(0, 0, 0, 1)
-outline_size = 50
+outline_size = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4obfb"]
 
@@ -20,10 +21,9 @@ size = Vector2(400, 100)
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchor_right = 1.667
-anchor_bottom = 1.667
-offset_right = -0.384033
-offset_bottom = -0.216064
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -41,7 +41,7 @@ theme_override_constants/separation = 40
 alignment = 1
 script = ExtResource("1_ekrfg")
 
-[node name="Title" type="Label" parent="Buttons and Title"]
+[node name="You\'re the Mom" type="Label" parent="Buttons and Title"]
 layout_mode = 2
 text = "You're the Mom
 "
@@ -52,6 +52,8 @@ paragraph_separator = "\\"
 
 [node name="Start" type="Button" parent="Buttons and Title"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4obfb")
 text = "Start"
@@ -61,28 +63,50 @@ icon_alignment = 1
 
 [node name="Endings" type="Button" parent="Buttons and Title"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w31pl")
-text = "View Endings"
+text = "Endings"
 icon = SubResource("PlaceholderTexture2D_4obfb")
 flat = true
 icon_alignment = 1
 
 [node name="Options" type="Button" parent="Buttons and Title"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrfg")
-text = "Settings"
+text = "Options
+"
 icon = SubResource("PlaceholderTexture2D_4obfb")
 flat = true
 icon_alignment = 1
+
+[node name="BGM" type="Button" parent="Buttons and Title"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrfg")
+toggle_mode = true
+button_pressed = true
+text = "Toggle BGM"
+icon = SubResource("PlaceholderTexture2D_4obfb")
+flat = true
+icon_alignment = 1
+
+[node name="Options" parent="." instance=ExtResource("2_yosvi")]
+layout_mode = 1
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_q2qps")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_fp2oq")
+stream = ExtResource("3_fp2oq")
 
 [connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]
 [connection signal="pressed" from="Buttons and Title/Options" to="Buttons and Title" method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons and Title/BGM" to="Buttons and Title" method="_on_bgm_pressed"]
