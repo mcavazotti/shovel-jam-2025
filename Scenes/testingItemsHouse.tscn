@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7q65lapufcsh"]
+[gd_scene load_steps=5 format=3 uid="uid://7q65lapufcsh"]
 
 [ext_resource type="Script" uid="uid://cf15o07313yjj" path="res://Scripts/insertDataInItems.gd" id="1_lm3mw"]
 [ext_resource type="Texture2D" uid="uid://c7otaye8ik8ay" path="res://icon.svg" id="2_1ca3x"]
 [ext_resource type="Script" uid="uid://dkvbtnumqqbep" path="res://Scripts/item.gd" id="3_nns8m"]
+[ext_resource type="Script" uid="uid://d2pqk6gvfvfjn" path="res://Scripts/timer.gd" id="4_1ca3x"]
 
 [node name="TestingItemsLoadCreateConnect" type="Node2D"]
 script = ExtResource("1_lm3mw")
@@ -23,6 +24,7 @@ offset_right = -64.0
 offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 
 [node name="Item2" type="Sprite2D" parent="."]
 position = Vector2(151, 266)
@@ -40,6 +42,29 @@ offset_right = -64.0
 offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Panel" parent="CanvasLayer"]
+offset_left = 519.0
+offset_top = 10.0
+offset_right = 592.0
+offset_bottom = 42.0
+script = ExtResource("4_1ca3x")
+
+[node name="Minutes" type="Label" parent="CanvasLayer/Timer"]
+offset_right = 41.0
+offset_bottom = 23.0
+text = "00 :"
+horizontal_alignment = 2
+
+[node name="Seconds" type="Label" parent="CanvasLayer/Timer"]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 65.0
+offset_bottom = 23.0
+text = "00"
+horizontal_alignment = 2
 
 [connection signal="button_down" from="Item/Button" to="Item" method="_on_button_button_down"]
 [connection signal="button_up" from="Item/Button" to="Item" method="_on_button_button_up"]

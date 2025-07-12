@@ -32,6 +32,10 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			itemInHouse.image = item["image"]
 			itemInHouse.shape = item["shape"]
 			
+			#if we need to config something with button inside the item.
+			#var button = itemInHouse.get_children()[0] #button always on first index
+		
+			
 			copiedItemData.erase(item)
 			roullete.erase(randomId)
 			
