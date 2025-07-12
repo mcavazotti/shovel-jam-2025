@@ -24,6 +24,7 @@
     "image": "path"
   },
   {
+<<<<<<< Updated upstream
     "name" : "cloak",
     "id" : 3001,
     "category" :  3,
@@ -35,6 +36,78 @@
               [1,1,1,1]],
     "description" : "cloak is nice",
     "image": "path"
+=======
+	"name" : "Sword",
+	"id" : 2001,
+	"category" :  2000,
+	"tags" : ["attack", "sword"],
+	"shape" : [[0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [1,1,1],
+			   [0,1,0]],
+	"description" : "normal steel sword",
+	"image": "path"
+  },
+   {
+	"name" : "Lightsaber",
+	"id" : 2002,
+	"category" :  2000,
+	"tags" : ["attack", "sword", "jedi"],
+	"shape" : [[0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [0,1,0]],
+	"description" : "a noble weapon for a noble person",
+	"image": "path"
+  },
+  {
+	"name" : "Pocket Sand",
+	"id" : 2003,
+	"category" :  2000,
+	"tags" : ["attack", "thief"],
+	"shape" : [[1,0,1],
+			   [1,1,1],
+			   [1,1,1]],
+	"description" : "a sneaky way out",
+	"image": "path"
+  },
+	{
+	"name" : "Simple Coin",
+	"id" : 2004,
+	"category" :  2000,
+	"tags" : ["attack", "sneaky", "hitman"],
+	"shape" : [[1,1],
+			   [1,1]],
+	"description" : "toss a coin to attract someone?",
+	"image": "path"
+  },
+  {
+	"name" : "Invisible Cloak",
+	"id" : 3001,
+	"category" :  3000,
+	"tags" : ["defensive"],
+	"shape" : [[1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			 [1,1,1,1,1]],
+	"description" : "you're a mage, froddo",
+	"image": "path"
+  },
+  {
+	"name" : "Sonic Shoes",
+	"id" : 4001,
+	"category" :  4000,
+	"tags" : ["mobility", "sassy"],
+	"shape" : [[0,0,1,1],
+			   [1,1,1,1],
+			   [1,1,1,1]],
+	"description" : "gotta reach high speeds",
+	"image": "path"
+>>>>>>> Stashed changes
   }
 ]
   
