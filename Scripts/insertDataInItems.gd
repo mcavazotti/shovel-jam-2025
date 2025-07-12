@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var children = $".".get_children()
-var copiedItemData = ItemDataLoad.getCopiedData()
+var copiedItemData
 var roullete = []
 
 func _ready():

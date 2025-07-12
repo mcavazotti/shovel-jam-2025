@@ -33,4 +33,5 @@ func copyData():
 	
 	
 func getCopiedData():
+	copyData()
 	return copiedData
