@@ -1,6 +1,6 @@
 [
   {
-	"name" : "apple",
+	"name" : "Apple",
 	"id" : 1001,
 	"category" :  1000,
 	"tags" : ["healthy food"],
@@ -10,8 +10,54 @@
 	"description" : "good for your health",
 	"image": "path"
   },
+	{
+	"name" : "Banana",
+	"id" : 1002,
+	"category" :  1000,
+	"tags" : ["healthy food"],
+	"shape" : [[0,1,0],
+			   [1,0,1],
+			   [1,0,1],
+			   [0,1,0]],
+	"description" : "good for your health",
+	"image": "path"
+  },
   {
-	"name" : "sword",
+	"name" : "Candy",
+	"id" : 1003,
+	"category" :  1000,
+	"tags" : ["bad food"],
+	"shape" : [[1,1],
+			   [1,1]],
+	"description" : "a sweet delight",
+	"image": "path"
+  },
+	{
+	"name" : "Chocolate",
+	"id" : 1004,
+	"category" :  1000,
+	"tags" : ["bad food"],
+	"shape" : [[1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			   [1,1,1]],
+	"description" : "dense and delicious chocolate",
+	"image": "path"
+  },
+	{
+	"name" : "Chips",
+	"id" : 1005,
+	"category" :  1000,
+	"tags" : ["bad food"],
+	"shape" : [[1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			   [1,1,1]],
+	"description" : "a sweet delight",
+	"image": "path"
+  },
+  {
+	"name" : "Sword",
 	"id" : 2001,
 	"category" :  2000,
 	"tags" : ["attack", "sword"],
@@ -23,8 +69,43 @@
 	"description" : "normal steel sword",
 	"image": "path"
   },
+   {
+	"name" : "Lightsaber",
+	"id" : 2002,
+	"category" :  2000,
+	"tags" : ["attack", "sword", "jedi"],
+	"shape" : [[0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [0,1,0],
+			   [0,1,0]],
+	"description" : "A noble weapon for a noble person",
+	"image": "path"
+  },
   {
-	"name" : "cloak",
+	"name" : "Pocket Sand",
+	"id" : 2003,
+	"category" :  2000,
+	"tags" : ["attack", "thief"],
+	"shape" : [[1,0,1],
+			   [1,1,1],
+			   [1,1,1]],
+	"description" : "A noble weapon for a noble person",
+	"image": "path"
+  },
+	{
+	"name" : "Simple Coin",
+	"id" : 2004,
+	"category" :  2000,
+	"tags" : ["attack", "sneaky", "hitman"],
+	"shape" : [[1,1],
+			   [1,1]],
+	"description" : "A noble weapon for a noble person",
+	"image": "path"
+  },
+  {
+	"name" : "Invisible Cloak",
 	"id" : 3001,
 	"category" :  3000,
 	"tags" : ["defensive"],
@@ -32,7 +113,18 @@
 			   [1,1,1],
 			   [1,1,1],
 			   [1,1,1],
-			  [1,1,1,1]],
+			 [1,1,1,1,1]],
+	"description" : "cloak is nice",
+	"image": "path"
+  },
+  {
+	"name" : "Sonic Shoes",
+	"id" : 4001,
+	"category" :  4000,
+	"tags" : ["mobility", "sassy"],
+	"shape" : [[0,0,1,1],
+			   [1,1,1,1],
+			   [1,1,1,1]],
 	"description" : "cloak is nice",
 	"image": "path"
   }
