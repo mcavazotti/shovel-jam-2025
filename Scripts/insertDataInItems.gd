@@ -21,7 +21,7 @@ func _ready():
 func connectItemData(itemInHouse): #Put randomItem data inside Item
 	var randomIndex = randi() % roullete.size()
 	var randomId = roullete[randomIndex]
-	print(roullete)
+	#print(roullete)
 	for item in copiedItemData:
 		if item["id"] == randomId:
 			itemInHouse.id = item["id"]
@@ -35,6 +35,6 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			copiedItemData.erase(item)
 			roullete.erase(randomId)
 			
-			print(roullete)
+			#print(roullete)
 
 #print(copiedItemData) Verify if CopiedItemData is erasing properly
