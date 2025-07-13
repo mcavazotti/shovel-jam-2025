@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://chkp5ltal2l4n"]
+[gd_scene load_steps=13 format=3 uid="uid://chkp5ltal2l4n"]
 
 [ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scripts/buttons_and_title.gd" id="1_ekrfg"]
+[ext_resource type="Texture2D" uid="uid://c70r0ll0sbh6x" path="res://Assets/Art/Speaker_Icon.png" id="2_2qdx2"]
 [ext_resource type="AudioStream" uid="uid://c1t5vysankjok" path="res://Assets/Sounds/Select.wav" id="2_q2qps"]
 [ext_resource type="PackedScene" uid="uid://3hso8cn4h0xh" path="res://Scenes/options.tscn" id="2_yosvi"]
-[ext_resource type="AudioStream" uid="uid://dw4umkddbmc5y" path="res://Assets/Sounds/Main-Theme-Draft.wav" id="3_fp2oq"]
+[ext_resource type="AudioStream" uid="uid://ck2j61qtef70e" path="res://Assets/Sounds/Results.mp3" id="4_q2qps"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4obfb"]
 font_size = 128
@@ -18,6 +19,11 @@ size = Vector2(400, 100)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w31pl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekrfg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yosvi"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3eqdi"]
+size = Vector2(120, 120)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -97,6 +103,29 @@ icon = SubResource("PlaceholderTexture2D_4obfb")
 flat = true
 icon_alignment = 1
 
+[node name="BGM Toggle" type="Button" parent="Buttons and Title"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yosvi")
+icon = SubResource("PlaceholderTexture2D_3eqdi")
+flat = true
+icon_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Buttons and Title/BGM Toggle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2qdx2")
+expand_mode = 1
+
 [node name="Options" parent="." instance=ExtResource("2_yosvi")]
 layout_mode = 1
 
@@ -104,10 +133,11 @@ layout_mode = 1
 stream = ExtResource("2_q2qps")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_fp2oq")
+stream = ExtResource("4_q2qps")
 
 [connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]
 [connection signal="pressed" from="Buttons and Title/Options" to="Buttons and Title" method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons and Title/Options" to="Options" method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons and Title/Exit" to="Buttons and Title" method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons and Title/BGM Toggle" to="Buttons and Title" method="_on_bgm_toggle_pressed"]
