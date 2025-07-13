@@ -2,19 +2,16 @@ extends Node
 
 @onready var itemData = {}	#all items stored here
 @onready var data_file_path = "res://Items/exemples of json item.json"
-
-#var image: String #path to sprite
-#var id: int 
-#var tags = [] #multiples and effects
-#var category: int 
-#var shape = [] #append Lists
-#var description: String #summary of the item
-#var image : String #path to the image
+var copiedData : Array
 
 func _ready():
 	itemData = loadItems(data_file_path)
-	
-
+#	for item in itemData:
+#		for key in item:
+#			var value = item[key]
+#			print(key, value)
+	copyData()
+		
 func loadItems(JsonPath):
 	if FileAccess.file_exists(JsonPath):
 		
@@ -29,3 +26,12 @@ func loadItems(JsonPath):
 	else:
 		print("File doesn't exist!")
 	
+	
+func copyData():
+	copiedData.clear()
+	copiedData = itemData.duplicate()
+	
+	
+func getCopiedData():
+	copyData()
+	return copiedData

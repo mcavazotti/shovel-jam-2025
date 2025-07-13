@@ -1,42 +1,62 @@
 [
   {
-    "name" : "apple",
-    "id" : 1001,
-    "category" :  1,
-    "tags" : ["healthy food"],
-    "shape" : [[1,1,1],
-               [1,0,1],
-               [1,0,1]],
-    "description" : "good for your health",
-    "image": "path"
+	"name" : "Apple",
+	"id" : 1001,
+	"category" :  1000,
+	"tags" : ["healthy food"],
+	"shape" : [[1,1,1],
+			   [1,0,1],
+			   [1,1,1]],
+	"description" : "good for your health",
+	"image": "path"
+  },
+	{
+	"name" : "Banana",
+	"id" : 1002,
+	"category" :  1000,
+	"tags" : ["healthy food"],
+	"shape" : [[0,1,0],
+			   [1,0,1],
+			   [1,0,1],
+			   [0,1,0]],
+	"description" : "good for your health",
+	"image": "path"
   },
   {
-    "name" : "sword",
-    "id" : 2001,
-    "category" :  2,
-    "tags" : ["attack", "sword"],
-    "shape" : [[0,1,0],
-               [0,1,0],
-               [0,1,0],
-               [1,1,1],
-               [0,1,0]],
-    "description" : "normal steel sword",
-    "image": "path"
+	"name" : "Candy",
+	"id" : 1003,
+	"category" :  1000,
+	"tags" : ["bad food"],
+	"shape" : [[1,1],
+			   [1,1]],
+	"description" : "a sweet delight",
+	"image": "path"
+  },
+	{
+	"name" : "Chocolate",
+	"id" : 1004,
+	"category" :  1000,
+	"tags" : ["bad food"],
+	"shape" : [[1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			   [1,1,1]],
+	"description" : "dense and delicious chocolate",
+	"image": "path"
+  },
+	{
+	"name" : "Chips",
+	"id" : 1005,
+	"category" :  1000,
+	"tags" : ["bad food"],
+	"shape" : [[1,1,1],
+			   [1,1,1],
+			   [1,1,1],
+			   [1,1,1]],
+	"description" : "a sweet delight",
+	"image": "path"
   },
   {
-<<<<<<< Updated upstream
-    "name" : "cloak",
-    "id" : 3001,
-    "category" :  3,
-    "tags" : ["defensive"],
-    "shape" : [[1,1,1],
-               [1,1,1],
-               [1,1,1],
-               [1,1,1],
-              [1,1,1,1]],
-    "description" : "cloak is nice",
-    "image": "path"
-=======
 	"name" : "Sword",
 	"id" : 2001,
 	"category" :  2000,
@@ -60,7 +80,7 @@
 			   [0,1,0],
 			   [0,1,0],
 			   [0,1,0]],
-	"description" : "a noble weapon for a noble person",
+	"description" : "A noble weapon for a noble person",
 	"image": "path"
   },
   {
@@ -71,8 +91,7 @@
 	"shape" : [[1,0,1],
 			   [1,1,1],
 			   [1,1,1]],
-	"description" : "a sneaky way out",
-	"description" : "Sneaky Sneaky",
+	"description" : "A noble weapon for a noble person",
 	"image": "path"
   },
 	{
@@ -82,73 +101,20 @@
 	"tags" : ["attack", "sneaky", "hitman"],
 	"shape" : [[1,1],
 			   [1,1]],
-	"description" : "toss a coin to attract someone?",
-	"shape" : [[1]],
-	"description" : "Toss a coin to attrach it",
-	"image": "path"
-  },
-	{
-	"name" : "Broken Sword (Anduril)",
-	"id" : 2005,
-	"category" :  2000,
-	"tags" : ["attack", "piece"],
-	"shape" : [[1,1,1],
-			   [0,1,0]],
-	"description" : "A broken piece of a king's sword",
-	"image": "path"
-  },
- {
-	"name" : "Blade Piece (Anduril)",
-	"id" : 2006,
-	"category" :  2000,
-	"tags" : ["attack", "piece"],
-	"shape" : [[1],
-			   [1]],
-	"description" : "A blade broken from something bigger, greater",
-	"image": "path"
-  },
-  {
-	"name" : "Fierce Point (Anduril)",
-	"id" : 2007,
-	"category" :  2000,
-	"tags" : ["attack", "piece"],
-	"shape" : [[1]],
-	"description" : "The point to pierce even the greatest of enemies",
-	"image": "path"
-  },
-{
-	"name" : "The King's Sword (Anduril)",
-	"id" : 2008,
-	"category" :  2000,
-	"tags" : ["attack", "lotr", "lotr", "lotr", "good"],
-	"shape" : [[0,1,0],
-			   [0,1,0],
-			   [0,1,0],
-			 [1,1,1,1,1],
-			   [0,1,0]],
-	"description" : "A great sword, for a even greater king",
+	"description" : "A noble weapon for a noble person",
 	"image": "path"
   },
   {
 	"name" : "Invisible Cloak",
 	"id" : 3001,
 	"category" :  3000,
-	"tags" : ["defensive", "sneaky", "hp"],
+	"tags" : ["defensive"],
 	"shape" : [[1,1,1],
 			   [1,1,1],
 			   [1,1,1],
 			   [1,1,1],
 			 [1,1,1,1,1]],
-	"description" : "you're a mage, froddo",
-	"image": "path"
-  },
-{
-	"name" : "Invisible Ring",
-	"id" : 3002,
-	"category" :  3000,
-	"tags" : ["defensive", "sneaky", "lotr", "bad"],
-	"shape" : [[1]],
-	"description" : "The one ring",
+	"description" : "cloak is nice",
 	"image": "path"
   },
   {
@@ -159,9 +125,8 @@
 	"shape" : [[0,0,1,1],
 			   [1,1,1,1],
 			   [1,1,1,1]],
-	"description" : "gotta reach high speeds",
+	"description" : "cloak is nice",
 	"image": "path"
->>>>>>> Stashed changes
   }
 ]
   
