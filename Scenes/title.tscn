@@ -84,7 +84,7 @@ icon = SubResource("PlaceholderTexture2D_4obfb")
 flat = true
 icon_alignment = 1
 
-[node name="BGM" type="Button" parent="Buttons and Title"]
+[node name="Exit" type="Button" parent="Buttons and Title"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -92,7 +92,7 @@ theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrfg")
 toggle_mode = true
 button_pressed = true
-text = "Toggle BGM"
+text = "Exit"
 icon = SubResource("PlaceholderTexture2D_4obfb")
 flat = true
 icon_alignment = 1
@@ -109,4 +109,5 @@ stream = ExtResource("3_fp2oq")
 [connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]
 [connection signal="pressed" from="Buttons and Title/Options" to="Buttons and Title" method="_on_options_pressed"]
-[connection signal="pressed" from="Buttons and Title/BGM" to="Buttons and Title" method="_on_bgm_pressed"]
+[connection signal="pressed" from="Buttons and Title/Options" to="Options" method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons and Title/Exit" to="Buttons and Title" method="_on_exit_pressed"]

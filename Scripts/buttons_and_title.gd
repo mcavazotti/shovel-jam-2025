@@ -30,10 +30,12 @@ func _on_endings_pressed():
 func _on_options_pressed():
 	SFX("select")
 
-func _on_bgm_pressed() -> void:
+func _on_exit_pressed():
 	SFX("select")
-	
-	if Music_streamer.playing == true: # toggle bgm
+	get_tree().exit()
+
+func _toggle_bgm(): # unused menu music toggle code. If is to be used, switch function with a button connection.
+	if Music_streamer.playing == true:
 		Music_streamer.stop()
 	elif Music_streamer.playing == false:
 		Music_streamer.play()
