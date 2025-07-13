@@ -1,10 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://chkp5ltal2l4n"]
+[gd_scene load_steps=11 format=3 uid="uid://chkp5ltal2l4n"]
 
 [ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scripts/buttons_and_title.gd" id="1_ekrfg"]
 [ext_resource type="Texture2D" uid="uid://c70r0ll0sbh6x" path="res://Assets/Art/Speaker_Icon.png" id="2_2qdx2"]
-[ext_resource type="AudioStream" uid="uid://c1t5vysankjok" path="res://Assets/Sounds/Sound Effects/BadSelect_digi.wav" id="2_q2qps"]
 [ext_resource type="PackedScene" uid="uid://3hso8cn4h0xh" path="res://Scenes/options.tscn" id="2_yosvi"]
-[ext_resource type="AudioStream" uid="uid://ck2j61qtef70e" path="res://Assets/Sounds/Music/Results.mp3" id="4_q2qps"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4obfb"]
 font_size = 128
@@ -37,7 +35,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.712129, 0.712129, 0.712129, 1)
+color = Color(0.856067, 0.856067, 0.856067, 1)
 
 [node name="Buttons and Title" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -47,9 +45,9 @@ theme_override_constants/separation = 40
 alignment = 1
 script = ExtResource("1_ekrfg")
 
-[node name="You\'re the Mom" type="Label" parent="Buttons and Title"]
+[node name="You are the Mom" type="Label" parent="Buttons and Title"]
 layout_mode = 2
-text = "You're the Mom
+text = "You are the Mom
 "
 label_settings = SubResource("LabelSettings_4obfb")
 horizontal_alignment = 1
@@ -91,6 +89,7 @@ flat = true
 icon_alignment = 1
 
 [node name="Exit" type="Button" parent="Buttons and Title"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -104,6 +103,7 @@ flat = true
 icon_alignment = 1
 
 [node name="BGM Toggle" type="Button" parent="Buttons and Title"]
+visible = false
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yosvi")
 icon = SubResource("PlaceholderTexture2D_3eqdi")
@@ -127,13 +127,8 @@ texture = ExtResource("2_2qdx2")
 expand_mode = 1
 
 [node name="Options" parent="." instance=ExtResource("2_yosvi")]
+visible = false
 layout_mode = 1
-
-[node name="SFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_q2qps")
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_q2qps")
 
 [connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]
