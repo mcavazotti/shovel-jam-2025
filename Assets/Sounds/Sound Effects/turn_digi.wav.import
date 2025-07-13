@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cil5mxdtoivaf"
+path="res://.godot/imported/turn_digi.wav-57b1463e9bd8b42cb29dee868001b9a3.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/turn_digi.wav"
+dest_files=["res://.godot/imported/turn_digi.wav-57b1463e9bd8b42cb29dee868001b9a3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
