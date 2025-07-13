@@ -4,6 +4,8 @@ extends Node2D
 @onready var children = $".".get_children()
 var copiedItemData
 var roullete = []
+var i = 0
+
 
 func _ready():
 	randomize()
@@ -15,13 +17,10 @@ func _ready():
 		if child is Item:
 			connectItemData(child)
 			
-	#print(ItemDataLoad.itemData) Verify if ItemData is NOT modified
-			
 
 func connectItemData(itemInHouse): #Put randomItem data inside Item
 	var randomIndex = randi() % roullete.size()
 	var randomId = roullete[randomIndex]
-	#print(roullete)
 	for item in copiedItemData:
 		if item["id"] == randomId:
 			itemInHouse.id = item["id"]
@@ -29,16 +28,19 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			itemInHouse.tags = item["tags"]
 			itemInHouse.category = item["category"]
 			itemInHouse.description = item["description"]
-			itemInHouse.image = item["image"]
 			itemInHouse.shape = item["shape"]
 			
-			#if we need to config something with button inside the item.
-			#var button = itemInHouse.get_children()[0] #button always on first index
-		
-			
+			var button = itemInHouse.get_children()[0] #button always on first index
+			changeTextureItem(itemInHouse, item["image"], button)
+
 			copiedItemData.erase(item)
 			roullete.erase(randomId)
-			
-			#print(roullete)
 
-#print(copiedItemData) Verify if CopiedItemData is erasing properly
+
+func changeTextureItem(item, texture, newButton):
+	var newTexture = load(texture)
+	item.texture = newTexture
+	var item_size = newTexture.get_size()
+	var item_position = item.global_position
+	newButton.global_position = item_position - (item_size / 2)
+	newButton.set_size(item_size)
