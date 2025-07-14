@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://7q65lapufcsh"]
+[gd_scene load_steps=8 format=3 uid="uid://7q65lapufcsh"]
 
 [ext_resource type="Script" uid="uid://cf15o07313yjj" path="res://Scripts/insertDataInItems.gd" id="1_lm3mw"]
 [ext_resource type="Texture2D" uid="uid://c7otaye8ik8ay" path="res://icon.svg" id="2_1ca3x"]
@@ -6,11 +6,15 @@
 [ext_resource type="Script" uid="uid://d2pqk6gvfvfjn" path="res://Scripts/timer.gd" id="4_1ca3x"]
 [ext_resource type="Script" uid="uid://cl6qrnwaiae5y" path="res://Scripts/finalEndingVerify.gd" id="5_nns8m"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nns8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3f1i"]
+
 [node name="TestingItemsLoadCreateConnect" type="Node2D"]
 script = ExtResource("1_lm3mw")
 
 [node name="Item" type="Sprite2D" parent="."]
-position = Vector2(150, 150)
+position = Vector2(215, 163)
 texture = ExtResource("2_1ca3x")
 script = ExtResource("3_nns8m")
 
@@ -20,8 +24,14 @@ offset_top = -64.0
 offset_right = -56.0
 offset_bottom = -56.0
 
+[node name="Area2D" type="Area2D" parent="Item"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/Area2D"]
+shape = SubResource("RectangleShape2D_nns8m")
+
 [node name="Item2" type="Sprite2D" parent="."]
-position = Vector2(493, 270)
+position = Vector2(395, 270)
 texture = ExtResource("2_1ca3x")
 script = ExtResource("3_nns8m")
 
@@ -30,6 +40,12 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = -56.0
 offset_bottom = -56.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="Item2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item2/Area2D"]
+shape = SubResource("RectangleShape2D_e3f1i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -56,10 +72,11 @@ text = "00"
 horizontal_alignment = 2
 
 [node name="ending" type="Button" parent="."]
-offset_left = 225.0
-offset_top = 357.0
-offset_right = 327.0
-offset_bottom = 435.0
+offset_left = 997.0
+offset_top = 529.0
+offset_right = 1099.0
+offset_bottom = 607.0
+text = "end"
 script = ExtResource("5_nns8m")
 
 [connection signal="button_down" from="Item/Button" to="Item" method="_on_button_button_down"]

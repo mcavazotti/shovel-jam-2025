@@ -7,8 +7,8 @@ var endingId : int
 var endingName : String
 var endingStory : String
 var endingCoverImage : String
-var possibleEndings = [] #{id, typeOfEnding}
-var intermediateEndings = [] #[{id:id, story:story},{id:id, story:story}]
+var possibleEndings = []
+var intermediateEndings = []
 var bag = []
 
 
@@ -69,7 +69,6 @@ func verifyEnding(bag):
 						
 	matchEnding(itemIds, itemCategories, itemTags)
 	preventConflictEnding()
-	finalEndingSelect()
 
 	
 func matchEnding(ids, categories, tags):
@@ -78,7 +77,6 @@ func matchEnding(ids, categories, tags):
 		var isEndingOk : Array[bool] = []
 		
 		#var true_id = str(int(ending["id"])).pad_zeros(4) #USE THIS, BUT THIS IS A STRING
-		
 		for conditions in ending["conditions"]:
 			var count = 0	
 			var c = conditions["type"]
@@ -108,6 +106,46 @@ func matchEnding(ids, categories, tags):
 			#edit dicionary to match keys.
  
 
+func preventConflictEnding():
+	var sameReference = []
+	var finalEndingVerify = []
+	var index: int
+	
+	for ending in possibleEndings:
+		if ending["typeOfEnding"] == "final":
+			index = sameReference.find(ending["reference"]) #search same value, always the first
+			
+			if index != -1:
+				sameReference.remove_at(index)
+				finalEndingVerify.remove_at(index)
+				
+			sameReference.append(ending["reference"])
+			finalEndingVerify.append(ending["id"])
+		
+	var selectedEnding = finalEndingSelect(finalEndingVerify)
+	
+	getEndInfo(selectedEnding)
+	print(endingId)
+	print(endingName)
+	print(endingStory)		
+		
+		
+func finalEndingSelect(endIds):
+	if endIds.size() == 1:
+		return endIds[0]
+	#put thing that will weight out things here
+		
+		
+func getEndInfo(id):
+	var endings = endingList
+	for ending in endings:	
+		if ending["id"] == id:
+			endingId = id
+			endingName = ending["name"]
+			endingStory = ending["story"]
+			endingCoverImage = ending["image"]
+	
+
 func matchOperator(count, type, condition):
 	match type:
 		"==": 
@@ -129,30 +167,7 @@ func launchCutscene():
 
 
 func _on_button_down() -> void: #button for testing, exclude afterwards
-	var endingFinal = verifyEnding(bag)
-
-
-func preventConflictEnding():
-	var sameReference = []
-	var finalEndingVerify = []
-	var index: int
-	
-	for ending in possibleEndings:
-		if ending["typeOfEnding"] == "final":
-			index = sameReference.find(ending["reference"])
-			
-			if index != -1:
-				sameReference.remove_at(index)
-				finalEndingVerify.remove_at(index)
-				
-			sameReference.append(ending["reference"])
-			finalEndingVerify.append(ending["id"])
-			
-			print(finalEndingVerify)
-			print(sameReference)
-
-		
-func finalEndingSelect():
+	var endingId = verifyEnding(bag)		
 		
 
 func clearEndings():

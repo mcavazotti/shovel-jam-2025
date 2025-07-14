@@ -32,6 +32,10 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			
 			var button = itemInHouse.get_children()[0] #button always on first index
 			#changeTextureItem(itemInHouse, item["image"], button)
+			changeTextureItem(itemInHouse, "res://Assets/Hana Stare.png", button)
+			
+			var area2d = itemInHouse.get_children()[1] #buttons always on secound index
+			changeArea2d(area2d, itemInHouse)
 
 			copiedItemData.erase(item)
 			roullete.erase(randomId)
@@ -44,3 +48,12 @@ func changeTextureItem(item, texture, newButton):
 	var item_position = item.global_position
 	newButton.global_position = item_position - (item_size / 2)
 	newButton.set_size(item_size)
+
+
+func changeArea2d(area, item):
+	area.global_position = item.global_position
+	area.set_collision_layer(2) #sets the collision layer to a itemInHouse
+	
+	var shape = area.get_node("CollisionShape2D").shape
+	var rect_size = item.get_rect().size
+	shape.extents = rect_size / 2.0
