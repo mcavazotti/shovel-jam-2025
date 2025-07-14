@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var children = $".".get_children()
+@onready var children = $".".get_children() #node where items are
 var copiedItemData
 var roullete = []
 var i = 0
@@ -31,7 +31,7 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			itemInHouse.shape = item["shape"]
 			
 			var button = itemInHouse.get_children()[0] #button always on first index
-			changeTextureItem(itemInHouse, item["image"], button)
+			#changeTextureItem(itemInHouse, item["image"], button)
 
 			copiedItemData.erase(item)
 			roullete.erase(randomId)

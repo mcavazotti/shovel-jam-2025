@@ -1,0 +1,133 @@
+[
+	{
+		"id": 0000,
+		"name": "Just a regular adventurer",
+		"story": "Lorem ipsum.....",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "category",
+				"value": 1000,
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "category",
+				"value": 2000, 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "category",
+				"value": 3000, 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "category",
+				"value": 4000, 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			}
+		],
+		"conditionRelation": "and",
+		"prevents": []
+	},
+	{
+		"id": 0001,
+		"name": "You are staying here!",
+		"story": "Lorem ipsum.....",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "category",
+				"value": 1000, 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": false
+			},
+			{
+				"type": "category",
+				"value": 2000, 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": false
+			},
+			{
+				"type": "category",
+				"value": 3000, 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": false
+			},
+			{
+				"type": "category",
+				"value": 4000, 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": false
+			},
+		],
+		"conditionRelation": "and",
+		"prevents": []
+	},
+	{
+		"id": 0100,
+		"name": "Jedi master",
+		"story": "Lorem ipsum.....",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 3001, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2001, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+		],
+		"conditionRelation": "and",
+		"prevents": [0000]
+	},
+	{
+		"id": 0200,
+		"name": "Lord Sith",
+		"story": "Lorem ipsum.....",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 3001, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2001, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "tag",
+				"value": "bad food", 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			},
+		],
+		"conditionRelation": "and",
+		"prevents": [0000, 0100]
+	},
+]

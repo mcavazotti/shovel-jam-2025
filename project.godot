@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ItemDataLoad="*res://Scripts/itemDataLoad.gd"
+FinalEndingLoad="*res://Scripts/finalEndingLoad.gd"
 
 [dotnet]
 

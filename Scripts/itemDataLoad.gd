@@ -20,11 +20,10 @@ func loadItems(JsonPath):
 		
 		if parsedResult is Array:
 			return parsedResult
-		else:
-			print("Error reading file!")
+		print("Error reading items file!")	
 			
 	else:
-		print("File doesn't exist!")
+		print("Items file doesn't exist!")
 	
 	
 func copyData():
