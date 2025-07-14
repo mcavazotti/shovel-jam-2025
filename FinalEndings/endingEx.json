@@ -2,6 +2,8 @@
 	{
 		"id": 0000,
 		"name": "Just a regular adventurer",
+		"typeOfEnding": "final",
+		"reference" : "Normal",
 		"story": "Lorem ipsum.....",
 		"coverImage": "....",
 		"conditions": [
@@ -40,6 +42,8 @@
 	{
 		"id": 0001,
 		"name": "You are staying here!",
+		"typeOfEnding": "final",
+		"reference" : "Normal",
 		"story": "Lorem ipsum.....",
 		"coverImage": "....",
 		"conditions": [
@@ -78,6 +82,8 @@
 	{
 		"id": 0100,
 		"name": "Jedi master",
+		"typeOfEnding": "final",
+		"reference" : "StarWars",
 		"story": "Lorem ipsum.....",
 		"coverImage": "....",
 		"conditions": [
@@ -102,6 +108,8 @@
 	{
 		"id": 0200,
 		"name": "Lord Sith",
+		"typeOfEnding": "final",
+		"reference" : "StarWars",
 		"story": "Lorem ipsum.....",
 		"coverImage": "....",
 		"conditions": [
