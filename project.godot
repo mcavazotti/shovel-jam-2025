@@ -29,6 +29,10 @@ window/size/viewport_height=1080
 
 project/assembly_name="Shovel Jam 2025"
 
+[global_group]
+
+Item=""
+
 [layer_names]
 
 2d_physics/layer_2="itemInHouse"

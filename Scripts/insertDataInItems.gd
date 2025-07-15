@@ -1,10 +1,10 @@
 extends Node2D
 const Item = preload("res://Scripts/item.gd")
 
-@onready var children = $"..".get_children() #node where items are
+
+@onready var itemSpawners = $"..".get_tree().get_nodes_in_group("itemSpawner") #node where items are
 var copiedItemData
 var roulette = []
-var i = 0
 
 
 func _ready():
@@ -14,33 +14,40 @@ func _ready():
 	for item in copiedItemData:
 		roulette.append(item["id"])
 		
-	for child in children:
-		if child is Item:
-			connectItemData(child)
+	for child in itemSpawners:
+		connectItemData(child)
 
 
-func connectItemData(itemInHouse): #Put randomItem data inside Item
+func connectItemData(itemInHouse:Item): #Put randomItem data inside Item
 	var randomIndex = randi() % roulette.size()
 	var randomId = roulette[randomIndex]
+	
 	for item in copiedItemData:
 		if item["id"] == randomId:
-			itemInHouse.id = item["id"]
+			itemInHouse.itemData = {
+				"Id" : item["id"],
+				"Name" : item["name"],
+				"Tags" : item["tags"],
+				"Category" : item["category"],
+				"Description" : item["description"],
+				"Shape" : item["shape"]
+			}
+			
 			itemInHouse.name = item["name"]
-			itemInHouse.tags = item["tags"]
-			itemInHouse.category = item["category"]
-			itemInHouse.description = item["description"]
-			itemInHouse.shape = item["shape"]
-
-			var button = itemInHouse.get_children()[0] #button always on first index
+			
+			var button = itemInHouse.get_children()[0] #button always on first index	
 			#changeTextureItem(itemInHouse, item["image"], button)
 			changeTextureItem(itemInHouse, "res://Assets/Hana Stare.png", button)
-			
+
 			var area2d = itemInHouse.get_children()[1] #buttons always on secound index
 			changeArea2d(area2d, itemInHouse)
-
+						
+			area2d.set_collision_layer(2) #sets the collision layer to a itemInHouse
+			itemInHouse.remove_from_group("itemSpawner")
+			itemInHouse.add_to_group("Item")
+			
 			copiedItemData.erase(item)
 			roulette.erase(randomId)
-			
 			if copiedItemData.is_empty() or roulette.is_empty():
 				break
 
@@ -54,9 +61,8 @@ func changeTextureItem(item:Item, texture, newButton):
 	newButton.set_size(item_size)
 
 
-func changeArea2d(area, item):
+func changeArea2d(area, item:Item):
 	area.global_position = item.global_position
-	area.set_collision_layer(2) #sets the collision layer to a itemInHouse
 	
 	var shape = area.get_node("CollisionShape2D").shape
 	var rect_size = item.get_rect().size

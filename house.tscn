@@ -12,3 +12,18 @@ position = Vector2(1022, 529)
 
 [node name="ItemSpawner2" parent="." instance=ExtResource("2_metfq")]
 position = Vector2(462, 420)
+
+[node name="ItemSpawner3" parent="." instance=ExtResource("2_metfq")]
+position = Vector2(1022, 529)
+
+[node name="ItemSpawner4" parent="." instance=ExtResource("2_metfq")]
+position = Vector2(1022, 529)
+
+[node name="ItemSpawner5" parent="." instance=ExtResource("2_metfq")]
+position = Vector2(1022, 529)
+
+[node name="ItemSpawner6" parent="." instance=ExtResource("2_metfq")]
+position = Vector2(699, 704)
+
+[node name="ItemSpawner7" parent="." instance=ExtResource("2_metfq")]
+position = Vector2(1505, 404)

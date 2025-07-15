@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2kau"]
 
-[node name="ItemSpawner" type="Sprite2D"]
+[node name="ItemSpawner" type="Sprite2D" groups=["itemSpawner"]]
 texture = ExtResource("1_jr3ll")
 script = ExtResource("2_rgec3")
 

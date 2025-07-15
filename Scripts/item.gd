@@ -5,13 +5,7 @@ class_name Item
 var dragging = false
 var of = Vector2(0, 0)
 
-var image: String 
-var id: int 
-var tags = [] 
-var category: int 
-var shape = [] 
-var description: String 
-
+var itemData = {}
 
 func _process(_delta):
 	if dragging:
