@@ -14,27 +14,115 @@ var bag = []
 
 func _ready() -> void:
 	clearEndings()
-	bag = [
+	bag = [  #FOR TESTS ONLY
 		{
-			"id": 4303,
-			"category": 4000,
-			"tags": ["Minecraft", "Dirt"],
-		},
-		{
-			"id": 1001,
-			"category": 1000,
-			"tags": ["Fish", "Healthy", "Sea"],
-		},
-		{
-			"id": 2002,
-			"category": 2000,
-			"tags": ["Head", "Stealth", "Cloak", "Elf", "Geek"],
-		},
-		{
-			"id": 3004,
-			"category": 3000,
-			"tags": ["Melee", "Big", "Bronze", "Sword", "Half-blood"],
-		}
+		"id": 1002,
+		"name": "Elven Bread",
+		"category": 1000,
+		"tags": ["Elf", "Healthy", "Bread"],
+		"shape": [[1]],
+		"description": "It’s said that one will keep a traveler on his feet for a day of long labour. That’s just what your child need! And you can confirm from experience what they say about this bread is true.",
+		"image": "path"
+	},
+	{
+		"id": 2102,
+		"name": "Mithril Coat",
+		"category": 2000,
+		"tags": ["Torso", "Armor", "Dwarf", "Mithril"],
+		"shape": [[1,1], [1,1]],
+		"description": "A very sturdy chain mail coat. Your husband used it all the time, now it’s time for your child to use it.",
+		"image": "path"
+	},
+	{
+		"id": 2103,
+		"name": "Space Monk Robe",
+		"category": 2000,
+		"tags": ["Torso", "Robe", "Jedi", "Geek"],
+		"shape": [[1,1], [1,1], [1,1]],
+		"description": "A robe worn by a specific group of space monk warriors a long time ago in a far, far away galaxy. You still wonder how your husband got his hands on that…",
+		"image": "path"
+	},
+	{
+		"id": 3004,
+		"name": "Bronze Sword",
+		"category": 3000,
+		"tags": ["Melee", "Big", "Bronze", "Sword", "Half-blood"],
+		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
+		"description": "A big sword made of bronze. Ancient warriors used bronze weapons. Some young people nowadays still use them, you think to yourself.",
+		"image": "path"
+	},
+	{
+		"id": 3005,
+		"name": "Steel Sword",
+		"category": 3000,
+		"tags": ["Melee", "Big", "Steel", "Sword"],
+		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
+		"description": "A big sword made of steel. Just a regular sword.",
+		"image": "path"
+	},
+	{
+		"id": 3006,
+		"name": "Elven Short Sword",
+		"category": 3000,
+		"tags": ["Melee", "Elf", "Sword"],
+		"shape": [[0,1,0], [0,1,0], [1,1,1], [0,1,0]],
+		"description": "A small sword from very ancient times. Your husband found it during one of his trips.",
+		"image": "path"
+	},
+	{
+		"id": 3007,
+		"name": "Retractable Light Sword",
+		"category": 3000,
+		"tags": ["Melee", "Jedi", "Sword", "Geek"],
+		"shape": [[1], [1], [1]],
+		"description": "It’s very handy to have a retractable sword that defies laws of physics and can cut through reinforced steel instantly! You still wonder where your husband found it…",
+		"image": "path"
+	},
+	{
+		"id": 3008,
+		"name": "Pistol with Silencer",
+		"category": 3000,
+		"tags": ["Ranged", "Stealth", "Spy", "Pistol"],
+		"shape": [[1,1,1], [1,0,0]],
+		"description": "A Pistol with silencer from your husband stuff, you don’t know much why he has it, but you know it was a gift from a friend.",
+		"image": "path"
+	},
+	{
+		"id": 4203,
+		"name": "The Chosen One certificate",
+		"category": 4000,
+		"tags": ["Certificate", "Paper"],
+		"shape": [[1,1]],
+		"description": "Everyone should know that your child is the chosen one!",
+		"image": "path"
+	},
+	{
+		"id": 4204,
+		"name": "Unknown Father certificateate",
+		"category": 4000,
+		"tags": ["Certificate", "Paper"],
+		"shape": [[1,1]],
+		"description": "Everyone should know that your child doesn’t know who his father is.",
+		"image": "path"
+	},
+	{
+		"id": 4209,
+		"name": "License to Kill",
+		"category": 4000,
+		"tags": ["Certificate", "Paper", "Spy"],
+		"shape": [[1,1]],
+		"description": "You really dont know how and why there’s this kind of license with your child’s name, but it could be handy.",
+		"image": "path"
+	},
+	{
+		"id": 4301,
+		"name": "GPS",
+		"category": 4000,
+		"tags": ["Localization", "Eletronics"],
+		"shape": [[1]],
+		"description": "Let’s make use of what technology gives us! Your child will never get lost with this device!",
+		"image": "path"
+	},
 	]
 	
 	#launchCutscene()
@@ -53,7 +141,7 @@ func verifyEnding(bag):
 	
 	for items in bag:
 		for key in items.keys():
-			match key:
+			match key: #CHANGE KEYS TO MATCH KEYS IN BAG
 				
 				"id":
 					itemIds.append(items[key])
@@ -67,7 +155,12 @@ func verifyEnding(bag):
 						
 	matchEnding(itemIds, itemCategories, itemTags)
 	preventConflictEnding()
-
+	
+	print(endingId)
+	print(endingName)
+	print(endingStory)
+	print(endingCoverImage)
+	
 
 func matchEnding(ids, categories, tags):
 	var endings = endingList
@@ -104,15 +197,15 @@ func matchEnding(ids, categories, tags):
 			if ending["typeOfEnding"] == "Intermediate":
 				intermediateEndings.append({"id" : ending["id"], "name" : ending["name"], "story" : ending["story"], "coverImage" : ending["coverImage"]})
 			else:
-				possibleEndings.append({"id": ending["id"], "reference": ending["reference"]})
+				possibleEndings.append({"id": ending["id"], "reference": ending["reference"], "conditions" : ending["conditions"]})
 	
 
 func preventConflictEnding():
 	var sameReference = []
 	var finalEndingVerify = []
+	var endingConditions = []
 	var index: int
 	
-	print(possibleEndings)
 	for ending in possibleEndings:
 		index = sameReference.find(ending["reference"]) #search same value, always the first
 		
@@ -122,23 +215,31 @@ func preventConflictEnding():
 			
 		sameReference.append(ending["reference"])
 		finalEndingVerify.append(ending["id"])
+		endingConditions.append(ending["conditions"])
 
-	var selectedEnding = finalEndingSelect(finalEndingVerify)
-	
+	var selectedEnding = finalEndingSelect(finalEndingVerify, endingConditions)
 	getEndInfo(selectedEnding)
-	print()
-	print(endingId)
-	print(endingName)
-	print(endingStory)
-	print(intermediateEndings)
 
 
-
-func finalEndingSelect(endIds):
+func finalEndingSelect(endIds, conditionsArray):
+	print(endIds)
+	var biggest_index = -1
+	var biggest_size = -1
+	
 	if endIds.size() == 1:
 		return endIds[0]
-	#put thing that will weight out things here
-
+	else:
+		for i in range(endIds.size()):
+			if int(endIds[i]) == 0:
+				continue
+			var conditions = conditionsArray[i]
+			if conditions.size() > biggest_size:
+				biggest_size = conditions.size()
+				biggest_index = i
+				
+				
+	return endIds[biggest_index]
+	
 
 func getEndInfo(id):
 	var endings = endingList
@@ -180,5 +281,6 @@ func clearEndings():
 
 
 func _on_button_down() -> void:  #REMOVE IN FINAL VERSION, will be
-	endingId = verifyEnding(bag)
+	clearEndings()
+	var endingId = verifyEnding(bag)
 	getEndInfo(endingId)

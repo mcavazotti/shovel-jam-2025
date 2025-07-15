@@ -38,7 +38,7 @@ func connectItemData(itemInHouse:Item): #Put randomItem data inside Item
 				"Description" : item["description"],
 				"Shape" : item["shape"],
 				"Image" : item["image"]
-			}
+			}  #THERE WILL BE A Label data, to help in the bag, line 61
 			
 			itemInHouse.name = item["name"]
 			
@@ -58,6 +58,9 @@ func connectItemData(itemInHouse:Item): #Put randomItem data inside Item
 			var categoryName = categoryEnum.get(int(item["category"]))
 			label.text = "%s\n%s" % [item["name"], categoryName]
 			itemInHouse.isVisible(label, false)
+			
+			itemInHouse.itemData["Label"] = "%s\\n%s" % [item["name"], categoryName]
+			#will be sent with the formatation.
 		
 			label.position.y -= 50
 			
