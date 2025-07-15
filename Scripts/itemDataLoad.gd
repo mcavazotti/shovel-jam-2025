@@ -1,11 +1,11 @@
 extends Node
 
 @onready var itemData = {}	#all items stored here
-@onready var data_file_path = "res://Items/exemples of json item.json"
+@onready var dataFilePath = "res://Items/ItemsList.json"
 var copiedData : Array
 
 func _ready():
-	itemData = loadItems(data_file_path)
+	itemData = loadItems(dataFilePath)
 #	for item in itemData:
 #		for key in item:
 #			var value = item[key]

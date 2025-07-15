@@ -3,7 +3,7 @@ const Item = preload("res://Scripts/item.gd")
 
 @onready var children = $"..".get_children() #node where items are
 var copiedItemData
-var roullete = []
+var roulette = []
 var i = 0
 
 
@@ -12,7 +12,7 @@ func _ready():
 	copiedItemData = ItemDataLoad.getCopiedData()
 	
 	for item in copiedItemData:
-		roullete.append(item["id"])
+		roulette.append(item["id"])
 		
 	for child in children:
 		if child is Item:
@@ -20,8 +20,8 @@ func _ready():
 
 
 func connectItemData(itemInHouse): #Put randomItem data inside Item
-	var randomIndex = randi() % roullete.size()
-	var randomId = roullete[randomIndex]
+	var randomIndex = randi() % roulette.size()
+	var randomId = roulette[randomIndex]
 	for item in copiedItemData:
 		if item["id"] == randomId:
 			itemInHouse.id = item["id"]
@@ -39,7 +39,10 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			changeArea2d(area2d, itemInHouse)
 
 			copiedItemData.erase(item)
-			roullete.erase(randomId)
+			roulette.erase(randomId)
+			
+			if copiedItemData.is_empty() or roulette.is_empty():
+				break
 
 
 func changeTextureItem(item:Item, texture, newButton):

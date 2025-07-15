@@ -12,7 +12,8 @@ var category: int
 var shape = [] 
 var description: String 
 
-func _process(delta):
+
+func _process(_delta):
 	if dragging:
 		position = get_global_mouse_position() - of
 
