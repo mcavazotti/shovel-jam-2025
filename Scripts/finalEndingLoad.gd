@@ -3,7 +3,6 @@ extends Node2D
 
 @onready var endingData = {}
 @onready var endingPath = "res://FinalEndings/endingEx.json"
-#var copiedEnding dont know if gonna need, since it will not be modified
 
 
 func _ready() -> void:
