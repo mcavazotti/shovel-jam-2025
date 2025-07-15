@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://chkp5ltal2l4n"]
+[gd_scene load_steps=12 format=3 uid="uid://chkp5ltal2l4n"]
 
 [ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scripts/buttons_and_title.gd" id="1_ekrfg"]
 [ext_resource type="Texture2D" uid="uid://c70r0ll0sbh6x" path="res://Assets/Art/Speaker_Icon.png" id="2_2qdx2"]
 [ext_resource type="PackedScene" uid="uid://3hso8cn4h0xh" path="res://Scenes/options.tscn" id="2_yosvi"]
+[ext_resource type="PackedScene" uid="uid://be5y6f8jhr140" path="res://Scenes/pause_game.tscn" id="3_fp2oq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4obfb"]
 font_size = 128
@@ -127,8 +128,10 @@ texture = ExtResource("2_2qdx2")
 expand_mode = 1
 
 [node name="Options" parent="." instance=ExtResource("2_yosvi")]
-visible = false
+process_mode = 2
 layout_mode = 1
+
+[node name="PauseGame" parent="." instance=ExtResource("3_fp2oq")]
 
 [connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]

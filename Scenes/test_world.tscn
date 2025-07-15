@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://brd2hf47y6b3y"]
+
+[ext_resource type="Texture2D" uid="uid://byuiad8beri1l" path="res://Assets/Art/20250715_150632.jpg" id="1_707cn"]
+[ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Scenes/mom.tscn" id="1_skmq4"]
+[ext_resource type="Script" uid="uid://dp6kqo21d8sh3" path="res://Scenes/camera_2d.gd" id="2_au00k"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_au00k"]
+size = Vector2(1920, 1080)
+
+[sub_resource type="Gradient" id="Gradient_au00k"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mq1bj"]
+gradient = SubResource("Gradient_au00k")
+
+[sub_resource type="Gradient" id="Gradient_707cn"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iwv7r"]
+gradient = SubResource("Gradient_707cn")
+
+[node name="World" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+mesh = SubResource("QuadMesh_au00k")
+texture = SubResource("GradientTexture1D_mq1bj")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(2880, 540)
+mesh = SubResource("QuadMesh_au00k")
+texture = SubResource("GradientTexture1D_iwv7r")
+
+[node name="20250715150632" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5160, 1255)
+rotation = 0.0174533
+texture = ExtResource("1_707cn")
+
+[node name="Mom" parent="." instance=ExtResource("1_skmq4")]
+position = Vector2(5873, 1996)
+speed = 500.0
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+anchor_mode = 0
+script = ExtResource("2_au00k")
+player = NodePath("../Mom")

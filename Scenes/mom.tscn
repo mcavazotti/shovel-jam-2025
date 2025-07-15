@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsqhqkxu74jve"]
+
+[ext_resource type="Script" uid="uid://dsewlmpvsohbl" path="res://Scripts/mom.gd" id="1_1838s"]
+[ext_resource type="Texture2D" uid="uid://65nugvsyg18p" path="res://Assets/Art/Mom_placehold.png" id="1_jgf88"]
+[ext_resource type="Material" uid="uid://y5eoycmoultw" path="res://Assets/Mats/Bounce_shader.tres" id="2_5i5ap"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1838s"]
+radius = 70.0
+height = 300.0
+
+[node name="Mom" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_1838s")
+
+[node name="MomPlacehold" type="Sprite2D" parent="."]
+material = ExtResource("2_5i5ap")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jgf88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1838s")

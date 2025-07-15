@@ -2,10 +2,12 @@ extends Control
 
 
 func _on_options_pressed():
-	visible = !visible
+	get_tree().paused = true
+	visible = true
 
 
 func _on_return_pressed():
+	get_tree().paused = false
 	visible = false
 
 

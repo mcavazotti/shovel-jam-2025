@@ -1,0 +1,130 @@
+[gd_scene load_steps=19 format=3 uid="uid://bb2hl8tark6g3"]
+
+[ext_resource type="Texture2D" uid="uid://caps3eyvc0mt3" path="res://Assets/Art/undercloset.png" id="1_jjai4"]
+[ext_resource type="Texture2D" uid="uid://dtv6nhm71doil" path="res://Assets/Art/Kitchen.png" id="2_t7s13"]
+[ext_resource type="Texture2D" uid="uid://cij3065fgcvc2" path="res://Assets/Art/Bathroom1.png" id="3_lddgv"]
+[ext_resource type="Texture2D" uid="uid://dl6dadmmkk3ro" path="res://Assets/Art/intomud.png" id="4_smgrs"]
+[ext_resource type="Texture2D" uid="uid://bdl1ejqhsrkfu" path="res://Assets/Art/mudroom.png" id="5_dyher"]
+[ext_resource type="Texture2D" uid="uid://bu7w24cbm6ybp" path="res://Assets/Art/Enter.png" id="6_ppvi3"]
+[ext_resource type="Texture2D" uid="uid://cc1xn4bgtvns0" path="res://Assets/Art/stairroom.png" id="7_848r5"]
+[ext_resource type="Texture2D" uid="uid://de5rckmrbd1i7" path="res://Assets/Art/bathunderbed.png" id="8_pkgvh"]
+[ext_resource type="Texture2D" uid="uid://2uj05ci6tdjc" path="res://Assets/Art/bedenter.png" id="9_7wmtr"]
+[ext_resource type="Texture2D" uid="uid://dvgn2krilm50b" path="res://Assets/Art/bed.png" id="10_y6p71"]
+[ext_resource type="Texture2D" uid="uid://br8y4j1uje8ww" path="res://Assets/Art/enterstairroom.png" id="11_ayluw"]
+[ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Scenes/mom.tscn" id="12_guf2q"]
+[ext_resource type="Script" uid="uid://dp6kqo21d8sh3" path="res://Scenes/camera_2d.gd" id="13_0qnmp"]
+[ext_resource type="PackedScene" uid="uid://7q65lapufcsh" path="res://Scenes/itemSpawnerControler.tscn" id="14_dyher"]
+[ext_resource type="PackedScene" uid="uid://be5y6f8jhr140" path="res://Scenes/pause_game.tscn" id="14_smgrs"]
+[ext_resource type="Texture2D" uid="uid://cgcqg1s53711j" path="res://Assets/Art/garage1.png" id="15_dyher"]
+[ext_resource type="PackedScene" uid="uid://c4lk76dkkl632" path="res://Items/itemSpawner.tscn" id="15_ppvi3"]
+[ext_resource type="Texture2D" uid="uid://byu86u4b2o8s2" path="res://Assets/Art/garage2.png" id="16_ppvi3"]
+
+[node name="Home" type="Node2D"]
+
+[node name="Level Design" type="Node2D" parent="."]
+
+[node name="Undercloset" type="Sprite2D" parent="Level Design"]
+position = Vector2(4800, 1620)
+texture = ExtResource("1_jjai4")
+
+[node name="Kitchen" type="Sprite2D" parent="Level Design"]
+position = Vector2(6720, 1620)
+texture = ExtResource("2_t7s13")
+
+[node name="Bathroom1" type="Sprite2D" parent="Level Design"]
+position = Vector2(6720, 540)
+texture = ExtResource("3_lddgv")
+
+[node name="Intomud" type="Sprite2D" parent="Level Design"]
+position = Vector2(6720, 2700)
+texture = ExtResource("4_smgrs")
+
+[node name="Mudroom" type="Sprite2D" parent="Level Design"]
+position = Vector2(8640, 2700)
+texture = ExtResource("5_dyher")
+
+[node name="Enter" type="Sprite2D" parent="Level Design"]
+position = Vector2(4800, 540)
+texture = ExtResource("6_ppvi3")
+
+[node name="Stairroom" type="Sprite2D" parent="Level Design"]
+position = Vector2(4800, 2700)
+texture = ExtResource("7_848r5")
+
+[node name="Bathunderbed" type="Sprite2D" parent="Level Design"]
+position = Vector2(960, 2700)
+texture = ExtResource("8_pkgvh")
+
+[node name="Bedenter" type="Sprite2D" parent="Level Design"]
+position = Vector2(2880, 1620)
+texture = ExtResource("9_7wmtr")
+
+[node name="Bed" type="Sprite2D" parent="Level Design"]
+position = Vector2(960, 1620)
+texture = ExtResource("10_y6p71")
+
+[node name="Enterstairroom" type="Sprite2D" parent="Level Design"]
+position = Vector2(2880, 2700)
+texture = ExtResource("11_ayluw")
+
+[node name="Garage1" type="Sprite2D" parent="Level Design"]
+position = Vector2(8640, 1620)
+texture = ExtResource("15_dyher")
+
+[node name="Garage2" type="Sprite2D" parent="Level Design"]
+position = Vector2(8640, 540)
+texture = ExtResource("16_ppvi3")
+
+[node name="itemSpawnerControler" parent="." instance=ExtResource("14_dyher")]
+
+[node name="ItemSpawners" type="Node2D" parent="."]
+
+[node name="ItemSpawner2" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(4236, 944)
+
+[node name="ItemSpawner3" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(6476, 1212)
+
+[node name="ItemSpawner4" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(7153, 903)
+
+[node name="ItemSpawner5" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(7495, 1607)
+
+[node name="ItemSpawner6" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(6731, 1790)
+
+[node name="ItemSpawner7" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(1306, 3081)
+
+[node name="ItemSpawner8" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(1673, 1380)
+
+[node name="ItemSpawner9" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(7911, 2805)
+
+[node name="ItemSpawner10" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(8217, 2799)
+
+[node name="ItemSpawner11" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(7850, 237)
+
+[node name="ItemSpawner12" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(7850, 506)
+
+[node name="ItemSpawner13" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(7874, 726)
+
+[node name="ItemSpawner" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(4009, 934)
+
+[node name="Mom" parent="." instance=ExtResource("12_guf2q")]
+position = Vector2(6164, 1673)
+speed = 500.0
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+anchor_mode = 0
+script = ExtResource("13_0qnmp")
+player = NodePath("../Mom")
+
+[node name="PauseGame" parent="." instance=ExtResource("14_smgrs")]

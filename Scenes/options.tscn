@@ -23,6 +23,8 @@ font_size = 64
 font_size = 32
 
 [node name="Options" type="Control"]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

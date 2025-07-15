@@ -37,7 +37,7 @@ func connectItemData(itemInHouse:Item): #Put randomItem data inside Item
 			
 			var button = itemInHouse.get_children()[0] #button always on first index	
 			#changeTextureItem(itemInHouse, item["image"], button)
-			changeTextureItem(itemInHouse, "res://Assets/Hana Stare.png", button)
+			changeTextureItem(itemInHouse, "res://Assets/Art/Hana Stare.png", button)
 
 			var area2d = itemInHouse.get_children()[1] #buttons always on secound index
 			changeArea2d(area2d, itemInHouse)
