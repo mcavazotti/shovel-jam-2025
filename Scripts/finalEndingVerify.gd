@@ -42,8 +42,8 @@ func _ready() -> void:
 	#endingName = endingFinal["endingName"]
 	#endingStory = endingFinal["endingStory"]
 	#launchCutscene()
-	
-	
+
+
 func verifyEnding(bag):
 	if not bag:
 		print("empty")
@@ -70,7 +70,7 @@ func verifyEnding(bag):
 	matchEnding(itemIds, itemCategories, itemTags)
 	preventConflictEnding()
 
-	
+
 func matchEnding(ids, categories, tags):
 	var endings = endingList
 	for ending in endings: #loop through the endings
@@ -121,22 +121,23 @@ func preventConflictEnding():
 				
 			sameReference.append(ending["reference"])
 			finalEndingVerify.append(ending["id"])
-		
+
 	var selectedEnding = finalEndingSelect(finalEndingVerify)
 	
 	getEndInfo(selectedEnding)
 	print(endingId)
 	print(endingName)
 	print(endingStory)		
-		
-		
+
+
 func finalEndingSelect(endIds):
 	if endIds.size() == 1:
 		return endIds[0]
 	#put thing that will weight out things here
-		
-		
+
+
 func getEndInfo(id):
+	
 	var endings = endingList
 	for ending in endings:	
 		if ending["id"] == id:
@@ -144,7 +145,7 @@ func getEndInfo(id):
 			endingName = ending["name"]
 			endingStory = ending["story"]
 			endingCoverImage = ending["image"]
-	
+
 
 func matchOperator(count, type, condition):
 	match type:
@@ -160,15 +161,15 @@ func matchOperator(count, type, condition):
 			return count > condition
 		"<":
 			return count > condition
-		
-		
+
+
 func launchCutscene():
 	pass
 
 
 func _on_button_down() -> void: #button for testing, exclude afterwards
-	var endingId = verifyEnding(bag)		
-		
+	var endingId = verifyEnding(bag)
+
 
 func clearEndings():
 	endingId = 0
@@ -177,5 +178,3 @@ func clearEndings():
 	endingCoverImage = ""
 	possibleEndings = [] 
 	intermediateEndings = [] 
-		
-		

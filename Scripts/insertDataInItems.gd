@@ -1,7 +1,7 @@
 extends Node2D
+const Item = preload("res://Scripts/item.gd")
 
-
-@onready var children = $".".get_children() #node where items are
+@onready var children = $"..".get_children() #node where items are
 var copiedItemData
 var roullete = []
 var i = 0
@@ -10,13 +10,14 @@ var i = 0
 func _ready():
 	randomize()
 	copiedItemData = ItemDataLoad.getCopiedData()
+	
 	for item in copiedItemData:
 		roullete.append(item["id"])
 		
 	for child in children:
 		if child is Item:
 			connectItemData(child)
-			
+
 
 func connectItemData(itemInHouse): #Put randomItem data inside Item
 	var randomIndex = randi() % roullete.size()
@@ -29,7 +30,7 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			itemInHouse.category = item["category"]
 			itemInHouse.description = item["description"]
 			itemInHouse.shape = item["shape"]
-			
+
 			var button = itemInHouse.get_children()[0] #button always on first index
 			#changeTextureItem(itemInHouse, item["image"], button)
 			changeTextureItem(itemInHouse, "res://Assets/Hana Stare.png", button)
@@ -41,7 +42,7 @@ func connectItemData(itemInHouse): #Put randomItem data inside Item
 			roullete.erase(randomId)
 
 
-func changeTextureItem(item, texture, newButton):
+func changeTextureItem(item:Item, texture, newButton):
 	var newTexture = load(texture)
 	item.texture = newTexture
 	var item_size = newTexture.get_size()

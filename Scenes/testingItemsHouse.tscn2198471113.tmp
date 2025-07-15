@@ -14,7 +14,7 @@
 script = ExtResource("1_lm3mw")
 
 [node name="Item" type="Sprite2D" parent="."]
-position = Vector2(215, 163)
+position = Vector2(434, 399)
 texture = ExtResource("2_1ca3x")
 script = ExtResource("3_nns8m")
 
@@ -23,6 +23,7 @@ offset_left = -64.0
 offset_top = -64.0
 offset_right = -56.0
 offset_bottom = -56.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="Item"]
 collision_layer = 2
@@ -31,7 +32,7 @@ collision_layer = 2
 shape = SubResource("RectangleShape2D_nns8m")
 
 [node name="Item2" type="Sprite2D" parent="."]
-position = Vector2(395, 270)
+position = Vector2(786, 387)
 texture = ExtResource("2_1ca3x")
 script = ExtResource("3_nns8m")
 

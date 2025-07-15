@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Shovel Jam 2025"
-run/main_scene="res://Scenes/testingItemsHouse.tscn"
+run/main_scene="res://Scenes/itemSpawnerControler.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 ItemDataLoad="*res://Scripts/itemDataLoad.gd"
 FinalEndingLoad="*res://Scripts/finalEndingLoad.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 

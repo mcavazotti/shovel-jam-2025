@@ -5,12 +5,12 @@ class_name Item
 var dragging = false
 var of = Vector2(0, 0)
 
-var image: String #path to image
+var image: String 
 var id: int 
-var tags = [] #multiples and effects
+var tags = [] 
 var category: int 
-var shape = [] #append Lists
-var description: String #summary of the item
+var shape = [] 
+var description: String 
 
 func _process(delta):
 	if dragging:
