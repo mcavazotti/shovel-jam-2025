@@ -1,20 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cta504y0e17tr"]
+[gd_scene load_steps=4 format=3 uid="uid://cta504y0e17tr"]
 
-[ext_resource type="PackedScene" uid="uid://f1cnjc2fssgf" path="res://Backpack/backpack.tscn" id="1_pippe"]
-[ext_resource type="PackedScene" uid="uid://dorrsyfd1rqv2" path="res://Items/BaseItem.tscn" id="2_f68d1"]
-[ext_resource type="Image" uid="uid://d1dawfbu2dj5a" path="res://Assets/sword_shape.png" id="3_h2clf"]
-[ext_resource type="Texture2D" uid="uid://cx5suqj8ee3g" path="res://Assets/sword_sprite.png" id="4_q51th"]
+[ext_resource type="PackedScene" uid="uid://cf2as5nri8rfi" path="res://Items/SceneItem.tscn" id="3_k81e3"]
+[ext_resource type="PackedScene" uid="uid://cmppofskqyqet" path="res://Backpack/BackpackController.tscn" id="4_h2clf"]
+[ext_resource type="PackedScene" uid="uid://2vu65kuxtcc5" path="res://Camera/GameCamera.tscn" id="5_q51th"]
 
 [node name="Temp" type="Node2D"]
 
-[node name="Backpack" parent="." instance=ExtResource("1_pippe")]
-position = Vector2(798, 323)
+[node name="BackpackController" parent="." instance=ExtResource("4_h2clf")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(571, 323)
+[node name="GameCamera" parent="." instance=ExtResource("5_q51th")]
 
-[node name="Sword" parent="." instance=ExtResource("2_f68d1")]
-position = Vector2(192, 535)
-ItemName = "Sword"
-ShapeMap = ExtResource("3_h2clf")
-ItemSprite = ExtResource("4_q51th")
+[node name="SceneItem" parent="." instance=ExtResource("3_k81e3")]
