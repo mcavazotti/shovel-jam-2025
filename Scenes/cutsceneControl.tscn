@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7frf8yehlwcx"]
+
+[ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://Scripts/cutsceneControl.gd" id="1_ovwsd"]
+
+[node name="cutsceneControl" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("1_ovwsd")
+
+[node name="anim" type="AnimationPlayer" parent="."]
