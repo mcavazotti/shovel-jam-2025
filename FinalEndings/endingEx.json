@@ -2,7 +2,7 @@
 	{
 		"id": 0000,
 		"name": "Just a regular adventurer",
-		"typeOfEnding": "final",
+		"typeOfEnding": "Final",
 		"reference" : "Normal",
 		"story": "Lorem ipsum.....",
 		"coverImage": "....",
@@ -35,16 +35,16 @@
 				"countType": ">=",
 				"shouldBeTrue": true
 			}
-		],
-		"conditionRelation": "and",
-		"prevents": []
+		]
 	},
 	{
 		"id": 0001,
 		"name": "You are staying here!",
-		"typeOfEnding": "final",
+		"typeOfEnding": "Final",
 		"reference" : "Normal",
-		"story": "Lorem ipsum.....",
+		"story": "You know too well the dangers of an adventure. You’re not letting your child be in harm’s way, no matter what!
+
+”Mom! Why you never let me do anything?!”",
 		"coverImage": "....",
 		"conditions": [
 			{
@@ -75,67 +75,705 @@
 				"countType": ">=",
 				"shouldBeTrue": false
 			},
-		],
-		"conditionRelation": "and",
-		"prevents": []
+		]
 	},
 	{
-		"id": 0100,
-		"name": "Jedi master",
-		"typeOfEnding": "final",
-		"reference" : "StarWars",
-		"story": "Lorem ipsum.....",
+		"id": 0002,
+		"name": "Badly Broken",
+		"typeOfEnding": "Intermediate",
+		"reference" : "BreakingBad",
+		"story": "Worried that he might not leave enough money for family, your child drove to the desert to cook some illegal stuff and make money.
+
+”Mom, I did it for my family!”",
 		"coverImage": "....",
 		"conditions": [
 			{
 				"type": "id",
-				"value": 3001, 
+				"value": 2202,
 				"count": 1,
 				"countType": "==",
 				"shouldBeTrue": true
 			},
 			{
 				"type": "id",
-				"value": 2001, 
+				"value": 5206, 
 				"count": 1,
 				"countType": "==",
 				"shouldBeTrue": true
 			},
-		],
-		"conditionRelation": "and",
-		"prevents": [0000]
+			{
+				"type": "id",
+				"value": 4320, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+		]
 	},
 	{
-		"id": 0200,
-		"name": "Lord Sith",
-		"typeOfEnding": "final",
-		"reference" : "StarWars",
-		"story": "Lorem ipsum.....",
+		"id": 0003,
+		"name": "You sure like to Hit them Man",
+		"typeOfEnding": "Intermediate",
+		"reference" : "Hitman",
+		"story": "During his adventures, your child took a few “contratcs” to help get him some cash to his adventures, making roles in major “accidents”, of course, involving villans.
+
+”Mom! Check out this coin cool I have it”",
 		"coverImage": "....",
 		"conditions": [
 			{
 				"type": "id",
-				"value": 3001, 
+				"value": 2202,
 				"count": 1,
 				"countType": "==",
 				"shouldBeTrue": true
 			},
 			{
 				"type": "id",
-				"value": 2001, 
+				"value": 3008, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+		]
+	},
+	{
+		"id": 0004,
+		"name": "You yearn for the mines",
+		"typeOfEnding": "Intermediate",
+		"reference" : "Minecraft",
+		"story": "On his grand journey your child learned the magical world of the mines where he strengthened his craft.
+
+”I. Am. A miner.”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 4302,
 				"count": 1,
 				"countType": "==",
 				"shouldBeTrue": true
 			},
 			{
 				"type": "tag",
-				"value": "bad food", 
+				"value": "Weapon", 
 				"count": 1,
 				"countType": ">=",
 				"shouldBeTrue": true
 			},
-		],
-		"conditionRelation": "and",
-		"prevents": [0000, 0100]
+		]
+	},
+	{
+		"id": 0005,
+		"name": "A Spade of Hope!",
+		"typeOfEnding": "Intermediate",
+		"reference" : "ShovelKnight",
+		"story": "Your child learns the glory of vanquishing your enemies with the drop of a spade on their heads. Who would have thought that shovels are so… bouncey? And for some reason he found himself battleing the most eclectic, and ego rot knights of an evil tower!
+
+”Mom, have you ever met a dancing apple trout?”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 3009,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2203, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+		]
+	},
+	{
+		"id": 0101,
+		"name": "Summer Camp with Friends",
+		"typeOfEnding": "Intermediate",
+		"reference" : "PercyJackson",
+		"story": "During his adventures, your child spent a summer in a camp. There he made friends, learned classical history and fought mythological creatures. It made you remember your youth days doing the same.
+
+”Mom… I have a question… who really was dad?”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2101,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4203, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "tag",
+				"value": "Half-blood", 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			},
+		]
+	},
+	{
+		"id": 0201,
+		"name": "A Pirate’s Life (or Death) for Me!",
+		"typeOfEnding": "Intermediate",
+		"reference" : "PiratesoftheCaribbean",
+		"story": "During his adventures, your child met a crew of cursed undead pirates looking for a medallion. Your husband will have some explaining to do when he’s back…
+
+”This is the day you will remember as the day you almost captured…”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2201,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4001, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0202,
+		"name": "A Dangerous Side Hustle",
+		"typeOfEnding": "Intermediate",
+		"reference" : "PiratesoftheCaribbean",
+		"story": "At some point during his adventures, your child started a side hustle of killing monsters for money. People started calling him something related to witches…
+
+”Mom, this world doesn't need a hero. It needs a professional.”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 3003,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4001, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0401,
+		"name": "One does not simply walk into a volcano… only to fail at the end",
+		"typeOfEnding": "Final",
+		"reference" : "TheLordoftheRings",
+		"story": "Your child walked into the Dark Lord’s realm to destroy the last thing that could make him come back to power: the invisibility ring!
+
+However, your child was corrupted by the evil influence of the ring. The Dark Lord rose to power again and brought terror and destruction to all the land!
+
+If your child only stayed at home…",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 1002,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2002, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2102, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3006, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4002, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0402,
+		"name": "One does not simply walk into a volcano",
+		"typeOfEnding": "Final",
+		"reference" : "TheLordoftheRings",
+		"story": "Your child walked into the Dark Lord’s realm and destroyed the last thing that could make him come back to power: the invisibility ring!
+
+Your child was almost corrupted by the evil influence of the ring, but the memory of his friends made him overcome it.
+
+He will now travel west and rest in the eternal lands.",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 1002,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2002, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2102, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3006, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4002, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4201, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0403,
+		"name": "The return of a king",
+		"typeOfEnding": "Final",
+		"reference" : "TheLordoftheRings",
+		"story": "The broken sword was reforged, the evil of this era was defeated, and your child sits on the throne that is rightfully his!
+
+”Mom, the blade that was broken shall return…”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 1002,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2002, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4101, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4102, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4103, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4104, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0404,
+		"name": "A new dark lord",
+		"typeOfEnding": "Final",
+		"reference" : "TheLordoftheRings",
+		"story": "The broken sword was reforged, and your child sits on the throne that is rightfully his, but not as a benevolent king, nor have the evil been purged.
+
+The ring corrupted your child! After defeating the Dark Lord, he became a tyrant! Our hope turned into despair as he had become a Dark Lord himself!
+
+If your child only stayed at home…",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 1002,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 2002, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4002, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4101, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4102, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4103, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4104, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0501,
+		"name": "Joining a club",
+		"typeOfEnding": "Intermediate",
+		"reference" : "StarWars",
+		"story": "Your child found out some interior power and started training with a group of space monk warriors. After some years of training, he became a master.
+
+”Mom, may the forc… inner power be with you!”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2103,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3007, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0502,
+		"name": "Family issues resolved",
+		"typeOfEnding": "Final",
+		"reference" : "StarWars",
+		"story": "Your child found out that his father was one of the top officials of the evil galactic empire. After some fighting, they worked together to defeat the evil emperor, thus saving the galaxy!
+
+Your child saved the day, but now you are a widow.
+
+”Mom, why did you never tell me who my father was?”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2103,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3007, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4204, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0503,
+		"name": "The Chosen One in space",
+		"typeOfEnding": "Final",
+		"reference" : "StarWars",
+		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He brought balance to the inner power and peace to the galaxy.",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2103,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3007, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4203, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0504,
+		"name": "The Fall of The Chosen One",
+		"typeOfEnding": "Final",
+		"reference" : "StarWars",
+		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He was supposed to bring balance to the inner power, but he couldn’t detach from his fear of losing relationships.
+
+His master said: “Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering”. Unfortunately that’s what happened. To make things worse, he couldn’t find the high ground.",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2103,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3007, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4203, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "tag",
+				"value": "Relationship", 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0505,
+		"name": "The Fall of The Chosen One, but in the high ground",
+		"typeOfEnding": "Final",
+		"reference" : "StarWars",
+		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He was supposed to bring balance to the inner power, but he couldn’t detach from his fear of losing relationships.
+
+His master said: “Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering”. Unfortunately that’s what happened. At least he found the high ground.",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2103,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3007, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4203, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "tag",
+				"value": "Relationship", 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "tag",
+				"value": "Localization", 
+				"count": 1,
+				"countType": ">=",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0506,
+		"name": "The Fall of the Death Moon, and The return of the Son",
+		"typeOfEnding": "Final",
+		"reference" : "StarWars",
+		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He brought balance to the inner power and peace to the galaxy.",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 2103,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 3007, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 4206, 
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+		]
+	},
+	{
+		"id": 0601,
+		"name": "The Lost Swordmaster",
+		"typeOfEnding": "Intermediate",
+		"reference" : "OnePiece",
+		"story": "In his journey, your child mastered the art of swordfight, with his 3 swords technic no one was a match to him, however he returned home… earlier than expected.
+
+”Mom? I swear I turned the right corner!”",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "tag",
+				"value": "Sword",
+				"count": 3,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 0602,
+		"name": "Getting a new crew",
+		"typeOfEnding": "Intermediate",
+		"reference" : "OnePiece",
+		"story": "Your kid gathered some good friends and formated a crew to adventure around the world, in search of the Lengendary lost treasure.
+
+”Mom! I’m going to be king of the-” *he falls into the water, 3 friends jump after him and rescue him*",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 4201,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 1003,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
+	},
+	{
+		"id": 9999,
+		"name": "Temple of the healing",
+		"typeOfEnding": "Intermediate",
+		"reference" : "Normal",
+		"story": "Your kid gathered some good friends and formated a crew to adventure around the world, in search of the Lengendary lost treasure.
+
+”Mom! I’m going to be king of the-” *he falls into the water, 3 friends jump after him and rescue him*",
+		"coverImage": "....",
+		"conditions": [
+			{
+				"type": "id",
+				"value": 4201,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			},
+			{
+				"type": "id",
+				"value": 1003,
+				"count": 1,
+				"countType": "==",
+				"shouldBeTrue": true
+			}
+		]
 	},
 ]

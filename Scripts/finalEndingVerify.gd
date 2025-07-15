@@ -57,13 +57,13 @@ func verifyEnding(bag):
 		for key in items.keys():
 			match key:
 				
-				"itemId":
+				"Id":
 					itemIds.append(items[key])
 					
-				"itemCategory":
+				"Category":
 					itemCategories.append(items[key])
 					
-				"itemTags":
+				"Tags":
 					for i in items[key]: #i being the items in the Tags array.
 						itemTags.append(i)
 						
@@ -112,7 +112,7 @@ func preventConflictEnding():
 	var index: int
 	
 	for ending in possibleEndings:
-		if ending["typeOfEnding"] == "final":
+		if ending["typeOfEnding"] == "Final":
 			index = sameReference.find(ending["reference"]) #search same value, always the first
 			
 			if index != -1:
@@ -137,7 +137,6 @@ func finalEndingSelect(endIds):
 
 
 func getEndInfo(id):
-	
 	var endings = endingList
 	for ending in endings:	
 		if ending["id"] == id:
@@ -169,6 +168,7 @@ func launchCutscene():
 
 func _on_button_down() -> void: #button for testing, exclude afterwards
 	var endingId = verifyEnding(bag)
+	getEndInfo(endingId)
 
 
 func clearEndings():

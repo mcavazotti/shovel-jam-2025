@@ -6,6 +6,8 @@ var dragging = false
 var of = Vector2(0, 0)
 
 var itemData = {}
+var over_bag : bool
+var bag : Area2D
 
 func _process(_delta):
 	if dragging:
@@ -19,4 +21,16 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	dragging = false
+	if over_bag:
+		bag.dataRecieved = itemData 
 	
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("bagArea"):
+		over_bag = true
+		bag = area
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("bagArea"):
+		over_bag = false
