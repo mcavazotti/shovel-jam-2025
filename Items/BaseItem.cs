@@ -22,6 +22,7 @@ public partial class BaseItem : Node2D
     private bool InBounds;
 
     private Vector2 PosBeforeDrag;
+    private float RotBeforeDrag;
     private bool Dragging;
     private Vector2 Offset;
     private Vector2 RectShape;
@@ -74,6 +75,7 @@ public partial class BaseItem : Node2D
                     {
                         Dragging = true;
                         PosBeforeDrag = Position;
+                        RotBeforeDrag = Rotation;
                     }
                     else
                         Dragging = false;
@@ -91,7 +93,7 @@ public partial class BaseItem : Node2D
             }
         }
 
-        if (@event is InputEventMouseMotion eventMouseMotion)
+        if (@event is InputEventMouseMotion)
         {
             if (Dragging && Input.IsMouseButtonPressed(MouseButton.Left))
             {
@@ -99,6 +101,21 @@ public partial class BaseItem : Node2D
                 Position = GetGlobalMousePosition() - Offset;
             }
 
+        }
+
+        if (@event.IsActionPressed("r_cw") && Dragging)
+        {
+            Rotate(Mathf.Pi / 2);
+            Offset = Offset.Rotated(Mathf.Pi / 2);
+            Position += Offset;
+            EmitSignal(SignalName.Drag, this);
+        }
+        if (@event.IsActionPressed("r_ccw") && Dragging)
+        {
+            Rotate(-Mathf.Pi / 2);
+            Offset = Offset.Rotated(-Mathf.Pi / 2);
+            Position -= Offset;
+            EmitSignal(SignalName.Drag, this);
         }
     }
 
@@ -143,5 +160,6 @@ public partial class BaseItem : Node2D
     public void ResetDragPosition()
     {
         Position = PosBeforeDrag;
+        Rotation = RotBeforeDrag;
     }
 }
