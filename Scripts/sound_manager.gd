@@ -14,14 +14,19 @@ func _ready():
 	add_child(SFX_streamer)
 	add_child(BGM_streamer)
 
-func SFX(SFX_name: String):
+enum SFX_TYPE {
+	Click,
+	Super_Click
+}
+
+func SFX(SFX_name: SFX_TYPE):
 	SFX_streamer.pitch_scale = 1.0
-	if SFX_name == "Click":
+	if SFX_name == SFX_TYPE.Click:
 		SFX_streamer.pitch_scale += randf_range(-0.5,0.5)
 		print()
 		SFX_streamer.stream = load("res://Assets/Sounds/Sound Effects/Click_real.wav")
 		
-	elif SFX_name == "Super Click":
+	elif SFX_name == SFX_TYPE.Super_Click:
 		print()
 		SFX_streamer.stream = load("res://Assets/Sounds/Sound Effects/SuperClick_real.wav")
 		
@@ -30,9 +35,16 @@ func SFX(SFX_name: String):
 		
 	SFX_streamer.play()
 
-func BGM(BGM_name: String):
-	if BGM_name == "Results":
+enum BGM_TYPE {
+	Results,
+	First_Minute
+}
+
+func BGM(BGM_name: BGM_TYPE):
+	if BGM_name == BGM_TYPE.Results:
 		BGM_streamer.stream = load("res://Assets/Sounds/Music/Results.mp3")
+	elif BGM_name == BGM_TYPE.First_Minute:
+		BGM_streamer.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
 	else:
 		print("Tried to play invalid track name:", BGM_name)
 		

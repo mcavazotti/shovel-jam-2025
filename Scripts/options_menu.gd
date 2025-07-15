@@ -16,17 +16,17 @@ func _on_exit_game_pressed():
 
 
 func _on_fullscreen_pressed():
-	Audio.SFX("Click")
+	Audio.SFX(Audio.SFX_TYPE.Click)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
 func _on_maximized_pressed():
-	Audio.SFX("Click")
+	Audio.SFX(Audio.SFX_TYPE.Click)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
 
 func _on_windowed_pressed():
-	Audio.SFX("Click")
+	Audio.SFX(Audio.SFX_TYPE.Click)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 

@@ -75,6 +75,19 @@ texture = ExtResource("15_dyher")
 position = Vector2(8640, 540)
 texture = ExtResource("16_ppvi3")
 
+[node name="Level Collision" type="StaticBody2D" parent="."]
+
+[node name="Kitchen Island" type="CollisionPolygon2D" parent="Level Collision"]
+polygon = PackedVector2Array(6330, 1539, 6352, 1862, 7116, 1854, 7109, 1496)
+
+[node name="Walls" type="CollisionPolygon2D" parent="Level Collision"]
+polygon = PackedVector2Array(6272, 996, 6275, 1114, 7617, 1129, 7633, 2266, 7725, 2278, 7721, 2217, 8079, 2217, 8077, 2101, 7732, 2108, 7728, 53, 9538, 72, 9550, 2104, 8447, 2090, 8430, 2904, 7732, 2899, 7730, 2583, 7624, 2564, 7617, 3178, 1979, 3180, 1979, 2600, 1866, 2590, 1873, 3173, 62, 3192, 66, 2204, 1844, 2211, 1858, 2364, 1974, 2364, 1972, 1961, 1865, 1940, 1870, 2105, 66, 2116, 69, 1135, 1865, 1149, 1865, 1715, 1983, 1704, 1976, 1161, 3794, 1135, 3801, 2150, 3900, 2150, 3888, 1142, 4489, 1140, 4478, 437, 4404, 442, 4404, 1010, 3895, 1022, 3893, 41, 4409, 63, 4414, 133, 4480, 138, 4473, 63, 5061, 65, 5066, 4, 3843, -8, 3838, 1060, 2, 1079, -3, 3229, 7678, 3236, 7680, 2998, 8545, 2965, 8512, 2156, 9596, 2161, 9594, -12, 5382, 7, 5378, 57, 6701, 42, 6730, 670, 6791, 674, 6765, 40, 7604, 38, 7633, 987)
+
+[node name="Mom" parent="." instance=ExtResource("12_guf2q")]
+position = Vector2(6113, 1699)
+speed = 500.0
+moving_bounce_speed = 13.0
+
 [node name="itemSpawnerControler" parent="." instance=ExtResource("14_dyher")]
 
 [node name="ItemSpawners" type="Node2D" parent="."]
@@ -118,11 +131,8 @@ position = Vector2(7874, 726)
 [node name="ItemSpawner" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
 position = Vector2(4009, 934)
 
-[node name="Mom" parent="." instance=ExtResource("12_guf2q")]
-position = Vector2(6164, 1673)
-speed = 500.0
-
-[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(5713, 1113)
 anchor_mode = 0
 script = ExtResource("13_0qnmp")
 player = NodePath("../Mom")
