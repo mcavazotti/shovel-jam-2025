@@ -46,7 +46,7 @@ public partial class Backpack : Node2D
 
         foreach (var i in items)
         {
-            if (i is BaseItem item)
+            if (i is BagItem item)
             {
                 item.Drag += DraggingItem;
                 item.Drop += DroppingItem;
@@ -57,11 +57,10 @@ public partial class Backpack : Node2D
 
     }
 
-    private void DraggingItem(BaseItem item)
+    private void DraggingItem(BagItem item)
     {
         foreach (var slot in Slots)
             slot.ResetState();
-
 
         var itemSlots = item.GetSlotsGlobalPositions();
 
@@ -86,7 +85,7 @@ public partial class Backpack : Node2D
     }
 
 
-    private void DroppingItem(BaseItem item)
+    private void DroppingItem(BagItem item)
     {
         foreach (var slot in Slots)
             slot.ResetState();
@@ -102,7 +101,7 @@ public partial class Backpack : Node2D
             FindIntersectingSlots(item.GetSlotsGlobalPositions().Slice(0, 1), out var intersectingSlots);
             var itemSlot = item.GetSlotsGlobalPositions()[0];
             var offset =  intersectingSlots[0].GlobalPosition - itemSlot;
-            item.Position = item.Position + offset;
+            item.Position += offset;
 
         }
     }
