@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dorrsyfd1rqv2"]
 
-[ext_resource type="Script" uid="uid://dx0xuqls5t4fk" path="res://Items/BaseItem.cs" id="1_5tpao"]
+[ext_resource type="Script" uid="uid://c2iwgtk6hi1f1" path="res://Items/BagItem.cs" id="1_5tpao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tpao"]
 
-[node name="BaseItem" type="Node2D" groups=["Items"]]
+[node name="BagItem" type="Node2D" groups=["BagItems"]]
 script = ExtResource("1_5tpao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

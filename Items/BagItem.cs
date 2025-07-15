@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class BaseItem : Node2D
+public partial class BagItem : Node2D
 {
     [Export]
     Vector2I SlotSize = new Vector2I(50, 50);
@@ -15,9 +15,9 @@ public partial class BaseItem : Node2D
     public Texture2D ItemSprite;
 
     [Signal]
-    public delegate void DragEventHandler(BaseItem i);
+    public delegate void DragEventHandler(BagItem i);
     [Signal]
-    public delegate void DropEventHandler(BaseItem i);
+    public delegate void DropEventHandler(BagItem i);
 
     private bool InBounds;
 
