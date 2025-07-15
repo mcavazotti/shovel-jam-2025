@@ -5,6 +5,12 @@ const Item = preload("res://Scripts/item.gd")
 @onready var itemSpawners = $"..".get_tree().get_nodes_in_group("itemSpawner") #node where items are
 var copiedItemData
 var roulette = []
+var categoryEnum = {
+	1000: "Food",
+	2000: "Cloathing",
+	3000: "Weapon",
+	4000: "Misc"
+}
 
 
 func _ready():
@@ -30,21 +36,30 @@ func connectItemData(itemInHouse:Item): #Put randomItem data inside Item
 				"Tags" : item["tags"],
 				"Category" : item["category"],
 				"Description" : item["description"],
-				"Shape" : item["shape"]
+				"Shape" : item["shape"],
+				"Image" : item["image"]
 			}
 			
 			itemInHouse.name = item["name"]
 			
-			var button = itemInHouse.get_children()[0] #button always on first index	
-			#changeTextureItem(itemInHouse, item["image"], button)
+			var button = itemInHouse.get_children()[0]
+			#changeTextureItem(itemInHouse, itemInHouse["image"], button)
 			changeTextureItem(itemInHouse, "res://Assets/Hana Stare.png", button)
 
-			var area2d = itemInHouse.get_children()[1] #buttons always on secound index
+			var area2d = itemInHouse.get_children()[1]
 			changeArea2d(area2d, itemInHouse)
 						
 			area2d.set_collision_layer(2) #sets the collision layer to a itemInHouse
 			itemInHouse.remove_from_group("itemSpawner")
 			itemInHouse.add_to_group("Item")
+				
+			var label = itemInHouse.get_children()[2]
+			
+			var categoryName = categoryEnum.get(int(item["category"]))
+			label.text = "%s\n%s" % [item["name"], categoryName]
+			itemInHouse.isVisible(label, false)
+		
+			label.position.y -= 50
 			
 			copiedItemData.erase(item)
 			roulette.erase(randomId)

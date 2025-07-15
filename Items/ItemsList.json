@@ -208,7 +208,7 @@
 	},
 	{
 		"id": 4102,
-		"name": "Broken Elven Blade (1/3)",
+		"name": "Broken Elven Blade",
 		"category": 4000,
 		"tags": ["Elf"],
 		"shape": [[1], [1]],
@@ -217,7 +217,7 @@
 	},
 	{
 		"id": 4103,
-		"name": "Broken Elven Blade (2/3)",
+		"name": "Broken Elven Blade",
 		"category": 4000,
 		"tags": ["Elf"],
 		"shape": [[1], [1]],
@@ -226,7 +226,7 @@
 	},
 	{
 		"id": 4104,
-		"name": "Broken Elven Blade (3/3)",
+		"name": "Broken Elven Tip",
 		"category": 4000,
 		"tags": ["Elf"],
 		"shape": [[1]],
@@ -336,7 +336,7 @@
 		"id": 4303,
 		"name": "Dirt Cube",
 		"category": 4000,
-		"tags": ["Minecraft", "Dirt"],
+		"tags": ["Dirt"],
 		"shape": [[1]],
 		"description": "Why is there dirt in the house?! Was it meant for a plant? There is no pot. Maybe your child deserves a dirty bag as retribution for bringing this inside. There is no way your husband would bring just dirt inside.",
 		"image": "path"

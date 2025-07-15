@@ -15,33 +15,31 @@ var bag = []
 func _ready() -> void:
 	clearEndings()
 	bag = [
-		{	
-			"itemId" : 3001,
-			"itemCategory" :  3000,
-			"itemTags" : ["defensive"],
- 		},
 		{
-			"itemId" : 1002,
-			"itemCategory" :  1000,
-			"itemTags" : ["healthy food"],
- 		 },
+			"id": 4303,
+			"category": 4000,
+			"tags": ["Minecraft", "Dirt"],
+		},
 		{
-			"itemId" : 2002,
-			"itemCategory" :  2000,
-			"itemTags" : ["attack", "sword", "jedi"],
-  		},
+			"id": 1001,
+			"category": 1000,
+			"tags": ["Fish", "Healthy", "Sea"],
+		},
 		{
-			"itemId" : 4001,
-			"itemCategory" :  4000,
-			"itemTags" : ["mobility, sassy"],
-  		}
+			"id": 2002,
+			"category": 2000,
+			"tags": ["Head", "Stealth", "Cloak", "Elf", "Geek"],
+		},
+		{
+			"id": 3004,
+			"category": 3000,
+			"tags": ["Melee", "Big", "Bronze", "Sword", "Half-blood"],
+		}
 	]
 	
-	#var endingFinal = verifyEnding(bag)
-	#endingId = endingFinal["endingId"]
-	#endingName = endingFinal["endingName"]
-	#endingStory = endingFinal["endingStory"]
 	#launchCutscene()
+	#var endingId = verifyEnding(bag)
+	#getEndInfo(endingId)
 
 
 func verifyEnding(bag):
@@ -57,13 +55,13 @@ func verifyEnding(bag):
 		for key in items.keys():
 			match key:
 				
-				"Id":
+				"id":
 					itemIds.append(items[key])
 					
-				"Category":
+				"category":
 					itemCategories.append(items[key])
 					
-				"Tags":
+				"tags":
 					for i in items[key]: #i being the items in the Tags array.
 						itemTags.append(i)
 						
@@ -100,34 +98,40 @@ func matchEnding(ids, categories, tags):
 				isEndingOk.append(true)
 			else:
 				isEndingOk.append(false)	
+										
 											
-		if not isEndingOk.has(false): 
-			possibleEndings.append({"id": ending["id"], "typeOfEnding": ending["typeOfEnding"], "reference": ending["reference"]})
-			#edit dicionary to match keys.
- 
+		if not isEndingOk.has(false):
+			if ending["typeOfEnding"] == "Intermediate":
+				intermediateEndings.append({"id" : ending["id"], "name" : ending["name"], "story" : ending["story"], "coverImage" : ending["coverImage"]})
+			else:
+				possibleEndings.append({"id": ending["id"], "reference": ending["reference"]})
+	
 
 func preventConflictEnding():
 	var sameReference = []
 	var finalEndingVerify = []
 	var index: int
 	
+	print(possibleEndings)
 	for ending in possibleEndings:
-		if ending["typeOfEnding"] == "Final":
-			index = sameReference.find(ending["reference"]) #search same value, always the first
+		index = sameReference.find(ending["reference"]) #search same value, always the first
+		
+		if index != -1:
+			sameReference.remove_at(index)
+			finalEndingVerify.remove_at(index)
 			
-			if index != -1:
-				sameReference.remove_at(index)
-				finalEndingVerify.remove_at(index)
-				
-			sameReference.append(ending["reference"])
-			finalEndingVerify.append(ending["id"])
+		sameReference.append(ending["reference"])
+		finalEndingVerify.append(ending["id"])
 
 	var selectedEnding = finalEndingSelect(finalEndingVerify)
 	
 	getEndInfo(selectedEnding)
+	print()
 	print(endingId)
 	print(endingName)
-	print(endingStory)		
+	print(endingStory)
+	print(intermediateEndings)
+
 
 
 func finalEndingSelect(endIds):
@@ -143,7 +147,7 @@ func getEndInfo(id):
 			endingId = id
 			endingName = ending["name"]
 			endingStory = ending["story"]
-			endingCoverImage = ending["image"]
+			endingCoverImage = ending["coverImage"]
 
 
 func matchOperator(count, type, condition):
@@ -166,11 +170,6 @@ func launchCutscene():
 	pass
 
 
-func _on_button_down() -> void: #button for testing, exclude afterwards
-	var endingId = verifyEnding(bag)
-	getEndInfo(endingId)
-
-
 func clearEndings():
 	endingId = 0
 	endingName = ""
@@ -178,3 +177,8 @@ func clearEndings():
 	endingCoverImage = ""
 	possibleEndings = [] 
 	intermediateEndings = [] 
+
+
+func _on_button_down() -> void:  #REMOVE IN FINAL VERSION, will be
+	endingId = verifyEnding(bag)
+	getEndInfo(endingId)

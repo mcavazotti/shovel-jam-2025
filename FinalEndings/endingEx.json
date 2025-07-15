@@ -148,14 +148,14 @@
 		"conditions": [
 			{
 				"type": "id",
-				"value": 4302,
+				"value": 4303,
 				"count": 1,
 				"countType": "==",
 				"shouldBeTrue": true
 			},
 			{
-				"type": "tag",
-				"value": "Weapon", 
+				"type": "category",
+				"value": 2000, 
 				"count": 1,
 				"countType": ">=",
 				"shouldBeTrue": true
