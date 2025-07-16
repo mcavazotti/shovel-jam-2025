@@ -1,24 +1,261 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7frf8yehlwcx"]
+[gd_scene load_steps=7 format=3 uid="uid://b7frf8yehlwcx"]
 
 [ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://Scripts/cutsceneControl.gd" id="1_ovwsd"]
+[ext_resource type="Texture2D" uid="uid://cxaswokf0updv" path="res://Assets/Hana Stare.png" id="2_w00vp"]
+
+[sub_resource type="Animation" id="Animation_dgoe4"]
+resource_name = "FinalEnding"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("finalStory:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("finalTitle:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.529067, 0.529067, 0.529067, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ovwsd"]
+resource_name = "IntermediateEndings"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("intermediate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8, 17, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-877, 700), Vector2(-877, -310.526), Vector2(-877, -310), Vector2(-877, -1700)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("son:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8, 17, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-216.5, 625), Vector2(-216.5, -406.579), Vector2(-216.5, -406.57), Vector2(-216.5, -1825)]
+}
+
+[sub_resource type="Animation" id="Animation_w00vp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("intermediate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-468, 600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("son:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-116, 600)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("finalStory:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("finalTitle:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextureRect:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dgoe4"]
+_data = {
+&"FinalEnding": SubResource("Animation_dgoe4"),
+&"IntermediateEndings": SubResource("Animation_ovwsd"),
+&"RESET": SubResource("Animation_w00vp")
+}
 
 [node name="cutsceneControl" type="Control"]
 layout_mode = 3
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_ovwsd")
 
 [node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dgoe4")
+}
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -340.0
+offset_right = 640.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w00vp")
+
+[node name="intermediate" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -468.0
+offset_top = 600.0
+offset_right = 1286.0
+offset_bottom = 1047.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "pepeloni. you know the pepeloni?
+
+ahh the pepeloni, pepeloni. you know the pepeloni?
+ the nooo one. i always, i always order the, the domino. domino pepeloni and without pepeloni.
+ i always order the pepeloni and without pepeloni. pepeloni! i like pepeloni, yeah. 
+i always, i always order the, the cheese- cheese pan. ahh how can i explain?
+ i can explain by my drawing! i always order like the cheese pan that it has cheese on here, this part, the ear. ear of pizza. 
+and then, i order- wh- when i order pepeloni, the ear- it always have a pepeloni on h- on a top, but i pick up these... away! 
+cause i don't eat it. and then i eat the cheese pan pizza. 
+okay? you understand? understandable! pepeloni! yes."
 horizontal_alignment = 1
+
+[node name="son" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 600.0
+offset_right = 317.0
+offset_bottom = 642.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "THE GREAT LIFE OF YOUR SON"
+horizontal_alignment = 1
+
+[node name="finalTitle" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -275.0
+offset_right = 394.0
+offset_bottom = -233.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "EPIC ENDING TITLE WOAH WOW AMAZING INCREDIBLE"
+
+[node name="finalStory" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -877.0
+offset_top = -200.0
+offset_right = 877.0
+offset_bottom = 697.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "pepeloni. you know the pepeloni?
+
+ahh the pepeloni, pepeloni. you know the pepeloni?
+ the nooo one. i always, i always order the, the domino. domino pepeloni and without pepeloni.
+ i always order the pepeloni and without pepeloni. pepeloni! i like pepeloni, yeah. 
+i always, i always order the, the cheese- cheese pan. ahh how can i explain?
+ i can explain by my drawing! i always order like the cheese pan that it has cheese on here, this part, the ear. ear of pizza. 
+and then, i order- wh- when i order pepeloni, the ear- it always have a pepeloni on h- on a top, but i pick up these... away! 
+cause i don't eat it. and then i eat the cheese pan pizza. 
+okay? you understand? understandable! pepeloni!
+"
+horizontal_alignment = 1
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
