@@ -6,7 +6,8 @@
 		"tags": ["Fish", "Healthy", "Sea"],
 		"shape": [[1], [1]],
 		"description": "Fish.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 1002,
@@ -15,7 +16,8 @@
 		"tags": ["Elf", "Healthy", "Bread"],
 		"shape": [[1]],
 		"description": "It’s said that one will keep a traveler on his feet for a day of long labour. That’s just what your child need! And you can confirm from experience what they say about this bread is true.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 1003,
@@ -24,7 +26,8 @@
 		"tags": ["OnePiece", "Healthy", "Cursed"],
 		"shape": [[1,1],[1,1]],
 		"description": "You found in a chest in the closet, you remembered your husband brought from a long trip to the ocean one time, maybe your kid needs more than you.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2001,
@@ -33,7 +36,8 @@
 		"tags": ["Head", "Stealth", "Cloak"],
 		"shape": [[1,1], [1,1]],
 		"description": "A cloak that hides your face and gives you a mysterious and stealthy look. You remember using it when you were young.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2002,
@@ -42,7 +46,8 @@
 		"tags": ["Head", "Stealth", "Cloak", "Elf", "Geek"],
 		"shape": [[1,1], [1,1]],
 		"description": "Perfect for camouflaging against unfriendly eyes.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2101,
@@ -51,7 +56,8 @@
 		"tags": ["Torso", "Camping", "T-shirt"],
 		"shape": [[1,1], [1,1]],
 		"description": "A T-shirt used for camping. You used to have one of it when you were young.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2102,
@@ -60,7 +66,8 @@
 		"tags": ["Torso", "Armor", "Dwarf", "Mithril"],
 		"shape": [[1,1], [1,1]],
 		"description": "A very sturdy chain mail coat. Your husband used it all the time, now it’s time for your child to use it.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2103,
@@ -69,7 +76,8 @@
 		"tags": ["Torso", "Robe", "Jedi", "Geek"],
 		"shape": [[1,1], [1,1], [1,1]],
 		"description": "A robe worn by a specific group of space monk warriors a long time ago in a far, far away galaxy. You still wonder how your husband got his hands on that…",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2201,
@@ -78,7 +86,8 @@
 		"tags": ["Sea", "Head"],
 		"shape": [[1,1], [1,1]],
 		"description": "Ahoy! Get yourself a sea-dog look!",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2202,
@@ -87,7 +96,8 @@
 		"tags": ["Head", "Disguise"],
 		"shape": [[1,1], [1,1]],
 		"description": "Sometimes you just want to look bald. Your husband was using it when you first met.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 2203,
@@ -96,7 +106,8 @@
 		"tags": ["Head"],
 		"shape": [[1,1,1], [1,0,1]],
 		"description": "A perfect peice of armor for a knightly adventurer. Somehow, it doesn’t reveil the face at all despite the T-shaped hole in it.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 3001,
@@ -105,7 +116,8 @@
 		"tags": ["Melee", "Stealth", "Dagger"],
 		"shape": [[1], [1]],
 		"description": "A dagger that can be hidden in your clothes, good for stealth attacks. You have fond memories of it.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 3002,
@@ -114,7 +126,8 @@
 		"tags": ["Melee", "Big", "Gold", "Half-blod", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of gold. Some say gold is too soft of a metal to be used to make a blade, however, you know cases when one would specifically needs a blade made of gold.",
-		"image": "path"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 3003,
@@ -123,7 +136,8 @@
 		"tags": ["Melee", "Big", "Silver", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of silver. You don’t know how different it is from a regular sword, but your husband did know.",
-		"image": "path"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 3004,
@@ -132,7 +146,8 @@
 		"tags": ["Melee", "Big", "Bronze", "Sword", "Half-blood"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of bronze. Ancient warriors used bronze weapons. Some young people nowadays still use them, you think to yourself.",
-		"image": "path"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 3005,
@@ -141,7 +156,8 @@
 		"tags": ["Melee", "Big", "Steel", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of steel. Just a regular sword.",
-		"image": "path"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 3006,
@@ -150,7 +166,8 @@
 		"tags": ["Melee", "Elf", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A small sword from very ancient times. Your husband found it during one of his trips.",
-		"image": "path"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 3007,
@@ -159,7 +176,8 @@
 		"tags": ["Melee", "Jedi", "Sword", "Geek"],
 		"shape": [[1], [1], [1]],
 		"description": "It’s very handy to have a retractable sword that defies laws of physics and can cut through reinforced steel instantly! You still wonder where your husband found it…",
-		"image": "path"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 3008,
@@ -168,7 +186,8 @@
 		"tags": ["Ranged", "Stealth", "Spy", "Pistol"],
 		"shape": [[1,1,1], [1,0,0]],
 		"description": "A Pistol with silencer from your husband stuff, you don’t know much why he has it, but you know it was a gift from a friend.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 3009,
@@ -177,7 +196,8 @@
 		"tags": ["Big", "Melee"],
 		"shape": [[1,1,1], [1,1,1], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A long, trusty blue shovel. It’s seen countless battles against knights. According to your husband, he also used to have a red sheild, however he didn’t have enough space in his bag to bring it home.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4001,
@@ -186,7 +206,8 @@
 		"tags": ["Necklace"],
 		"shape": [[1]],
 		"description": "It might be magic, it might be cursed, or it might be just a regular medallion, you don’t know. All you know is that your husband brought it home after a trip.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4002,
@@ -195,7 +216,8 @@
 		"tags": ["Ring", "Gold"],
 		"shape": [[1]],
 		"description": "A golden ring that turns the wearer invisible. It might do other things too, but you’re not sure. Your husband got it after a game of riddles in the dark.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4101,
@@ -204,7 +226,8 @@
 		"tags": ["Elf"],
 		"shape": [[0,1,0], [1,1,1], [0,1,0]],
 		"description": "An ancient sword, or at least what remains of it, which is not really useful by itself. Your husband received it as an inheritance.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4102,
@@ -213,7 +236,8 @@
 		"tags": ["Elf"],
 		"shape": [[1], [1]],
 		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4103,
@@ -222,7 +246,8 @@
 		"tags": ["Elf"],
 		"shape": [[1], [1]],
 		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4104,
@@ -231,7 +256,8 @@
 		"tags": ["Elf"],
 		"shape": [[1]],
 		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4201,
@@ -240,7 +266,8 @@
 		"tags": ["Memory", "Friend", "Relationship", "Paper"],
 		"shape": [[1,1]],
 		"description": "It’s good to remember people who are important to us. It might be useful for your child during his adventure.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4202,
@@ -249,7 +276,8 @@
 		"tags": ["Memory", "Love", "Relationship", "Paper"],
 		"shape": [[1,1]],
 		"description": "It’s good to remember people who are important to us. It might be useful for your child during his adventure.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4203,
@@ -258,7 +286,8 @@
 		"tags": ["Certificate", "Paper"],
 		"shape": [[1,1]],
 		"description": "Everyone should know that your child is the chosen one!",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4204,
@@ -267,7 +296,8 @@
 		"tags": ["Certificate", "Paper"],
 		"shape": [[1,1]],
 		"description": "Everyone should know that your child doesn’t know who his father is.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4205,
@@ -276,7 +306,8 @@
 		"tags": ["Book", "Paper"],
 		"shape": [[1], [1]],
 		"description": "Very useful in case your child has to build something.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4206,
@@ -285,7 +316,8 @@
 		"tags": ["Book", "Paper"],
 		"shape": [[1], [1]],
 		"description": "Very useful in case your child has to pilot something.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4207,
@@ -294,7 +326,8 @@
 		"tags": ["Book", "Paper"],
 		"shape": [[1], [1]],
 		"description": "Very useful if your child has to brew something or do some chemical reactions.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4208,
@@ -303,7 +336,8 @@
 		"tags": ["Localization", "Paper"],
 		"shape": [[1,1], [1,1]],
 		"description": "People say that maps are a thing from the past, but you’re a mom, you know better.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4209,
@@ -312,7 +346,8 @@
 		"tags": ["Certificate", "Paper", "Spy"],
 		"shape": [[1,1]],
 		"description": "You really dont know how and why there’s this kind of license with your child’s name, but it could be handy.",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4301,
@@ -321,7 +356,8 @@
 		"tags": ["Localization", "Eletronics"],
 		"shape": [[1]],
 		"description": "Let’s make use of what technology gives us! Your child will never get lost with this device!",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4302,
@@ -330,7 +366,8 @@
 		"tags": ["Vehicle"],
 		"shape": [[1]],
 		"description": "Trailers are the best: the speed of a car with the comfort of a home!",
-		"image": "path"
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
 		"id": 4303,
@@ -339,7 +376,8 @@
 		"tags": ["Dirt"],
 		"shape": [[1]],
 		"description": "Why is there dirt in the house?! Was it meant for a plant? There is no pot. Maybe your child deserves a dirty bag as retribution for bringing this inside. There is no way your husband would bring just dirt inside.",
-		"image": "path"
-	},
+		"image": "res://Assets/Hana Stare.png",
+		"icon": "res://Assets/Hana Stare.png"
+	}
 ]
   

@@ -365,7 +365,7 @@ func _ready() -> void:
 	launchCutscene()
 
 
-func verifyEnding(bag):
+func verifyEnding():
 	if not bag:
 		return 0001
 		

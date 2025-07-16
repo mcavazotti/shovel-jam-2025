@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf2as5nri8rfi"]
+
+[ext_resource type="Script" uid="uid://b5vccrtubmn47" path="res://Items/HouseItem/HouseItem.cs" id="1_wcbdy"]
+[ext_resource type="PackedScene" uid="uid://dorrsyfd1rqv2" path="res://Items/BagItem/BagItem.tscn" id="2_fsng8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aauuk"]
+
+[node name="HouseItem" type="Node2D" groups=["HouseItems"]]
+script = ExtResource("1_wcbdy")
+BagItemScene = ExtResource("2_fsng8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_aauuk")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -11.5
+offset_right = 25.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Area2D" to="." method="CursorEnter"]
+[connection signal="mouse_exited" from="Area2D" to="." method="CursorLeave"]

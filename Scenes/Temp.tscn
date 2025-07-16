@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cta504y0e17tr"]
+
+[ext_resource type="PackedScene" uid="uid://cf2as5nri8rfi" path="res://Items/HouseItem/HouseItem.tscn" id="3_k81e3"]
+[ext_resource type="PackedScene" uid="uid://cmppofskqyqet" path="res://Backpack/BackpackController.tscn" id="4_h2clf"]
+[ext_resource type="PackedScene" uid="uid://2vu65kuxtcc5" path="res://Camera/GameCamera.tscn" id="5_q51th"]
+
+[node name="Temp" type="Node2D"]
+
+[node name="BackpackController" parent="." instance=ExtResource("4_h2clf")]
+
+[node name="GameCamera" parent="." instance=ExtResource("5_q51th")]
+
+[node name="SceneItem" parent="." instance=ExtResource("3_k81e3")]
