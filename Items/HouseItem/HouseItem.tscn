@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf2as5nri8rfi"]
+[gd_scene load_steps=4 format=3 uid="uid://cf2as5nri8rfi"]
 
 [ext_resource type="Script" uid="uid://b5vccrtubmn47" path="res://Items/HouseItem/HouseItem.cs" id="1_wcbdy"]
+[ext_resource type="PackedScene" uid="uid://dorrsyfd1rqv2" path="res://Items/BagItem/BagItem.tscn" id="2_fsng8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aauuk"]
 
 [node name="HouseItem" type="Node2D" groups=["HouseItems"]]
 script = ExtResource("1_wcbdy")
+BagItemScene = ExtResource("2_fsng8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

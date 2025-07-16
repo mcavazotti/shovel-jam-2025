@@ -5,14 +5,8 @@ public partial class BagItem : Node2D
 {
     [Export]
     Vector2I SlotSize = new Vector2I(50, 50);
-    [Export]
-    public int Id;
-    [Export]
-    public string ItemName;
-    [Export]
-    public Image ShapeMap;
-    [Export]
-    public Texture2D ItemSprite;
+
+    public ItemData Data;
 
     [Signal]
     public delegate void DragEventHandler(BagItem i);
@@ -26,36 +20,18 @@ public partial class BagItem : Node2D
     private bool Dragging;
     private Vector2 Offset;
     private Vector2 RectShape;
-    private Vector2I ShapeDim;
 
-    public int[,] Shape;
 
 
     public override void _Ready()
     {
         var collisionShape = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
 
-        ShapeDim = ShapeMap.GetSize();
-        RectShape = ShapeDim * SlotSize;
+        RectShape = new Vector2(Data.Shape.GetLength(0), Data.Shape.GetLength(1)) * SlotSize;
         (collisionShape.Shape as RectangleShape2D).Size = RectShape;
 
-        Shape = new int[ShapeDim.X, ShapeDim.Y];
-
-        for (var y = 0; y < ShapeDim.Y; y++)
-        {
-            for (var x = 0; x < ShapeDim.X; x++)
-            {
-                if (ShapeMap.GetPixel(x, y) == new Color("000"))
-                    Shape[x, y] = 1;
-                else Shape[x, y] = 0;
-            }
-        }
-
         var sprite = GetNode<Sprite2D>("Sprite2D");
-        sprite.Texture = ItemSprite;
-
-
-
+        sprite.Texture = GD.Load<Texture2D>(Data.Image);
     }
     public override void _Input(InputEvent @event)
     {
@@ -136,21 +112,21 @@ public partial class BagItem : Node2D
         var mappedMousePos = localMousePos + (RectShape / 2);
 
         var slotMousePos = (Vector2I)(mappedMousePos / SlotSize);
-        if (slotMousePos < Vector2.Zero || slotMousePos.X >= ShapeDim.X || slotMousePos.Y >= ShapeDim.Y)
+        if (slotMousePos < Vector2.Zero || slotMousePos.X >= Data.Shape.GetLength(0) || slotMousePos.Y >= Data.Shape.GetLength(1))
             return false;
 
-        return Shape[slotMousePos.X, slotMousePos.Y] == 1;
+        return Data.Shape[slotMousePos.X, slotMousePos.Y] == 1;
     }
 
     public Godot.Collections.Array<Vector2> GetSlotsGlobalPositions()
     {
         var positions = new Godot.Collections.Array<Vector2>();
         var topLeftCorner = (SlotSize - RectShape) / 2;
-        for (int y = 0; y < ShapeDim.Y; y++)
+        for (int y = 0; y < Data.Shape.GetLength(1); y++)
         {
-            for (int x = 0; x < ShapeDim.X; x++)
+            for (int x = 0; x < Data.Shape.GetLength(0); x++)
             {
-                if (Shape[x, y] == 1)
+                if (Data.Shape[x, y] == 1)
                     positions.Add(GlobalPosition + (topLeftCorner + SlotSize * new Vector2(x, y)).Rotated(GlobalRotation));
             }
         }
@@ -161,5 +137,13 @@ public partial class BagItem : Node2D
     {
         Position = PosBeforeDrag;
         Rotation = RotBeforeDrag;
+    }
+
+    public void ForceDraggingState(Vector2 originalPos)
+    {
+        PosBeforeDrag = originalPos;
+        RotBeforeDrag = 0;
+        Offset = Vector2.Zero;
+        Dragging = true;
     }
 }

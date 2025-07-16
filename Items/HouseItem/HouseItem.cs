@@ -3,10 +3,27 @@ using System;
 
 public partial class HouseItem : Node2D
 {
-    ItemData Data;
+    public ItemData Data;
+
+    [Export]
+    public PackedScene BagItemScene { get; set; }
+
     private bool InBounds = false;
     private bool Dragging = false;
     private Vector2 Offset;
+
+    private BackpackController Controller;
+
+    public override void _Ready()
+    {
+        var controls = GetTree().GetNodesInGroup("BackpackController");
+        if (controls.Count > 0 && controls[0] is BackpackController bc)
+            Controller = bc;
+        else throw new Exception("There must be a BackpackController in the scene");
+
+        Controller.OpenBag += TransferItemToBackpackContext;
+    }
+
 
     public override void _Input(InputEvent @event)
     {
@@ -71,6 +88,20 @@ public partial class HouseItem : Node2D
     {
         GetNode<Label>("Label").Visible = false;
         InBounds = false;
+    }
+
+    public void TransferItemToBackpackContext()
+    {
+        if (Dragging)
+        {
+            var bagItem = BagItemScene.Instantiate<BagItem>();
+            bagItem.Data = Data;
+            Controller.AddSibling(bagItem);
+            bagItem.GlobalPosition = GlobalPosition;
+            bagItem.ForceDraggingState(GlobalPosition);
+
+            Free();
+        }
     }
 
     private string GetCategoryName(int category)

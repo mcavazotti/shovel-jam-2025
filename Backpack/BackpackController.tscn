@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmppofskqyqet"]
+[gd_scene load_steps=7 format=3 uid="uid://cmppofskqyqet"]
 
 [ext_resource type="PackedScene" uid="uid://f1cnjc2fssgf" path="res://Backpack/Backpack.tscn" id="1_kjw0n"]
+[ext_resource type="Script" uid="uid://3duyqj2tx3gd" path="res://Backpack/BackpackController.cs" id="1_uo260"]
 [ext_resource type="Script" uid="uid://8v3eam21uedy" path="res://Backpack/AnimationPlayer.cs" id="2_klxdi"]
 
 [sub_resource type="Animation" id="Animation_uo260"]
@@ -40,7 +41,8 @@ _data = {
 &"RESET": SubResource("Animation_hd504")
 }
 
-[node name="BackpackController" type="CanvasLayer"]
+[node name="BackpackController" type="CanvasLayer" groups=["BackpackController"]]
+script = ExtResource("1_uo260")
 
 [node name="UiAreas" type="Control" parent="."]
 layout_mode = 3
@@ -110,6 +112,7 @@ libraries = {
 }
 script = ExtResource("2_klxdi")
 
+[connection signal="mouse_entered" from="UiAreas/OpenArea" to="." method="EmitOpenBag"]
 [connection signal="mouse_entered" from="UiAreas/OpenArea" to="Backpack/AnimationPlayer" method="PlayOpenBag"]
 [connection signal="mouse_entered" from="UiAreas/OpenArea/Label" to="Backpack/AnimationPlayer" method="PlayOpenBag"]
 [connection signal="mouse_entered" from="UiAreas/CloseArea" to="Backpack/AnimationPlayer" method="PlayCloseBag"]

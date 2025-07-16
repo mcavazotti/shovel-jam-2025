@@ -42,7 +42,7 @@ public partial class Backpack : Node2D
         var rectShape = GridSize * SlotSize;
         (collisionShape.Shape as RectangleShape2D).Size = rectShape;
 
-        var items = GetTree().GetNodesInGroup("Items");
+        var items = GetTree().GetNodesInGroup("BagItems");
 
         foreach (var i in items)
         {

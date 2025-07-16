@@ -35,6 +35,7 @@ BagItems=""
 Item=""
 ItemSpawner=""
 HouseItems=""
+BackpackController=""
 
 [input]
 
