@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7frf8yehlwcx"]
 
 [ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://CutsceneControl/CutsceneControl.gd" id="1_ovwsd"]
-[ext_resource type="Texture2D" uid="uid://cxaswokf0updv" path="res://Assets/Hana Stare.png" id="2_w00vp"]
+[ext_resource type="Texture2D" uid="uid://cxaswokf0updv" path="res://Assets/Art/Hana Stare.png" id="2_w00vp"]
 
 [sub_resource type="Animation" id="Animation_dgoe4"]
 resource_name = "FinalEnding"
@@ -352,17 +352,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -877.0
+offset_left = -639.0
 offset_top = 300.0
-offset_right = 877.0
-offset_bottom = 1197.0
+offset_right = 639.0
+offset_bottom = 1215.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
-text = "pepeloni. you know the pepeloni?
-
-ahh the pepeloni, pepeloni. you know the pepeloni?
- the nooo one. i always, i always order the, the domino. domino pepeloni and without pepeloni.
- i always order the pepeloni and without pepeloni. pepeloni! i like pepeloni, yeah. 
+text = "pepeloni. you know the pepeloni?ahh the pepeloni, pepeloni. you know the pepeloni?
+ the nooo one. i always, i always order the, the domino. domino pepeloni and without pepeloni. i always order the pepeloni and without pepeloni. pepeloni! i like pepeloni, yeah. 
 i always, i always order the, the cheese- cheese pan. ahh how can i explain?
  i can explain by my drawing! i always order like the cheese pan that it has cheese on here, this part, the ear. ear of pizza. 
 and then, i order- wh- when i order pepeloni, the ear- it always have a pepeloni on h- on a top, but i pick up these... away! 
@@ -370,6 +367,7 @@ cause i don't eat it. and then i eat the cheese pan pizza.
 okay? you understand? understandable! pepeloni!
 "
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="buttons" type="Control" parent="."]
 layout_mode = 1

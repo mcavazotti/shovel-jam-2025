@@ -38,17 +38,22 @@ func treatEnding():
 		for ending in intermediateEndings:
 			stichedIntermediateEndings += "%s\n\n" % ending["story"]
 			endIds.append(ending["id"])
+			
 		
 	else:
 		stichedIntermediateEndings += "Your child didn't started his adventure yet..."
 		
-		endIds.append(finalEnding["id"])
-		FinalEndingLoad.updateEndingUnlocked(endIds)
+	endIds.append(finalEnding["id"])
+	FinalEndingLoad.updateEndingUnlocked(endIds)
 	
 	var unlocked = FinalEndingLoad.endingUnlocked.size()
 	var total = FinalEndingLoad.endingData.size()
 	
 	labelIntermediate.text = stichedIntermediateEndings
+	labelFinalTitle.text = finalEnding["name"]
+	labelFinalStory.text = finalEnding["story"]
+	
+	
 	labelEndingCount.text = "%s/%s" % [str(unlocked), str(total)]
 	labelEndingLocked.text = "There's still %s endings locked" % [total - unlocked]
 	startAnimation()
@@ -61,8 +66,18 @@ func startAnimation():
 	$finalTitle.visible = false
 	$finalStory.visible = false
 	$finalImage.visible = false
+	labelEndingCount.set_modulate("ffffff00")
+	labelEndingLocked.set_modulate("ffffff00")
 	anim.play("IntermediateEndings")
 	
+	
+func skipIntermediate():
+	if anim.current_animation == "IntermediateEndings" and not intermediateEndings:
+		anim.play("FinalEnding")
+		$finalTitle.visible = true
+		$finalStory.visible = true
+		$finalImage.visible = true
+		
 	
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
@@ -75,22 +90,16 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func _on_button_menu_button_down() -> void:
-	pass
-	#pass menu scene
+	Audio.SFX(Audio.SFX_TYPE.Click)
+	get_tree().change_scene_to_file("res://Scenes/title.tscn")
+
 
 
 func _on_button_house_button_down() -> void:
-	get_tree().change_scene_to_file("res://Scenes/House.tscn")
+	Audio.SFX(Audio.SFX_TYPE.Click)
+	get_tree().change_scene_to_file("res://Scenes/home.tscn")
 
 
 func _on_button_replay_button_down() -> void:
+	Audio.SFX(Audio.SFX_TYPE.Click)
 	startAnimation()
-
-
-func skipIntermediate():
-	if anim.current_animation == "IntermediateEndings" and not intermediateEndings:
-		print("Skipped")
-		anim.play("FinalEnding")
-		$finalTitle.visible = true
-		$finalStory.visible = true
-		$finalImage.visible = true

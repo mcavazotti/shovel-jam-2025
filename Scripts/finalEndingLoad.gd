@@ -26,8 +26,6 @@ func loadEnding(JsonPath):
 
 func updateEndingUnlocked(arrayOfEndingIds):
 	for endId in arrayOfEndingIds:
-		if endId in endingUnlocked:
-			print("its here")
-		else:
+		if (endId in endingUnlocked) == false:
 			endingUnlocked.append(endId)
 			
