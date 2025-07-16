@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxaswokf0updv"
-path="res://.godot/imported/Hana Stare.png-b7d49fb6cbeab633e029fa89e80b0e52.ctex"
+uid="uid://cgcqg1s53711j"
+path="res://.godot/imported/garage1.png-3f8b50eb4cbb06b850ca7bbb62c9097b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hana Stare.png"
-dest_files=["res://.godot/imported/Hana Stare.png-b7d49fb6cbeab633e029fa89e80b0e52.ctex"]
+source_file="res://Assets/Art/garage1.png"
+dest_files=["res://.godot/imported/garage1.png-3f8b50eb4cbb06b850ca7bbb62c9097b.ctex"]
 
 [params]
 
