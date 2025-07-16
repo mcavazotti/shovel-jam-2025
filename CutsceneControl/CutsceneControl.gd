@@ -17,12 +17,12 @@ var speed_up = false
 
 func _ready() -> void:
 	endIds.clear()
-	var screen_size = DisplayServer.screen_get_size()
-	image.custom_minimum_size = screen_size
+	image.custom_minimum_size = DisplayServer.screen_get_size()
 	
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "IntermediateEndings":
+		#image.texture = finalEnding["coverImage"]
 		anim.speed_scale = 1
 		speed_up = false
 		anim.play("FinalEnding")
@@ -38,10 +38,14 @@ func treatEnding():
 		for ending in intermediateEndings:
 			stichedIntermediateEndings += "%s\n\n" % ending["story"]
 			endIds.append(ending["id"])
-			
+			$son.text = "THE GREAT LIFE OF YOUR SON"
 		
 	else:
-		stichedIntermediateEndings += "Your child didn't started his adventure yet..."
+		stichedIntermediateEndings +=  "You know too well the dangers of an adventure. You’re not letting your child be in harm’s way, no matter what!
+
+”Mom! Why you never let me do anything?!”"
+		$son.text = "THE not so GREAT staying OF YOUR SON"
+		
 		
 	endIds.append(finalEnding["id"])
 	FinalEndingLoad.updateEndingUnlocked(endIds)
@@ -82,11 +86,10 @@ func skipIntermediate():
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if speed_up:
-			anim.speed_scale = 1
-			speed_up = false
+			anim.speed_scale = 1	
 		else:
 			anim.speed_scale = 3
-			speed_up = true
+	speed_up = !speed_up
 
 
 func _on_button_menu_button_down() -> void:

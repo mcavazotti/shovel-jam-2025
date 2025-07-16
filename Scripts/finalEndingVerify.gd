@@ -360,8 +360,8 @@ func _ready() -> void:
 	},
 	]
 	
-	var endingId = verifyEnding()
-	getEndInfo(endingId)
+	var finalId = verifyEnding()
+	getEndInfo(finalId)
 	launchCutscene()
 
 
@@ -424,7 +424,7 @@ func matchEnding(ids, categories, tags):
 											
 		if not isEndingOk.has(false):
 			if ending["typeOfEnding"] == "Intermediate":
-				intermediateEndings.append({"id" : ending["id"], "name" : ending["name"], "story" : ending["story"], "coverImage" : ending["coverImage"]})
+				intermediateEndings.append({"id" : ending["id"], "name" : ending["name"], "story" : ending["story"]})
 			else:
 				possibleEndings.append({"id": ending["id"], "reference": ending["reference"], "conditions" : ending["conditions"]})
 	
@@ -473,7 +473,7 @@ func getEndInfo(id):
 	var endings = endingList
 	for ending in endings:	
 		if ending["id"] == id:
-			endingId = id
+			endingId = ending["id"]
 			endingName = ending["name"]
 			endingStory = ending["story"]
 			endingCoverImage = ending["coverImage"]
@@ -496,7 +496,6 @@ func matchOperator(count, type, condition):
 
 
 func launchCutscene():
-	print(cutsceneControl)
 	if cutsceneControl:
 		cutsceneControl.finalEnding = {
 			"id": endingId,
