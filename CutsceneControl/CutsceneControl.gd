@@ -16,6 +16,7 @@ var speed_up = false
 
 
 func _ready() -> void:
+	endIds.clear()
 	var screen_size = DisplayServer.screen_get_size()
 	image.custom_minimum_size = screen_size
 	
@@ -31,15 +32,18 @@ func _on_anim_animation_finished(anim_name: StringName) -> void:
 			
 
 func treatEnding():
-	var endingCount = 0
 	var stichedIntermediateEndings = ""
 	
-	for ending in intermediateEndings:
-		stichedIntermediateEndings += "%s\n\n" % ending["story"]
-		endIds.append(ending["id"])
-	
-	endIds.append(finalEnding["id"])
-	FinalEndingLoad.updateEndingUnlocked(endIds)
+	if intermediateEndings:
+		for ending in intermediateEndings:
+			stichedIntermediateEndings += "%s\n\n" % ending["story"]
+			endIds.append(ending["id"])
+		
+	else:
+		stichedIntermediateEndings += "Your child didn't started his adventure yet..."
+		
+		endIds.append(finalEnding["id"])
+		FinalEndingLoad.updateEndingUnlocked(endIds)
 	
 	var unlocked = FinalEndingLoad.endingUnlocked.size()
 	var total = FinalEndingLoad.endingData.size()
@@ -81,3 +85,12 @@ func _on_button_house_button_down() -> void:
 
 func _on_button_replay_button_down() -> void:
 	startAnimation()
+
+
+func skipIntermediate():
+	if anim.current_animation == "IntermediateEndings" and not intermediateEndings:
+		print("Skipped")
+		anim.play("FinalEnding")
+		$finalTitle.visible = true
+		$finalStory.visible = true
+		$finalImage.visible = true
