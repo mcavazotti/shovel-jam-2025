@@ -6,6 +6,8 @@ extends Control
 @onready var labelIntermediate = $intermediate 
 @onready var labelFinalTitle = $finalTitle
 @onready var labelFinalStory = $finalStory
+@onready var labelEndingCount = $buttons/endingCount
+@onready var labelEndingLocked = $buttons/endingLocked
 
 var endIds = []
 var intermediateEndings
@@ -17,23 +19,44 @@ func _ready() -> void:
 	var screen_size = DisplayServer.screen_get_size()
 	image.custom_minimum_size = screen_size
 	
-	
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "IntermediateEndings":
+		anim.speed_scale = 1
+		speed_up = false
 		anim.play("FinalEnding")
-
+		$finalTitle.visible = true
+		$finalStory.visible = true
+		$finalImage.visible = true
+			
 
 func treatEnding():
+	var endingCount = 0
 	var stichedIntermediateEndings = ""
+	
 	for ending in intermediateEndings:
 		stichedIntermediateEndings += "%s\n\n" % ending["story"]
-	print(stichedIntermediateEndings)
+		endIds.append(ending["id"])
+	
+	endIds.append(finalEnding["id"])
+	FinalEndingLoad.updateEndingUnlocked(endIds)
+	
+	var unlocked = FinalEndingLoad.endingUnlocked.size()
+	var total = FinalEndingLoad.endingData.size()
+	
 	labelIntermediate.text = stichedIntermediateEndings
+	labelEndingCount.text = "%s/%s" % [str(unlocked), str(total)]
+	labelEndingLocked.text = "There's still %s endings locked" % [total - unlocked]
 	startAnimation()
 	
 
 func startAnimation():
+	$buttons/buttonMenu.visible = false
+	$buttons/buttonHouse.visible = false
+	$buttons/buttonReplay.visible = false
+	$finalTitle.visible = false
+	$finalStory.visible = false
+	$finalImage.visible = false
 	anim.play("IntermediateEndings")
 	
 	
@@ -45,4 +68,16 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		else:
 			anim.speed_scale = 3
 			speed_up = true
-		
+
+
+func _on_button_menu_button_down() -> void:
+	pass
+	#pass menu scene
+
+
+func _on_button_house_button_down() -> void:
+	get_tree().change_scene_to_file("res://Scenes/House.tscn")
+
+
+func _on_button_replay_button_down() -> void:
+	startAnimation()

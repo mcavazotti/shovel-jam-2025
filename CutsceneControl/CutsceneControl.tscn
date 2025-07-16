@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7frf8yehlwcx"]
 
-[ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://Scripts/cutsceneControl.gd" id="1_ovwsd"]
+[ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://CutsceneControl/CutsceneControl.gd" id="1_ovwsd"]
 [ext_resource type="Texture2D" uid="uid://cxaswokf0updv" path="res://Assets/Hana Stare.png" id="2_w00vp"]
 
 [sub_resource type="Animation" id="Animation_dgoe4"]
 resource_name = "FinalEnding"
-length = 10.0
+length = 13.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,13 +34,73 @@ tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("finalImage:modulate")
-tracks/2/interp = 2
+tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(0.529067, 0.529067, 0.529067, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("buttons/buttonMenu:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(11.013, 11.2352),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("buttons/buttonHouse:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(11.013, 11.2352),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("buttons/buttonReplay:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(11.013, 11.2352),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("buttons/endingCount:modulate")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(12, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("buttons/endingLocked:modulate")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(12, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ovwsd"]
@@ -133,6 +193,66 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("buttons/buttonMenu:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("buttons/buttonHouse:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("buttons/buttonReplay:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("buttons/endingCount:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("buttons/endingLocked:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dgoe4"]
 _data = {
@@ -174,10 +294,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -468.0
-offset_top = 600.0
-offset_right = 432.0
-offset_bottom = 863.0
+offset_left = -450.0
+offset_top = 1300.0
+offset_right = 450.0
+offset_bottom = 1563.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 27
 text = "dsadasdasdasdasdasdasdsadasdasdasdasdasdasddasdadad"
@@ -189,10 +309,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -116.0
-offset_top = 600.0
-offset_right = 317.0
-offset_bottom = 642.0
+offset_left = -216.5
+offset_top = 1200.0
+offset_right = 216.5
+offset_bottom = 1242.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
 text = "THE GREAT LIFE OF YOUR SON"
@@ -237,4 +357,91 @@ okay? you understand? understandable! pepeloni!
 "
 horizontal_alignment = 1
 
+[node name="buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 800.0
+offset_right = 20.0
+offset_bottom = 840.0
+grow_horizontal = 2
+
+[node name="buttonMenu" type="Button" parent="buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = -89.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "MENU"
+
+[node name="buttonHouse" type="Button" parent="buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 95.0
+offset_right = 306.0
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "HOUSE"
+
+[node name="buttonReplay" type="Button" parent="buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 100.0
+offset_right = 305.0
+offset_bottom = 191.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "REPLAY ENDINGS"
+
+[node name="endingCount" type="Label" parent="buttons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.5
+offset_top = 15.0
+offset_right = 83.5
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "WW/WW"
+horizontal_alignment = 1
+
+[node name="endingLocked" type="Label" parent="buttons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -301.0
+offset_top = -100.0
+offset_right = 305.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "There's still WW endings locked"
+horizontal_alignment = 1
+
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+[connection signal="button_down" from="buttons/buttonMenu" to="." method="_on_button_menu_button_down"]
+[connection signal="button_down" from="buttons/buttonHouse" to="." method="_on_button_house_button_down"]
+[connection signal="button_down" from="buttons/buttonReplay" to="." method="_on_button_replay_button_down"]

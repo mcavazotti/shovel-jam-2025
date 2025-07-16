@@ -360,7 +360,7 @@ func _ready() -> void:
 	},
 	]
 	
-	var endingId = verifyEnding(bag)
+	var endingId = verifyEnding()
 	getEndInfo(endingId)
 	launchCutscene()
 
