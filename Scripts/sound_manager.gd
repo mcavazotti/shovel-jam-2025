@@ -1,71 +1,103 @@
 extends Node
 
-var SFX_streamer: AudioStreamPlayer
-var BGM_streamer: AudioStreamPlayer
+var SFX_stream: AudioStreamPlayer
+var BGM_stream: AudioStreamPlayer
+var AMB_stream: AudioStreamPlayer
 
 func _ready():
-	SFX_streamer = AudioStreamPlayer.new()
-	SFX_streamer.process_mode = Node.PROCESS_MODE_ALWAYS # Won't be affected by pausing scene tree
+	SFX_stream = AudioStreamPlayer.new()
+	SFX_stream.process_mode = Node.PROCESS_MODE_ALWAYS
 	
-	BGM_streamer = AudioStreamPlayer.new()
-	BGM_streamer.process_mode = Node.PROCESS_MODE_ALWAYS 
-	BGM_streamer.volume_db = -10.0
+	BGM_stream = AudioStreamPlayer.new()
+	BGM_stream.process_mode = Node.PROCESS_MODE_ALWAYS 
+	BGM_stream.volume_db = -10.0
 	
-	add_child(SFX_streamer)
-	add_child(BGM_streamer)
+	AMB_stream = AudioStreamPlayer.new()
+	AMB_stream.process_mode = Node.PROCESS_MODE_ALWAYS 
+	
+	add_child(SFX_stream)
+	add_child(BGM_stream)
+	add_child(AMB_stream)
 
-enum SFX_TYPE {
+enum TRACK_ALIAS {
+	# SOUND EFFECTS
 	Click,
-	Super_Click
-}
-
-func SFX(SFX_name: SFX_TYPE):
-	SFX_streamer.pitch_scale = 1.0
-	if SFX_name == SFX_TYPE.Click:
-		SFX_streamer.pitch_scale += randf_range(-0.5,0.5)
-		print()
-		SFX_streamer.stream = load("res://Assets/Sounds/Sound Effects/Click_real.wav")
-		
-	elif SFX_name == SFX_TYPE.Super_Click:
-		print()
-		SFX_streamer.stream = load("res://Assets/Sounds/Sound Effects/SuperClick_real.wav")
-		
-	else:
-		print("Tried to play invalid effect name:", SFX_name)
-		
-	SFX_streamer.play()
-
-enum BGM_TYPE {
+	Super_Click,
+	# BACKGROUND MUSIC
 	Results,
-	First_Minute
+	First_Minute,
+	Second_Minute,
+	# AMBIENCE
+	AMB_1,
+	AMB_2,
+	AMB_3,
+	AMB_4
 }
 
-func BGM(BGM_name: BGM_TYPE):
-	if BGM_name == BGM_TYPE.Results:
-		BGM_streamer.stream = load("res://Assets/Sounds/Music/Results.mp3")
-	elif BGM_name == BGM_TYPE.First_Minute:
-		BGM_streamer.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
-	else:
-		print("Tried to play invalid track name:", BGM_name)
+func Play(Track_name: TRACK_ALIAS):
+	SFX_stream.pitch_scale = 1.0
+	
+	# Sound effects
+	if Track_name == TRACK_ALIAS.Click:
+		SFX_stream.pitch_scale += randf_range(-0.5,0.5)
+		print()
+		SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/Click_real.wav")
+		SFX_stream.play()
 		
-	BGM_streamer.play()
+	elif Track_name == TRACK_ALIAS.Super_Click:
+		print()
+		SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/SuperClick_real.wav")
+		SFX_stream.play()
+		
+	# Background Music
+	elif Track_name == TRACK_ALIAS.Results:
+		BGM_stream.stream = load("res://Assets/Sounds/Music/Results.mp3")
+		BGM_stream.play()
+		
+	elif Track_name == TRACK_ALIAS.First_Minute:
+		BGM_stream.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
+		BGM_stream.play()
+		
+	# Ambience
+	elif Track_name == TRACK_ALIAS.AMB_1:
+		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_1.wav")
+		AMB_stream.play()
+		
+	elif Track_name == TRACK_ALIAS.AMB_2:
+		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_2.wav")
+		AMB_stream.play()
+		
+	elif Track_name == TRACK_ALIAS.AMB_3:
+		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_3.wav")
+		AMB_stream.play()
+		
+	elif Track_name == TRACK_ALIAS.AMB_4:
+		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_4.wav")
+		AMB_stream.play()
+		
+	else:
+		print("Tried to play nonexistent track:", Track_name)
 
 func BGM_toggle():
-	if BGM_streamer.playing == true:
-		BGM_streamer.stop()
-	elif BGM_streamer.playing == false:
-		BGM_streamer.play()
-
-
+	if BGM_stream.playing == true:
+		BGM_stream.stop()
+	elif BGM_stream.playing == false:
+		BGM_stream.play()
 
 func BGM_volume_set(BGM_value: float):
 	if BGM_value == -30.0:
-		BGM_streamer.volume_linear = 0.0
+		BGM_stream.volume_linear = 0.0
 	else:
-		BGM_streamer.volume_db = BGM_value
+		BGM_stream.volume_db = BGM_value
 
 func SFX_volume_set(SFX_value: float):
 	if SFX_value == -30.0:
-		SFX_streamer.volume_linear = 0.0
+		SFX_stream.volume_linear = 0.0
 	else:
-		SFX_streamer.volume_db = SFX_value
+		SFX_stream.volume_db = SFX_value
+
+func AMB_volume_set(AMB_value: float):
+	if AMB_value == -30.0:
+		AMB_stream.volume_linear = 0.0
+	else:
+		AMB_stream.volume_db = AMB_value

@@ -209,7 +209,7 @@ paragraph_separator = "\\"
 
 [node name="Notice" type="Label" parent="TabContainer/Audio/Buttons and Title"]
 layout_mode = 2
-text = "*Only changes upon release"
+text = "*Only changes upon slider release"
 label_settings = SubResource("LabelSettings_prnvy")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -232,14 +232,28 @@ tick_count = 10
 
 [node name="SFX" type="Label" parent="TabContainer/Audio/Buttons and Title"]
 layout_mode = 2
-text = "
-SFX"
+text = "SFX"
 label_settings = SubResource("LabelSettings_q2qps")
 horizontal_alignment = 1
 vertical_alignment = 1
 paragraph_separator = "\\"
 
 [node name="SFX Slider" type="HSlider" parent="TabContainer/Audio/Buttons and Title"]
+layout_mode = 2
+min_value = -30.0
+max_value = 4.0
+step = 0.1
+tick_count = 10
+
+[node name="AMB" type="Label" parent="TabContainer/Audio/Buttons and Title"]
+layout_mode = 2
+text = "SFX"
+label_settings = SubResource("LabelSettings_q2qps")
+horizontal_alignment = 1
+vertical_alignment = 1
+paragraph_separator = "\\"
+
+[node name="AMB Slider" type="HSlider" parent="TabContainer/Audio/Buttons and Title"]
 layout_mode = 2
 min_value = -30.0
 max_value = 4.0
@@ -254,3 +268,4 @@ tick_count = 10
 [connection signal="pressed" from="TabContainer/Video/Video Buttons/Windowed" to="." method="_on_windowed_pressed"]
 [connection signal="drag_ended" from="TabContainer/Audio/Buttons and Title/BGM Slider" to="." method="_on_bgm_slider_drag_ended"]
 [connection signal="drag_ended" from="TabContainer/Audio/Buttons and Title/SFX Slider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="drag_ended" from="TabContainer/Audio/Buttons and Title/AMB Slider" to="." method="_on_amb_slider_drag_ended"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://0g23xhdtwpww"
+path="res://.godot/imported/Acheivement_Get.wav-aa83a75042b7c79e798b7386426c2c5e.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/Acheivement_Get.wav"
+dest_files=["res://.godot/imported/Acheivement_Get.wav-aa83a75042b7c79e798b7386426c2c5e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
