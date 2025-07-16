@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmppofskqyqet"]
 
-[ext_resource type="PackedScene" uid="uid://f1cnjc2fssgf" path="res://Backpack/backpack.tscn" id="1_kjw0n"]
+[ext_resource type="PackedScene" uid="uid://f1cnjc2fssgf" path="res://Backpack/Backpack.tscn" id="1_kjw0n"]
 [ext_resource type="Script" uid="uid://8v3eam21uedy" path="res://Backpack/AnimationPlayer.cs" id="2_klxdi"]
 
 [sub_resource type="Animation" id="Animation_uo260"]

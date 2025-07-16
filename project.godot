@@ -32,8 +32,9 @@ project/assembly_name="Shovel Jam 2025"
 [global_group]
 
 BagItems=""
-SceneItems=""
 Item=""
+ItemSpawner=""
+HouseItems=""
 
 [input]
 
