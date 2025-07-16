@@ -7,8 +7,8 @@ var seconds: int = 0
 
 func _process(delta: float) -> void:
 	time -= delta
-	minutes = fmod(time, 3600) / 60
-	seconds = fmod(time, 60)
+	minutes = int(fmod(time, 3600) / 60)
+	seconds = int(fmod(time, 60))
 
 	$Minutes.text = "%02d:" % minutes
 	$Seconds.text = "%02d" % seconds

@@ -130,7 +130,7 @@ func _ready() -> void:
 	#getEndInfo(endingId)
 
 
-func verifyEnding(bag):
+func verifyEnding():
 	if not bag:
 		print("empty")
 		return 0001
@@ -282,5 +282,5 @@ func clearEndings():
 
 func _on_button_down() -> void:  #REMOVE IN FINAL VERSION, will be
 	clearEndings()
-	var endingId = verifyEnding(bag)
+	endingId = verifyEnding()
 	getEndInfo(endingId)
