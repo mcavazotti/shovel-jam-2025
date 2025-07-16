@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://be5y6f8jhr140"]
+
+[ext_resource type="Script" uid="uid://dwtho1ie82pp7" path="res://Scripts/pause_game.gd" id="1_bwpif"]
+
+[node name="PauseGame" type="CanvasLayer"]
+script = ExtResource("1_bwpif")

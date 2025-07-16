@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsqhqkxu74jve"]
+
+[ext_resource type="Script" uid="uid://dsewlmpvsohbl" path="res://Scripts/mom.gd" id="1_1838s"]
+[ext_resource type="Texture2D" uid="uid://65nugvsyg18p" path="res://Assets/Art/Mom_placehold.png" id="1_jgf88"]
+[ext_resource type="Material" uid="uid://y5eoycmoultw" path="res://Assets/Mats/Bounce_shader.tres" id="2_5i5ap"]
+[ext_resource type="Shader" uid="uid://dxef5pfxbekt3" path="res://Scripts/breathe.gdshader" id="2_5m583"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4s6d"]
+shader = ExtResource("2_5m583")
+shader_parameter/speed = 3.5
+shader_parameter/inverse_amplitude = 12.0
+shader_parameter/size = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_5i5ap"]
+radius = 61.782
+height = 40.0
+
+[sub_resource type="Gradient" id="Gradient_5m583"]
+colors = PackedColorArray(0, 0, 0, 0.27451, 0, 0, 0, 0.27451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w4s6d"]
+gradient = SubResource("Gradient_5m583")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1838s"]
+radius = 53.0
+height = 200.0
+
+[node name="Mom" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_1838s")
+
+[node name="Shadow" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_w4s6d")
+position = Vector2(-5, 131.5)
+scale = Vector2(1, 1.425)
+mesh = SubResource("SphereMesh_5i5ap")
+texture = SubResource("GradientTexture1D_w4s6d")
+
+[node name="MomPlacehold" type="Sprite2D" parent="."]
+material = ExtResource("2_5i5ap")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jgf88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 43)
+shape = SubResource("CapsuleShape2D_1838s")
