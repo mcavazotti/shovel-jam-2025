@@ -33,7 +33,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:modulate")
+tracks/2/path = NodePath("finalImage:modulate")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -45,7 +45,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ovwsd"]
 resource_name = "IntermediateEndings"
-length = 20.0
+length = 50.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,10 +53,10 @@ tracks/0/path = NodePath("intermediate:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 8, 17, 19),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 49),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-877, 700), Vector2(-877, -310.526), Vector2(-877, -310), Vector2(-877, -1700)]
+"values": [Vector2(-450, 1300), Vector2(-450, -3000)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -65,10 +65,10 @@ tracks/1/path = NodePath("son:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 8, 17, 19),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 49),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-216.5, 625), Vector2(-216.5, -406.579), Vector2(-216.5, -406.57), Vector2(-216.5, -1825)]
+"values": [Vector2(-216.5, 1200), Vector2(-216.5, -3100)]
 }
 
 [sub_resource type="Animation" id="Animation_w00vp"]
@@ -124,7 +124,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("TextureRect:modulate")
+tracks/4/path = NodePath("finalImage:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -143,13 +143,10 @@ _data = {
 
 [node name="cutsceneControl" type="Control"]
 layout_mode = 3
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_ovwsd")
@@ -159,21 +156,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_dgoe4")
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="finalImage" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -640.0
-offset_top = -340.0
 offset_right = 640.0
-offset_bottom = 380.0
+offset_bottom = 720.0
 grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("2_w00vp")
 
 [node name="intermediate" type="Label" parent="."]
@@ -183,21 +176,13 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -468.0
 offset_top = 600.0
-offset_right = 1286.0
-offset_bottom = 1047.0
+offset_right = 432.0
+offset_bottom = 863.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 30
-text = "pepeloni. you know the pepeloni?
-
-ahh the pepeloni, pepeloni. you know the pepeloni?
- the nooo one. i always, i always order the, the domino. domino pepeloni and without pepeloni.
- i always order the pepeloni and without pepeloni. pepeloni! i like pepeloni, yeah. 
-i always, i always order the, the cheese- cheese pan. ahh how can i explain?
- i can explain by my drawing! i always order like the cheese pan that it has cheese on here, this part, the ear. ear of pizza. 
-and then, i order- wh- when i order pepeloni, the ear- it always have a pepeloni on h- on a top, but i pick up these... away! 
-cause i don't eat it. and then i eat the cheese pan pizza. 
-okay? you understand? understandable! pepeloni! yes."
+theme_override_font_sizes/font_size = 27
+text = "dsadasdasdasdasdasdasdsadasdasdasdasdasdasddasdadad"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="son" type="Label" parent="."]
 layout_mode = 1
@@ -216,34 +201,28 @@ horizontal_alignment = 1
 [node name="finalTitle" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -394.0
-offset_top = -275.0
+offset_top = 200.0
 offset_right = 394.0
-offset_bottom = -233.0
+offset_bottom = 242.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "EPIC ENDING TITLE WOAH WOW AMAZING INCREDIBLE"
 
 [node name="finalStory" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -877.0
-offset_top = -200.0
+offset_top = 300.0
 offset_right = 877.0
-offset_bottom = 697.0
+offset_bottom = 1197.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "pepeloni. you know the pepeloni?
 

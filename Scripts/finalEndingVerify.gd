@@ -2,6 +2,7 @@ extends Node
 
 
 @onready var endingList = FinalEndingLoad.endingData
+@onready var cutsceneControl = $"../CanvasLayer/cutsceneControl"
 
 var endingId : int
 var endingName : String
@@ -16,12 +17,57 @@ func _ready() -> void:
 	clearEndings()
 	bag = [  #FOR TESTS ONLY
 		{
+		"id": 1001,
+		"name": "Fish",
+		"category": 1000,
+		"tags": ["Fish", "Healthy", "Sea"],
+		"shape": [[1], [1]],
+		"description": "Fish.",
+		"image": "path"
+	},
+	{
 		"id": 1002,
 		"name": "Elven Bread",
 		"category": 1000,
 		"tags": ["Elf", "Healthy", "Bread"],
 		"shape": [[1]],
 		"description": "It’s said that one will keep a traveler on his feet for a day of long labour. That’s just what your child need! And you can confirm from experience what they say about this bread is true.",
+		"image": "path"
+	},
+	{
+		"id": 1003,
+		"name": "Weird Fruit",
+		"category": 1000,
+		"tags": ["OnePiece", "Healthy", "Cursed"],
+		"shape": [[1,1],[1,1]],
+		"description": "You found in a chest in the closet, you remembered your husband brought from a long trip to the ocean one time, maybe your kid needs more than you.",
+		"image": "path"
+	},
+	{
+		"id": 2001,
+		"name": "Stealthy Cloak",
+		"category": 2000,
+		"tags": ["Head", "Stealth", "Cloak"],
+		"shape": [[1,1], [1,1]],
+		"description": "A cloak that hides your face and gives you a mysterious and stealthy look. You remember using it when you were young.",
+		"image": "path"
+	},
+	{
+		"id": 2002,
+		"name": "Elven Cloak",
+		"category": 2000,
+		"tags": ["Head", "Stealth", "Cloak", "Elf", "Geek"],
+		"shape": [[1,1], [1,1]],
+		"description": "Perfect for camouflaging against unfriendly eyes.",
+		"image": "path"
+	},
+	{
+		"id": 2101,
+		"name": "Camp T-shirt",
+		"category": 2000,
+		"tags": ["Torso", "Camping", "T-shirt"],
+		"shape": [[1,1], [1,1]],
+		"description": "A T-shirt used for camping. You used to have one of it when you were young.",
 		"image": "path"
 	},
 	{
@@ -40,6 +86,60 @@ func _ready() -> void:
 		"tags": ["Torso", "Robe", "Jedi", "Geek"],
 		"shape": [[1,1], [1,1], [1,1]],
 		"description": "A robe worn by a specific group of space monk warriors a long time ago in a far, far away galaxy. You still wonder how your husband got his hands on that…",
+		"image": "path"
+	},
+	{
+		"id": 2201,
+		"name": "Pirate Hat",
+		"category": 2000,
+		"tags": ["Sea", "Head"],
+		"shape": [[1,1], [1,1]],
+		"description": "Ahoy! Get yourself a sea-dog look!",
+		"image": "path"
+	},
+	{
+		"id": 2202,
+		"name": "Bald Cap",
+		"category": 2000,
+		"tags": ["Head", "Disguise"],
+		"shape": [[1,1], [1,1]],
+		"description": "Sometimes you just want to look bald. Your husband was using it when you first met.",
+		"image": "path"
+	},
+	{
+		"id": 2203,
+		"name": "Blue Helmet",
+		"category": 2000,
+		"tags": ["Head"],
+		"shape": [[1,1,1], [1,0,1]],
+		"description": "A perfect peice of armor for a knightly adventurer. Somehow, it doesn’t reveil the face at all despite the T-shaped hole in it.",
+		"image": "path"
+	},
+	{
+		"id": 3001,
+		"name": "Dagger",
+		"category": 3000,
+		"tags": ["Melee", "Stealth", "Dagger"],
+		"shape": [[1], [1]],
+		"description": "A dagger that can be hidden in your clothes, good for stealth attacks. You have fond memories of it.",
+		"image": "path"
+	},
+	{
+		"id": 3002,
+		"name": "Gold Sword",
+		"category": 3000,
+		"tags": ["Melee", "Big", "Gold", "Half-blod", "Sword"],
+		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
+		"description": "A big sword made of gold. Some say gold is too soft of a metal to be used to make a blade, however, you know cases when one would specifically needs a blade made of gold.",
+		"image": "path"
+	},
+	{
+		"id": 3003,
+		"name": "Silver Sword",
+		"category": 3000,
+		"tags": ["Melee", "Big", "Silver", "Sword"],
+		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
+		"description": "A big sword made of silver. You don’t know how different it is from a regular sword, but your husband did know.",
 		"image": "path"
 	},
 	{
@@ -88,6 +188,87 @@ func _ready() -> void:
 		"image": "path"
 	},
 	{
+		"id": 3009,
+		"name": "Blue Spade",
+		"category": 3000,
+		"tags": ["Big", "Melee"],
+		"shape": [[1,1,1], [1,1,1], [0,1,0], [1,1,1], [0,1,0]],
+		"description": "A long, trusty blue shovel. It’s seen countless battles against knights. According to your husband, he also used to have a red sheild, however he didn’t have enough space in his bag to bring it home.",
+		"image": "path"
+	},
+	{
+		"id": 4001,
+		"name": "Medallion",
+		"category": 4000,
+		"tags": ["Necklace"],
+		"shape": [[1]],
+		"description": "It might be magic, it might be cursed, or it might be just a regular medallion, you don’t know. All you know is that your husband brought it home after a trip.",
+		"image": "path"
+	},
+	{
+		"id": 4002,
+		"name": "Invisibility ring",
+		"category": 4000,
+		"tags": ["Ring", "Gold"],
+		"shape": [[1]],
+		"description": "A golden ring that turns the wearer invisible. It might do other things too, but you’re not sure. Your husband got it after a game of riddles in the dark.",
+		"image": "path"
+	},
+	{
+		"id": 4101,
+		"name": "Broken Elven Sword",
+		"category": 4000,
+		"tags": ["Elf"],
+		"shape": [[0,1,0], [1,1,1], [0,1,0]],
+		"description": "An ancient sword, or at least what remains of it, which is not really useful by itself. Your husband received it as an inheritance.",
+		"image": "path"
+	},
+	{
+		"id": 4102,
+		"name": "Broken Elven Blade",
+		"category": 4000,
+		"tags": ["Elf"],
+		"shape": [[1], [1]],
+		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
+		"image": "path"
+	},
+	{
+		"id": 4103,
+		"name": "Broken Elven Blade",
+		"category": 4000,
+		"tags": ["Elf"],
+		"shape": [[1], [1]],
+		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
+		"image": "path"
+	},
+	{
+		"id": 4104,
+		"name": "Broken Elven Tip",
+		"category": 4000,
+		"tags": ["Elf"],
+		"shape": [[1]],
+		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
+		"image": "path"
+	},
+	{
+		"id": 4201,
+		"name": "Picture with best friend",
+		"category": 4000,
+		"tags": ["Memory", "Friend", "Relationship", "Paper"],
+		"shape": [[1,1]],
+		"description": "It’s good to remember people who are important to us. It might be useful for your child during his adventure.",
+		"image": "path"
+	},
+	{
+		"id": 4202,
+		"name": "Letter of a loved one",
+		"category": 4000,
+		"tags": ["Memory", "Love", "Relationship", "Paper"],
+		"shape": [[1,1]],
+		"description": "It’s good to remember people who are important to us. It might be useful for your child during his adventure.",
+		"image": "path"
+	},
+	{
 		"id": 4203,
 		"name": "The Chosen One certificate",
 		"category": 4000,
@@ -103,6 +284,42 @@ func _ready() -> void:
 		"tags": ["Certificate", "Paper"],
 		"shape": [[1,1]],
 		"description": "Everyone should know that your child doesn’t know who his father is.",
+		"image": "path"
+	},
+	{
+		"id": 4205,
+		"name": "Machinery for Dummies",
+		"category": 4000,
+		"tags": ["Book", "Paper"],
+		"shape": [[1], [1]],
+		"description": "Very useful in case your child has to build something.",
+		"image": "path"
+	},
+	{
+		"id": 4206,
+		"name": "Piloting for Dummies",
+		"category": 4000,
+		"tags": ["Book", "Paper"],
+		"shape": [[1], [1]],
+		"description": "Very useful in case your child has to pilot something.",
+		"image": "path"
+	},
+	{
+		"id": 4207,
+		"name": "Alchemy for Dummies",
+		"category": 4000,
+		"tags": ["Book", "Paper"],
+		"shape": [[1], [1]],
+		"description": "Very useful if your child has to brew something or do some chemical reactions.",
+		"image": "path"
+	},
+	{
+		"id": 4208,
+		"name": "Map",
+		"category": 4000,
+		"tags": ["Localization", "Paper"],
+		"shape": [[1,1], [1,1]],
+		"description": "People say that maps are a thing from the past, but you’re a mom, you know better.",
 		"image": "path"
 	},
 	{
@@ -123,16 +340,33 @@ func _ready() -> void:
 		"description": "Let’s make use of what technology gives us! Your child will never get lost with this device!",
 		"image": "path"
 	},
+	{
+		"id": 4302,
+		"name": "RV Trailer keys",
+		"category": 4000,
+		"tags": ["Vehicle"],
+		"shape": [[1]],
+		"description": "Trailers are the best: the speed of a car with the comfort of a home!",
+		"image": "path"
+	},
+	{
+		"id": 4303,
+		"name": "Dirt Cube",
+		"category": 4000,
+		"tags": ["Dirt"],
+		"shape": [[1]],
+		"description": "Why is there dirt in the house?! Was it meant for a plant? There is no pot. Maybe your child deserves a dirty bag as retribution for bringing this inside. There is no way your husband would bring just dirt inside.",
+		"image": "path"
+	},
 	]
 	
-	#launchCutscene()
-	#var endingId = verifyEnding(bag)
-	#getEndInfo(endingId)
+	var endingId = verifyEnding(bag)
+	getEndInfo(endingId)
+	launchCutscene()
 
 
 func verifyEnding(bag):
 	if not bag:
-		print("empty")
 		return 0001
 		
 	var itemIds : Array[int] = []
@@ -155,11 +389,6 @@ func verifyEnding(bag):
 						
 	matchEnding(itemIds, itemCategories, itemTags)
 	preventConflictEnding()
-	
-	print(endingId)
-	print(endingName)
-	print(endingStory)
-	print(endingCoverImage)
 	
 
 func matchEnding(ids, categories, tags):
@@ -222,7 +451,6 @@ func preventConflictEnding():
 
 
 func finalEndingSelect(endIds, conditionsArray):
-	print(endIds)
 	var biggest_index = -1
 	var biggest_size = -1
 	
@@ -268,8 +496,16 @@ func matchOperator(count, type, condition):
 
 
 func launchCutscene():
-	pass
-
+	print(cutsceneControl)
+	if cutsceneControl:
+		cutsceneControl.finalEnding = {
+			"id": endingId,
+			"name": endingName,
+			"story": endingStory,
+			"coverImage": endingCoverImage
+		}
+		cutsceneControl.intermediateEndings = intermediateEndings
+		cutsceneControl.treatEnding()
 
 func clearEndings():
 	endingId = 0
@@ -278,9 +514,4 @@ func clearEndings():
 	endingCoverImage = ""
 	possibleEndings = [] 
 	intermediateEndings = [] 
-
-
-func _on_button_down() -> void:  #REMOVE IN FINAL VERSION, will be
-	clearEndings()
-	var endingId = verifyEnding(bag)
-	getEndInfo(endingId)
+	
