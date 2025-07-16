@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://by7vdkxty80q2"
+path="res://.godot/imported/Bag_open_digi.wav-ba629fcf5fa4653ad2cbdc9047d75fed.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Sound Effects/Bag_open_digi.wav"
+dest_files=["res://.godot/imported/Bag_open_digi.wav-ba629fcf5fa4653ad2cbdc9047d75fed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

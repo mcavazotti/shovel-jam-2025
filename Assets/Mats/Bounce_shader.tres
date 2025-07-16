@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://y5eoycmoultw"]
+
+[ext_resource type="Shader" uid="uid://c3qroc5f44b1t" path="res://Scripts/squish.gdshader" id="1_ykjre"]
+
+[resource]
+shader = ExtResource("1_ykjre")
+shader_parameter/speed = 3.5
+shader_parameter/inverse_amplitude = 16.0
+shader_parameter/size = 0.9
