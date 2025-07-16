@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://chkp5ltal2l4n"]
+[gd_scene load_steps=11 format=3 uid="uid://chkp5ltal2l4n"]
 
 [ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scripts/buttons_and_title.gd" id="1_ekrfg"]
 [ext_resource type="Texture2D" uid="uid://c70r0ll0sbh6x" path="res://Assets/Art/Speaker_Icon.png" id="2_2qdx2"]
 [ext_resource type="PackedScene" uid="uid://3hso8cn4h0xh" path="res://Scenes/options.tscn" id="2_yosvi"]
-[ext_resource type="PackedScene" uid="uid://be5y6f8jhr140" path="res://Scenes/pause_game.tscn" id="3_fp2oq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4obfb"]
 font_size = 128
@@ -39,6 +38,7 @@ offset_bottom = 1080.0
 color = Color(0.856067, 0.856067, 0.856067, 1)
 
 [node name="Buttons and Title" type="VBoxContainer" parent="."]
+process_mode = 3
 layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -66,13 +66,13 @@ icon = SubResource("PlaceholderTexture2D_4obfb")
 flat = true
 icon_alignment = 1
 
-[node name="Endings" type="Button" parent="Buttons and Title"]
+[node name="Achievements" type="Button" parent="Buttons and Title"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w31pl")
-text = "Endings"
+text = "Achievemets"
 icon = SubResource("PlaceholderTexture2D_4obfb")
 flat = true
 icon_alignment = 1
@@ -90,7 +90,6 @@ flat = true
 icon_alignment = 1
 
 [node name="Exit" type="Button" parent="Buttons and Title"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -127,15 +126,22 @@ grow_vertical = 2
 texture = ExtResource("2_2qdx2")
 expand_mode = 1
 
-[node name="Options" parent="." instance=ExtResource("2_yosvi")]
-process_mode = 2
-layout_mode = 1
+[node name="Options_Menu" type="CanvasLayer" parent="Buttons and Title"]
+process_mode = 3
 
-[node name="PauseGame" parent="." instance=ExtResource("3_fp2oq")]
+[node name="Options" parent="Buttons and Title/Options_Menu" instance=ExtResource("2_yosvi")]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
-[connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]
+[connection signal="pressed" from="Buttons and Title/Achievements" to="Buttons and Title" method="_on_endings_pressed"]
 [connection signal="pressed" from="Buttons and Title/Options" to="Buttons and Title" method="_on_options_pressed"]
-[connection signal="pressed" from="Buttons and Title/Options" to="Options" method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons and Title/Exit" to="Buttons and Title" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons and Title/BGM Toggle" to="Buttons and Title" method="_on_bgm_toggle_pressed"]
