@@ -1,8 +1,12 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class Backpack : Node2D
 {
+    [Signal]
+    public delegate void BackpackContentChangeEventHandler(ItemData[] items);
+
     [Export]
     Vector2I GridSize = new Vector2I(6, 8);
     [Export]
@@ -13,6 +17,8 @@ public partial class Backpack : Node2D
     private BackpackSlot[,] Slots;
 
     private bool DraggingError = false;
+
+    public Godot.Collections.Dictionary<int, ItemData> ItemsInside;
 
     public override void _EnterTree()
     {
@@ -41,30 +47,16 @@ public partial class Backpack : Node2D
         var collisionShape = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
         var rectShape = GridSize * SlotSize;
         (collisionShape.Shape as RectangleShape2D).Size = rectShape;
-
-        var items = GetTree().GetNodesInGroup("BagItems");
-
-        foreach (var i in items)
-        {
-            if (i is BagItem item)
-            {
-                item.Drag += DraggingItem;
-                item.Drop += DroppingItem;
-                
-            }
-
-        }
-
     }
 
-    private void DraggingItem(BagItem item)
+    public void DraggingItem(BagItem item)
     {
         foreach (var slot in Slots)
-            slot.ResetState();
+            slot.ResetState(item.Data.Id);
 
         var itemSlots = item.GetSlotsGlobalPositions();
 
-        var error = FindIntersectingSlots(itemSlots,out var intersectingSlots);
+        var error = FindIntersectingSlots(itemSlots, out var intersectingSlots);
 
 
         foreach (var slot in intersectingSlots)
@@ -85,25 +77,43 @@ public partial class Backpack : Node2D
     }
 
 
-    private void DroppingItem(BagItem item)
+    public void DroppingItem(BagItem item)
     {
         foreach (var slot in Slots)
-            slot.ResetState();
+            slot.ResetState(item.Data.Id);
 
         var area2D = GetNode<Area2D>("Area2D");
         var overlaps = area2D.OverlapsArea(item.GetNode<Area2D>("Area2D"));
-        if (DraggingError && overlaps)
+        if (overlaps)
         {
-            item.ResetDragPosition();
-        }
-        if (!DraggingError)
-        {
-            FindIntersectingSlots(item.GetSlotsGlobalPositions().Slice(0, 1), out var intersectingSlots);
-            var itemSlot = item.GetSlotsGlobalPositions()[0];
-            var offset =  intersectingSlots[0].GlobalPosition - itemSlot;
-            item.Position += offset;
+            if (DraggingError)
+            {
+                item.ResetDragPosition();
+                FindIntersectingSlots(item.GetSlotsGlobalPositions(), out var intersectingSlots);
+                foreach (var slot in intersectingSlots)
+                    slot.ItemId = item.Data.Id;
+            }
+            else
+            {
+                FindIntersectingSlots(item.GetSlotsGlobalPositions(), out var intersectingSlots);
+                var itemSlot = item.GetSlotsGlobalPositions()[0];
+                var offset = intersectingSlots[0].GlobalPosition - itemSlot;
 
+                foreach (var slot in intersectingSlots)
+                    slot.ItemId = item.Data.Id;
+
+                item.InsideBag = true;
+                item.Position += offset;
+                item.Reparent(this);
+                ItemsInside.Add(item.Data.Id, item.Data);
+            }
         }
+        else
+        {
+            item.InsideBag = false;
+            ItemsInside.Remove(item.Data.Id);
+        }
+        EmitSignal(SignalName.BackpackContentChange, ItemsInside.Values.ToArray());
     }
 
     private bool FindIntersectingSlots(Godot.Collections.Array<Vector2> itemSlots, out Godot.Collections.Array<BackpackSlot> intesectingSlots)

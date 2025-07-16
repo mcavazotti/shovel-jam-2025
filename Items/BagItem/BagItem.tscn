@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tpao"]
 
 [node name="BagItem" type="Node2D" groups=["BagItems"]]
+z_index = 2
 script = ExtResource("1_5tpao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -96,10 +96,19 @@ public partial class HouseItem : Node2D
         {
             var bagItem = BagItemScene.Instantiate<BagItem>();
             bagItem.Data = Data;
-            Controller.AddSibling(bagItem);
+            bagItem.Name = Data.Name;
+            bagItem.Controller = Controller;
+            Controller.AddChild(bagItem);
+            bagItem.Owner = Controller;
+
+
+            bagItem.Drag += Controller.Backpack.DraggingItem;
+            bagItem.Drop += Controller.Backpack.DroppingItem;
+
             bagItem.GlobalPosition = GlobalPosition;
             bagItem.ForceDraggingState(GlobalPosition);
 
+            Controller.OpenBag -= TransferItemToBackpackContext;
             Free();
         }
     }

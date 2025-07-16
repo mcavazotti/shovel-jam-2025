@@ -20,6 +20,7 @@ public partial class BackpackSlot : Node2D
         if (Error) Modulate = ErrorColor;
         else if (Highlight || Hover) Modulate = HightlighColor;
         else Modulate = new Color("#ffffff");
+        if(ItemId != 0) Modulate = new Color("#147a36ff");
 
     }
 
@@ -33,8 +34,9 @@ public partial class BackpackSlot : Node2D
         Hover = false;
     }
 
-    public void ResetState()
+    public void ResetState(int itemId)
     {
+        if (ItemId == itemId) ItemId = 0;
         Highlight = false;
         Error = false;
     }

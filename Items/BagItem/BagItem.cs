@@ -8,6 +8,9 @@ public partial class BagItem : Node2D
 
     public ItemData Data;
 
+    public bool InsideBag = false;
+    public BackpackController Controller; 
+
     [Signal]
     public delegate void DragEventHandler(BagItem i);
     [Signal]
@@ -27,7 +30,7 @@ public partial class BagItem : Node2D
     {
         var collisionShape = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
 
-        RectShape = new Vector2(Data.Shape.GetLength(0), Data.Shape.GetLength(1)) * SlotSize;
+        RectShape = new Vector2(Data.Shape.GetLength(1), Data.Shape.GetLength(0)) * SlotSize;
         (collisionShape.Shape as RectangleShape2D).Size = RectShape;
 
         var sprite = GetNode<Sprite2D>("Sprite2D");
@@ -42,7 +45,6 @@ public partial class BagItem : Node2D
             {
                 if (eventMouseButton.Pressed)
                 {
-
                     Offset = GetGlobalMousePosition() - GlobalPosition;
                     var validPos = Dragging;
                     if (InBounds) validPos = ValidateMousePos();
@@ -74,7 +76,7 @@ public partial class BagItem : Node2D
             if (Dragging && Input.IsMouseButtonPressed(MouseButton.Left))
             {
                 EmitSignal(SignalName.Drag, this);
-                Position = GetGlobalMousePosition() - Offset;
+                GlobalPosition = GetViewport().GetMousePosition() - Offset;
             }
 
         }
@@ -112,21 +114,21 @@ public partial class BagItem : Node2D
         var mappedMousePos = localMousePos + (RectShape / 2);
 
         var slotMousePos = (Vector2I)(mappedMousePos / SlotSize);
-        if (slotMousePos < Vector2.Zero || slotMousePos.X >= Data.Shape.GetLength(0) || slotMousePos.Y >= Data.Shape.GetLength(1))
+        if (slotMousePos < Vector2.Zero || slotMousePos.X >= Data.Shape.GetLength(1) || slotMousePos.Y >= Data.Shape.GetLength(0))
             return false;
 
-        return Data.Shape[slotMousePos.X, slotMousePos.Y] == 1;
+        return Data.Shape[slotMousePos.Y, slotMousePos.X] == 1;
     }
 
     public Godot.Collections.Array<Vector2> GetSlotsGlobalPositions()
     {
         var positions = new Godot.Collections.Array<Vector2>();
         var topLeftCorner = (SlotSize - RectShape) / 2;
-        for (int y = 0; y < Data.Shape.GetLength(1); y++)
+        for (int y = 0; y < Data.Shape.GetLength(0); y++)
         {
-            for (int x = 0; x < Data.Shape.GetLength(0); x++)
+            for (int x = 0; x < Data.Shape.GetLength(1); x++)
             {
-                if (Data.Shape[x, y] == 1)
+                if (Data.Shape[y, x] == 1)
                     positions.Add(GlobalPosition + (topLeftCorner + SlotSize * new Vector2(x, y)).Rotated(GlobalRotation));
             }
         }
@@ -145,5 +147,6 @@ public partial class BagItem : Node2D
         RotBeforeDrag = 0;
         Offset = Vector2.Zero;
         Dragging = true;
+        InBounds = true;
     }
 }
