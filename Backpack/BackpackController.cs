@@ -6,6 +6,8 @@ public partial class BackpackController : CanvasLayer
     [Signal]
     public delegate void OpenBagEventHandler();
     [Signal]
+    public delegate void CloseBagEventHandler();
+    [Signal]
     public delegate void ContentChangeEventHandler(ItemData[] items);
 
     private Backpack _backpack;
@@ -23,8 +25,13 @@ public partial class BackpackController : CanvasLayer
         EmitSignal(SignalName.OpenBag);
     }
 
+    public void EmitCloseBag()
+    {
+        EmitSignal(SignalName.CloseBag);
+    }
+
     public void EmitItemsChange(ItemData[] items)
     {
-        EmitSignal(SignalName.OpenBag, items);
+        EmitSignal(SignalName.ContentChange, items);
     }
 }

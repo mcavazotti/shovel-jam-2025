@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmppofskqyqet"]
 
-[ext_resource type="PackedScene" uid="uid://f1cnjc2fssgf" path="res://Backpack/Backpack.tscn" id="1_kjw0n"]
+[ext_resource type="PackedScene" uid="uid://bg7yiecy1rhsc" path="res://Backpack/Backpack.tscn" id="1_kjw0n"]
 [ext_resource type="Script" uid="uid://3duyqj2tx3gd" path="res://Backpack/BackpackController.cs" id="1_uo260"]
 [ext_resource type="Script" uid="uid://8v3eam21uedy" path="res://Backpack/AnimationPlayer.cs" id="2_klxdi"]
 
@@ -167,4 +167,6 @@ script = ExtResource("2_klxdi")
 [connection signal="mouse_entered" from="UiArea/OpenArea" to="." method="EmitOpenBag"]
 [connection signal="mouse_entered" from="UiArea/OpenArea" to="AnimationPlayer" method="PlayOpenBag"]
 [connection signal="mouse_entered" from="UiArea/OpenArea/Label" to="AnimationPlayer" method="PlayOpenBag"]
+[connection signal="mouse_entered" from="UiArea/CloseArea" to="." method="EmitCloseBag"]
 [connection signal="mouse_entered" from="UiArea/CloseArea" to="AnimationPlayer" method="PlayCloseBag"]
+[connection signal="BackpackContentChange" from="Backpack" to="." method="EmitItemsChange"]

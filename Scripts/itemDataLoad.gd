@@ -1,16 +1,15 @@
 extends Node
 
-@onready var itemData = {}	#all items stored here
 @onready var dataFilePath = "res://Items/ItemsList.json"
-var copiedData : Array
+
+var _itemsDict: Dictionary
 
 func _ready():
-	itemData = loadItems(dataFilePath)
-#	for item in itemData:
-#		for key in item:
-#			var value = item[key]
-#			print(key, value)
-	copyData()
+	var itemData = loadItems(dataFilePath)
+	_itemsDict = {}
+
+	for  i in itemData:
+		_itemsDict[int(i["id"])] = i
 		
 func loadItems(JsonPath):
 	if FileAccess.file_exists(JsonPath):
@@ -20,17 +19,13 @@ func loadItems(JsonPath):
 		
 		if parsedResult is Array:
 			return parsedResult
-		print("Error reading items file!")	
+		printerr("Error reading items file!")	
 			
 	else:
-		print("Items file doesn't exist!")
+		printerr("Items file doesn't exist!")
 	
 	
-func copyData():
-	copiedData.clear()
-	copiedData = itemData.duplicate()
-	
-	
-func getCopiedData():
-	copyData()
-	return copiedData
+
+func getItems()-> Dictionary:
+	return _itemsDict.duplicate()
+

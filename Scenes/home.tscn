@@ -161,44 +161,29 @@ moving_bounce_speed = 13.0
 
 [node name="ItemSpawners" type="Node2D" parent="."]
 
-[node name="ItemSpawner2" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(4236, 944)
+[node name="SwordSpawner" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(5795, 2357)
+IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="ItemSpawner3" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(6476, 1212)
+[node name="SwordSpawner2" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(5526, 1953)
+IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="ItemSpawner4" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(7153, 903)
+[node name="SwordSpawner3" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(5506, 1617)
+IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="ItemSpawner5" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(7495, 1607)
+[node name="SwordSpawner4" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(5903, 1906)
+IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="ItemSpawner6" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(6731, 1790)
+[node name="SwordSpawner5" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(6253, 2148)
+IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="ItemSpawner7" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(1306, 3081)
-
-[node name="ItemSpawner8" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(1673, 1380)
-
-[node name="ItemSpawner9" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(7911, 2805)
-
-[node name="ItemSpawner10" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(8217, 2799)
-
-[node name="ItemSpawner11" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(7850, 237)
-
-[node name="ItemSpawner12" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(7850, 506)
-
-[node name="ItemSpawner13" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(7874, 726)
-
-[node name="ItemSpawner" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
-position = Vector2(4009, 934)
+[node name="SwordSpawner6" parent="ItemSpawners" instance=ExtResource("15_ppvi3")]
+position = Vector2(6583, 2155)
+IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(5713, 1113)
@@ -209,3 +194,5 @@ player = NodePath("../Mom")
 [node name="BackpackController" parent="." instance=ExtResource("23_ayluw")]
 
 [node name="PauseGame" parent="." instance=ExtResource("14_smgrs")]
+
+[connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]

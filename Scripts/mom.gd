@@ -22,3 +22,7 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+
+
+func _on_backpack_controller_content_change(items:Array) -> void:
+	print(items.map(func(i): return i.Id))
