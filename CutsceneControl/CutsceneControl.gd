@@ -18,6 +18,8 @@ var speed_up = false
 func _ready() -> void:
 	endIds.clear()
 	image.custom_minimum_size = DisplayServer.screen_get_size()
+	image.size = DisplayServer.screen_get_size()
+	#image.global_position = 
 	
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
@@ -26,9 +28,9 @@ func _on_anim_animation_finished(anim_name: StringName) -> void:
 		anim.speed_scale = 1
 		speed_up = false
 		anim.play("FinalEnding")
-		$finalTitle.visible = true
-		$finalStory.visible = true
-		$finalImage.visible = true
+		labelFinalTitle.visible = true
+		labelFinalStory.visible = true
+		image.visible = true
 			
 
 func treatEnding():
@@ -67,12 +69,13 @@ func startAnimation():
 	$buttons/buttonMenu.visible = false
 	$buttons/buttonHouse.visible = false
 	$buttons/buttonReplay.visible = false
-	$finalTitle.visible = false
-	$finalStory.visible = false
-	$finalImage.visible = false
+	labelFinalTitle .visible = false
+	labelFinalStory.visible = false
+	image.visible = false
 	labelEndingCount.set_modulate("ffffff00")
 	labelEndingLocked.set_modulate("ffffff00")
 	anim.play("IntermediateEndings")
+	Audio.BGM(Audio.BGM_TYPE.Intermediate_Endings)
 	
 	
 func skipIntermediate():
@@ -86,10 +89,11 @@ func skipIntermediate():
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if speed_up:
-			anim.speed_scale = 1	
+			anim.speed_scale = 1
+			speed_up = false
 		else:
 			anim.speed_scale = 3
-	speed_up = !speed_up
+			speed_up = true
 
 
 func _on_button_menu_button_down() -> void:
