@@ -5,43 +5,42 @@ extends Node2D
 @onready var parent = get_parent()
 
 const HouseItem = preload("res://Items/HouseItem/HouseItem.tscn")
+const ItemSpawner = preload("res://Items/ItemSpawner/ItemSpawner.cs")
 
-var copiedItemData
-var roulette = []
-var categoryEnum = {
-	1000: "Food",
-	2000: "Cloathing",
-	3000: "Weapon",
-	4000: "Misc"
-}
+var items
+
 
 
 func _ready():
 	randomize()
-	copiedItemData = ItemDataLoad.getCopiedData()
-	
-	for item in copiedItemData:
-		roulette.append(item["id"])
-		
+	items = ItemDataLoad.getItems()
+	print(itemSpawners)
 	for child in itemSpawners:
-		createItem(child as Node2D)
+		createItem(child as ItemSpawner)
 
 
-func createItem(spawner:Node2D): #Put randomItem data inside Item
-	var randomIndex = randi() % roulette.size()
-	var randomId = roulette[randomIndex]
+func createItem(spawner:ItemSpawner): #Put randomItem data inside Item
+	var validIds = items.keys().filter(func(i): return int(i) in spawner.IdsToAccept)
+	print(spawner.IdsToAccept)
+	print(validIds)
 
-	for itemData in copiedItemData:
-		if itemData["id"] == randomId:
-			var pos = spawner.global_position
-			var itemNode = HouseItem.instantiate()
-			var stringData = JSON.stringify(itemData)
-			itemNode.global_position = pos
-			itemNode.name = itemData["name"]
-			parent.add_child.call_deferred(itemNode)
-			itemNode.SetData(stringData)
+	if validIds.size() == 0:
+		return
+	
+	var idx = 0
+	if validIds.size() > 1:
+		idx = randi_range(0, validIds.size() -1)
+
+	var itemId = validIds[idx]
+
+	var itemData = items[itemId]
+
+	var pos = spawner.global_position
+	var itemNode = HouseItem.instantiate()
+	var stringData = JSON.stringify(itemData)
+	itemNode.global_position = pos
+	itemNode.name = itemData["name"]
+	parent.add_child.call_deferred(itemNode)
+	itemNode.SetData(stringData)
 			
-			copiedItemData.erase(itemData)
-			roulette.erase(randomId)
-			if copiedItemData.is_empty() or roulette.is_empty():
-				break
+	items.erase(itemId)
