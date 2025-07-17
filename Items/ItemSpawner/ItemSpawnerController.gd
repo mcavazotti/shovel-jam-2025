@@ -14,15 +14,12 @@ var items
 func _ready():
 	randomize()
 	items = ItemDataLoad.getItems()
-	print(itemSpawners)
 	for child in itemSpawners:
 		createItem(child as ItemSpawner)
 
 
 func createItem(spawner:ItemSpawner): #Put randomItem data inside Item
 	var validIds = items.keys().filter(func(i): return int(i) in spawner.IdsToAccept)
-	print(spawner.IdsToAccept)
-	print(validIds)
 
 	if validIds.size() == 0:
 		return
