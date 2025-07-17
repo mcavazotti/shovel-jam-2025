@@ -1,16 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://3hso8cn4h0xh"]
+[gd_scene load_steps=9 format=3 uid="uid://3hso8cn4h0xh"]
 
 [ext_resource type="Script" uid="uid://dmkise6xg1gfj" path="res://Scripts/options_menu.gd" id="1_5v8ap"]
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/new_theme.tres" id="2_4tmxy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prnvy"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q2qps"]
-size = Vector2(500, 100)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekrfg"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4obfb"]
-size = Vector2(400, 100)
 
 [sub_resource type="LabelSettings" id="LabelSettings_q2qps"]
 font_size = 64
@@ -19,12 +12,13 @@ font_size = 64
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w31pl"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekrfg"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_prnvy"]
 font_size = 32
 
 [node name="Options" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,7 +46,9 @@ offset_right = 450.0
 offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_4tmxy")
 theme_override_constants/side_margin = 0
+theme_override_constants/icon_separation = 0
 theme_override_font_sizes/font_size = 64
 tab_alignment = 1
 current_tab = 0
@@ -68,10 +64,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -400.0
-offset_right = 450.0
-offset_bottom = 400.0
+offset_left = -235.5
+offset_top = -376.0
+offset_right = 235.5
+offset_bottom = 376.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -102,21 +98,15 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_prnvy")
 text = "Return to Game"
-icon = SubResource("PlaceholderTexture2D_q2qps")
-flat = true
 icon_alignment = 1
 
 [node name="Exit Game" type="Button" parent="TabContainer/General/General Buttons and Credits"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 64
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrfg")
 toggle_mode = true
 button_pressed = true
 text = "Exit Game"
-icon = SubResource("PlaceholderTexture2D_4obfb")
-flat = true
 icon_alignment = 1
 
 [node name="Video" type="Panel" parent="TabContainer"]
@@ -131,9 +121,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -450.0
+offset_left = -220.0
 offset_top = -400.0
-offset_right = 450.0
+offset_right = 220.0
 offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -155,8 +145,6 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4obfb")
 text = "Fullsceen"
-icon = SubResource("PlaceholderTexture2D_4obfb")
-flat = true
 icon_alignment = 1
 
 [node name="Maximized" type="Button" parent="TabContainer/Video/Video Buttons"]
@@ -166,8 +154,6 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w31pl")
 text = "Maximized"
-icon = SubResource("PlaceholderTexture2D_4obfb")
-flat = true
 icon_alignment = 1
 
 [node name="Windowed" type="Button" parent="TabContainer/Video/Video Buttons"]
@@ -177,8 +163,6 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ekrfg")
 text = "Windowed"
-icon = SubResource("PlaceholderTexture2D_4obfb")
-flat = true
 icon_alignment = 1
 
 [node name="Audio" type="Panel" parent="TabContainer"]
@@ -247,7 +231,7 @@ tick_count = 10
 
 [node name="AMB" type="Label" parent="TabContainer/Audio/Buttons and Title"]
 layout_mode = 2
-text = "SFX"
+text = "AMB"
 label_settings = SubResource("LabelSettings_q2qps")
 horizontal_alignment = 1
 vertical_alignment = 1

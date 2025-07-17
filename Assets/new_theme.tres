@@ -1,0 +1,56 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://djb6iany7t78l"]
+
+[ext_resource type="FontFile" uid="uid://c5vbqb7ncv01l" path="res://Assets/Piazzolla/static/otf/Piazzolla-Medium.otf" id="1_6usot"]
+[ext_resource type="Texture2D" uid="uid://dw7h0n05nqic2" path="res://Assets/Art/Frame.png" id="1_sdao3"]
+[ext_resource type="Texture2D" uid="uid://d3xlhsw5c2e3n" path="res://Assets/Art/Tab.png" id="2_koc4f"]
+[ext_resource type="Texture2D" uid="uid://by0sxlxo0nq1" path="res://Assets/Art/Tab_down.png" id="3_6usot"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kh4qu"]
+texture = ExtResource("1_sdao3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tj1lx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v7r0k"]
+texture = ExtResource("1_sdao3")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kh4qu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tj1lx"]
+texture = ExtResource("2_koc4f")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6284n"]
+texture = ExtResource("3_6usot")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+
+[resource]
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_6usot")
+Button/styles/disabled = SubResource("StyleBoxTexture_kh4qu")
+Button/styles/focus = SubResource("StyleBoxEmpty_tj1lx")
+Button/styles/hover = SubResource("StyleBoxTexture_kh4qu")
+Button/styles/normal = SubResource("StyleBoxTexture_kh4qu")
+Button/styles/pressed = SubResource("StyleBoxTexture_kh4qu")
+Label/fonts/font = ExtResource("1_6usot")
+Panel/styles/panel = SubResource("StyleBoxTexture_v7r0k")
+RichTextLabel/fonts/normal_font = ExtResource("1_6usot")
+TabContainer/constants/icon_separation = 0
+TabContainer/constants/side_margin = 0
+TabContainer/font_sizes/font_size = 64
+TabContainer/fonts/font = ExtResource("1_6usot")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_kh4qu")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_tj1lx")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_tj1lx")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_6284n")

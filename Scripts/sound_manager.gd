@@ -42,27 +42,35 @@ func Play(Track_name: TRACK_ALIAS):
 		TRACK_ALIAS.Click:
 			SFX_stream.pitch_scale += randf_range(-0.5,0.5)
 			SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/Click_real.wav")
+			SFX_stream.play()
 		TRACK_ALIAS.Super_Click:
 			SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/SuperClick_real.wav")
+			SFX_stream.play()
 	# Background Music
 		TRACK_ALIAS.Intermediate_Endings:
 			BGM_stream.stream = load("res://Assets/Sounds/Music/Your Son Life.mp3")
+			BGM_stream.play()
 		TRACK_ALIAS.Results:
-			BGM_stream.stream = load("res://Assets/Sounds/Music/Results.mp3")		
+			BGM_stream.stream = load("res://Assets/Sounds/Music/Results.mp3")
+			BGM_stream.play()
 		TRACK_ALIAS.First_Minute:
 			BGM_stream.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
+			BGM_stream.play()
 	# Ambience
 		TRACK_ALIAS.AMB_1:
 			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_1.wav")
+			AMB_stream.play()
 		TRACK_ALIAS.AMB_2:
-			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_2.wav")		
+			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_2.wav")
+			AMB_stream.play()
 		TRACK_ALIAS.AMB_3:
-			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_3.wav")		
+			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_3.wav")
+			AMB_stream.play()
 		TRACK_ALIAS.AMB_4:
 			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_4.wav")
+			AMB_stream.play()
 		_:
 			print("Tried to play nonexistent track:", Track_name)
-	AMB_stream.play()
 
 func BGM_toggle():
 	if BGM_stream.playing == true:
