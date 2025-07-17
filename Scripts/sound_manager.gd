@@ -27,67 +27,42 @@ enum TRACK_ALIAS {
 	Results,
 	First_Minute,
 	Second_Minute,
+	Intermediate_Endings,
 	# AMBIENCE
 	AMB_1,
 	AMB_2,
 	AMB_3,
 	AMB_4
-	Intermediate_Endings
 }
 
 func Play(Track_name: TRACK_ALIAS):
 	SFX_stream.pitch_scale = 1.0
-	
+	match Track_name:
 	# Sound effects
-	if Track_name == TRACK_ALIAS.Click:
-		SFX_stream.pitch_scale += randf_range(-0.5,0.5)
-		print()
-		SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/Click_real.wav")
-		SFX_stream.play()
-
-func BGM(BGM_name: BGM_TYPE):
-	if BGM_name == BGM_TYPE.Results:
-		BGM_streamer.stream = load("res://Assets/Sounds/Music/Results.mp3")
-	elif BGM_name == BGM_TYPE.First_Minute:
-		BGM_streamer.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
-	elif BGM_name == BGM_TYPE.Intermediate_Endings:
-		BGM_streamer.stream = load("res://Assets/Sounds/Music/Your Son Life.mp3")
-	else:
-		print("Tried to play invalid track name:", BGM_name)
-		
-	elif Track_name == TRACK_ALIAS.Super_Click:
-		print()
-		SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/SuperClick_real.wav")
-		SFX_stream.play()
-		
+		TRACK_ALIAS.Click:
+			SFX_stream.pitch_scale += randf_range(-0.5,0.5)
+			SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/Click_real.wav")
+		TRACK_ALIAS.Super_Click:
+			SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/SuperClick_real.wav")
 	# Background Music
-	elif Track_name == TRACK_ALIAS.Results:
-		BGM_stream.stream = load("res://Assets/Sounds/Music/Results.mp3")
-		BGM_stream.play()
-		
-	elif Track_name == TRACK_ALIAS.First_Minute:
-		BGM_stream.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
-		BGM_stream.play()
-		
+		TRACK_ALIAS.Intermediate_Endings:
+			BGM_stream.stream = load("res://Assets/Sounds/Music/Your Son Life.mp3")
+		TRACK_ALIAS.Results:
+			BGM_stream.stream = load("res://Assets/Sounds/Music/Results.mp3")		
+		TRACK_ALIAS.First_Minute:
+			BGM_stream.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
 	# Ambience
-	elif Track_name == TRACK_ALIAS.AMB_1:
-		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_1.wav")
-		AMB_stream.play()
-		
-	elif Track_name == TRACK_ALIAS.AMB_2:
-		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_2.wav")
-		AMB_stream.play()
-		
-	elif Track_name == TRACK_ALIAS.AMB_3:
-		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_3.wav")
-		AMB_stream.play()
-		
-	elif Track_name == TRACK_ALIAS.AMB_4:
-		AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_4.wav")
-		AMB_stream.play()
-		
-	else:
-		print("Tried to play nonexistent track:", Track_name)
+		TRACK_ALIAS.AMB_1:
+			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_1.wav")
+		TRACK_ALIAS.AMB_2:
+			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_2.wav")		
+		TRACK_ALIAS.AMB_3:
+			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_3.wav")		
+		TRACK_ALIAS.AMB_4:
+			AMB_stream.stream = load("res://Assets/Sounds/Ambience/AMB_4.wav")
+		_:
+			print("Tried to play nonexistent track:", Track_name)
+	AMB_stream.play()
 
 func BGM_toggle():
 	if BGM_stream.playing == true:

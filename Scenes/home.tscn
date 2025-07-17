@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cc1xn4bgtvns0" path="res://Assets/Art/stairroom.png" id="7_848r5"]
 [ext_resource type="Texture2D" uid="uid://de5rckmrbd1i7" path="res://Assets/Art/bathunderbed.png" id="8_pkgvh"]
 [ext_resource type="Texture2D" uid="uid://2uj05ci6tdjc" path="res://Assets/Art/bedenter.png" id="9_7wmtr"]
-[ext_resource type="Texture2D" uid="uid://ymlsw28nmtk7" path="res://Assets/Art/bed.png" id="10_y6p71"]
+[ext_resource type="Texture2D" uid="uid://3pyim44qgkra" path="res://Assets/Art/bed.png" id="10_y6p71"]
 [ext_resource type="Texture2D" uid="uid://br8y4j1uje8ww" path="res://Assets/Art/enterstairroom.png" id="11_ayluw"]
 [ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Scenes/mom.tscn" id="12_guf2q"]
 [ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="13_0qnmp"]
