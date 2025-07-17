@@ -26,4 +26,5 @@ func updateList(categories):
 			4000:
 				$Panel/VBoxContainer/Misc.set_modulate("ffffff13")
 			_:
-				print("Unknown Category, something fucked up")
+				print("Unknown Category")
+				
