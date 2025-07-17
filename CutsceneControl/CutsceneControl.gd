@@ -75,7 +75,7 @@ func startAnimation():
 	labelEndingCount.set_modulate("ffffff00")
 	labelEndingLocked.set_modulate("ffffff00")
 	anim.play("IntermediateEndings")
-	Audio.BGM(Audio.BGM_TYPE.Intermediate_Endings)
+	Audio.Play(Audio.TRACK_ALIAS.Intermediate_Endings)
 	
 	
 func skipIntermediate():
@@ -97,16 +97,16 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func _on_button_menu_button_down() -> void:
-	Audio.SFX(Audio.SFX_TYPE.Click)
+	Audio.Play(Audio.TRACK_ALIAS.Click)
 	get_tree().change_scene_to_file("res://Scenes/title.tscn")
 
 
 
 func _on_button_house_button_down() -> void:
-	Audio.SFX(Audio.SFX_TYPE.Click)
+	Audio.Play(Audio.TRACK_ALIAS.Click)
 	get_tree().change_scene_to_file("res://Scenes/home.tscn")
 
 
 func _on_button_replay_button_down() -> void:
-	Audio.SFX(Audio.SFX_TYPE.Click)
+	Audio.Play(Audio.TRACK_ALIAS.Click)
 	startAnimation()
