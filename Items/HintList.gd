@@ -1,45 +1,29 @@
 extends CanvasLayer
 
-const ItemData = preload("res://Items/ItemData.cs")
 
 @onready var anim = $AnimationPlayer
 @onready var backpack = $"../BackpackController"
-var listagem = []
 
 #the labels are names after the ENUM of Categories
 func _ready() -> void:
-	backpack.connect("BackpackContentChange", Callable(self, "_on_BackpackContentChange"))
+	backpack.connect("ContentChange", Callable(self, "_on_BackpackContentChange"))
 
 
-func _on_BackpackContentChange(conteudo:ItemData):
-	if listagem:
-		var found = false
-		for item in listagem:
-			
-			if item.Id == conteudo.Id:
-				listagem.erase(item)
-				found = true
-				break
-				
-		if not found:
-			listagem.append(conteudo)
-	else:
-		listagem.append(conteudo)
+func _on_BackpackContentChange(items:Array):
+	var categories = (items.map(func(i): return i.Category))
+	updateList(categories)
 		
-	updateList()
 	
-	
-func updateList():
-	for item in listagem:
-		
-		match item.Category:
-			"Food":
+func updateList(categories):
+	for category in categories:
+		match category:
+			1000:
 				$Panel/VBoxContainer/Food.set_modulate("ffffff13")
-			"Cloathing":
+			2000:
 				$Panel/VBoxContainer/Cloathing.set_modulate("ffffff13")
-			"Weapon":
+			3000:
 				$Panel/VBoxContainer/Weapon.set_modulate("ffffff13")
-			"Misc":
+			4000:
 				$Panel/VBoxContainer/Misc.set_modulate("ffffff13")
 			_:
 				print("Unknown Category, something fucked up")
