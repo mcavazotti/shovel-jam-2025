@@ -12,14 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://ymlsw28nmtk7" path="res://Assets/Art/bed.png" id="10_y6p71"]
 [ext_resource type="Texture2D" uid="uid://br8y4j1uje8ww" path="res://Assets/Art/enterstairroom.png" id="11_ayluw"]
 [ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Scenes/mom.tscn" id="12_guf2q"]
-[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="13_0qnmp"]
+[ext_resource type="Script" uid="uid://dp6kqo21d8sh3" path="res://Scenes/camera_2d.gd" id="13_0qnmp"]
 [ext_resource type="Texture2D" uid="uid://bli7oic53rpcv" path="res://Assets/Art/Friend.png" id="14_848r5"]
 [ext_resource type="PackedScene" uid="uid://7q65lapufcsh" path="res://Items/ItemSpawner/ItemSpawnerController.tscn" id="14_dyher"]
 [ext_resource type="PackedScene" uid="uid://be5y6f8jhr140" path="res://Scenes/pause_game.tscn" id="14_smgrs"]
 [ext_resource type="Texture2D" uid="uid://cgcqg1s53711j" path="res://Assets/Art/garage1.png" id="15_dyher"]
 [ext_resource type="PackedScene" uid="uid://c4lk76dkkl632" path="res://Items/ItemSpawner/ItemSpawner.tscn" id="15_ppvi3"]
-[ext_resource type="Shader" path="res://Scripts/breathe.gdshader" id="15_y6p71"]
-[ext_resource type="Shader" path="res://Scripts/squish.gdshader" id="16_ayluw"]
+[ext_resource type="Shader" uid="uid://dxef5pfxbekt3" path="res://Scripts/breathe.gdshader" id="15_y6p71"]
+[ext_resource type="Shader" uid="uid://c3qroc5f44b1t" path="res://Scripts/squish.gdshader" id="16_ayluw"]
 [ext_resource type="Texture2D" uid="uid://byu86u4b2o8s2" path="res://Assets/Art/garage2.png" id="16_ppvi3"]
 [ext_resource type="Texture2D" uid="uid://65nugvsyg18p" path="res://Assets/Art/Mom_placehold.png" id="20_pkgvh"]
 [ext_resource type="PackedScene" uid="uid://cmppofskqyqet" path="res://Backpack/BackpackController.tscn" id="23_ayluw"]
@@ -206,6 +206,6 @@ anchor_mode = 0
 script = ExtResource("13_0qnmp")
 player = NodePath("../Mom")
 
-[node name="PauseGame" parent="." instance=ExtResource("14_smgrs")]
-
 [node name="BackpackController" parent="." instance=ExtResource("23_ayluw")]
+
+[node name="PauseGame" parent="." instance=ExtResource("14_smgrs")]
