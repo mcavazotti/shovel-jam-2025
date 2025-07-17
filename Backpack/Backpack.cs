@@ -18,7 +18,7 @@ public partial class Backpack : Node2D
 
     private bool DraggingError = false;
 
-    public Godot.Collections.Dictionary<int, ItemData> ItemsInside;
+    public Godot.Collections.Dictionary<int, ItemData> ItemsInside = [];
 
     public override void _EnterTree()
     {
@@ -105,7 +105,8 @@ public partial class Backpack : Node2D
                 item.InsideBag = true;
                 item.Position += offset;
                 item.Reparent(this);
-                ItemsInside.Add(item.Data.Id, item.Data);
+                if (!ItemsInside.ContainsKey(item.Data.Id))
+                    ItemsInside.Add(item.Data.Id, item.Data);
             }
         }
         else

@@ -1,25 +1,30 @@
 using Godot;
 using System;
+using System.Security.Cryptography;
 
 public partial class HouseItem : Node2D
 {
 	public ItemData Data;
-
-	[Export]
-	public PackedScene BagItemScene { get; set; }
+	public PackedScene BagItemScene;
 
 	private bool InBounds = false;
 	private bool Dragging = false;
 	private Vector2 Offset;
 
-	private BackpackController Controller;
+	public BackpackController Controller;
 
 	public override void _Ready()
 	{
-		var controls = GetTree().GetNodesInGroup("BackpackController");
-		if (controls.Count > 0 && controls[0] is BackpackController bc)
-			Controller = bc;
-		else throw new Exception("There must be a BackpackController in the scene");
+		BagItemScene = GD.Load<PackedScene>("res://Items/BagItem/BagItem.tscn");
+		if (Controller == null)
+		{
+
+			var controls = GetTree().GetNodesInGroup("BackpackController");
+			if (controls.Count > 0 && controls[0] is BackpackController bc)
+				Controller = bc;
+			else throw new Exception("There must be a BackpackController in the scene");
+		}
+		if (Data != null) ApplyData();
 
 		Controller.OpenBag += TransferItemToBackpackContext;
 	}
@@ -65,7 +70,11 @@ public partial class HouseItem : Node2D
 		Data.Image = (string)d["image"];
 		Data.Icon = (string)d["icon"];
 		Data.SetShapeFromJaggedArray((Godot.Collections.Array)d["shape"]);
+		ApplyData();
+	}
 
+	private void ApplyData()
+	{
 		var sprite = GetNode<Sprite2D>("Sprite2D");
 		sprite.Texture = GD.Load<Texture2D>(Data.Icon);
 		var imageSize = sprite.Texture.GetSize();
@@ -92,25 +101,25 @@ public partial class HouseItem : Node2D
 
 	public void TransferItemToBackpackContext()
 	{
-		if (Dragging)
-		{
-			var bagItem = BagItemScene.Instantiate<BagItem>();
-			bagItem.Data = Data;
-			bagItem.Name = Data.Name;
-			bagItem.Controller = Controller;
-			Controller.AddChild(bagItem);
-			bagItem.Owner = Controller;
+		if (!Dragging) return;
+
+		var bagItem = BagItemScene.Instantiate<BagItem>();
+		bagItem.Data = Data;
+		bagItem.Name = Data.Name;
+		bagItem.Controller = Controller;
+		Controller.AddChild(bagItem);
+		bagItem.Owner = Controller;
 
 
-			bagItem.Drag += Controller.Backpack.DraggingItem;
-			bagItem.Drop += Controller.Backpack.DroppingItem;
+		bagItem.Drag += Controller.Backpack.DraggingItem;
+		bagItem.Drop += Controller.Backpack.DroppingItem;
 
-			bagItem.GlobalPosition = GlobalPosition;
-			bagItem.ForceDraggingState(GlobalPosition);
+		bagItem.GlobalPosition = GlobalPosition;
+		bagItem.ForceDraggingState(GlobalPosition);
 
-			Controller.OpenBag -= TransferItemToBackpackContext;
-			Free();
-		}
+		Controller.OpenBag -= TransferItemToBackpackContext;
+		Free();
+
 	}
 
 	private string GetCategoryName(int category)

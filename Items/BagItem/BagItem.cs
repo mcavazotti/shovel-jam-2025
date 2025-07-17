@@ -6,10 +6,12 @@ public partial class BagItem : Node2D
     [Export]
     Vector2I SlotSize = new Vector2I(50, 50);
 
+    public PackedScene HouseItemScene;
+
     public ItemData Data;
 
     public bool InsideBag = false;
-    public BackpackController Controller; 
+    public BackpackController Controller;
 
     [Signal]
     public delegate void DragEventHandler(BagItem i);
@@ -28,6 +30,7 @@ public partial class BagItem : Node2D
 
     public override void _Ready()
     {
+        HouseItemScene = GD.Load<PackedScene>("res://Items/HouseItem/HouseItem.tscn");
         var collisionShape = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
 
         RectShape = new Vector2(Data.Shape.GetLength(1), Data.Shape.GetLength(0)) * SlotSize;
@@ -35,6 +38,8 @@ public partial class BagItem : Node2D
 
         var sprite = GetNode<Sprite2D>("Sprite2D");
         sprite.Texture = GD.Load<Texture2D>(Data.Image);
+
+        Controller.CloseBag += TransferItemToHouseContext;
     }
     public override void _Input(InputEvent @event)
     {
@@ -148,5 +153,26 @@ public partial class BagItem : Node2D
         Offset = Vector2.Zero;
         Dragging = true;
         InBounds = true;
+    }
+
+    public void TransferItemToHouseContext()
+    {
+        if (InsideBag) return;
+
+        var houseItem = HouseItemScene.Instantiate<HouseItem>();
+        houseItem.Data = Data;
+        houseItem.Name = Data.Name;
+        houseItem.Controller = Controller;
+        Controller.GetParent().AddChild(houseItem);
+        houseItem.Owner = Controller.GetParent();
+
+        var player = GetTree().GetNodesInGroup("Player")[0] as Node2D;
+        var angle = (float)GD.RandRange(0, 2 * Mathf.Pi);
+        var offset = Vector2.Up.Rotated(angle) * 50;
+
+        houseItem.GlobalPosition = player.GlobalPosition + offset;
+
+        Controller.CloseBag -= TransferItemToHouseContext;
+        Free();
     }
 }

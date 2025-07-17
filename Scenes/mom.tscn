@@ -25,7 +25,7 @@ gradient = SubResource("Gradient_5m583")
 radius = 53.0
 height = 200.0
 
-[node name="Mom" type="CharacterBody2D"]
+[node name="Mom" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_1838s")
 
