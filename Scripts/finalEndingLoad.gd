@@ -4,6 +4,7 @@ extends Node2D
 @onready var endingData = {}
 @onready var endingPath = "res://FinalEndings/endingEx.json"
 @onready var endingUnlocked = []
+@onready var itemsBackpack:Array
 
 
 func _ready() -> void:

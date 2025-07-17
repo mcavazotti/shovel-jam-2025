@@ -40,12 +40,16 @@ func treatEnding():
 			stichedIntermediateEndings += "%s\n\n" % ending["story"]
 			endIds.append(ending["id"])
 			$son.text = "THE GREAT LIFE OF YOUR SON"
+			
+	elif (not intermediateEndings) and FinalEndingLoad.itemsBackpack: #This will also trigger if there's no intermidiate ending
+		stichedIntermediateEndings +=  "You know too well the dangers of an adventure. But you decide to let your son life his adventures anyway.
 		
-	else:
-		stichedIntermediateEndings +=  "You know too well the dangers of an adventure. You’re not letting your child be in harm’s way, no matter what!
+From time to time you heard a few news about him...”"
+		
+	elif not intermediateEndings:
+		stichedIntermediateEndings += "You know too well the dangers of an adventure. You’re not letting your child be in harm’s way, no matter what!
 
 ”Mom! Why you never let me do anything?!”"
-		$son.text = "THE not so GREAT staying OF YOUR SON"
 		
 		
 	endIds.append(finalEnding["id"])

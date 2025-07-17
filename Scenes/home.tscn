@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=33 format=3 uid="uid://bb2hl8tark6g3"]
 
 [ext_resource type="Texture2D" uid="uid://caps3eyvc0mt3" path="res://Assets/Art/undercloset.png" id="1_jjai4"]
 [ext_resource type="Texture2D" uid="uid://dtv6nhm71doil" path="res://Assets/Art/Kitchen.png" id="2_t7s13"]
@@ -52,6 +52,9 @@ shader = ExtResource("16_ayluw")
 shader_parameter/speed = 25.0
 shader_parameter/inverse_amplitude = 2.0
 shader_parameter/size = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guf2q"]
+size = Vector2(407, 82)
 
 [node name="Home" type="Node2D"]
 
@@ -198,4 +201,11 @@ player = NodePath("../Mom")
 
 [node name="HintList" parent="." instance=ExtResource("23_guf2q")]
 
+[node name="ExitHouse" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitHouse"]
+position = Vector2(5222, -18)
+shape = SubResource("RectangleShape2D_guf2q")
+
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
+[connection signal="body_entered" from="ExitHouse" to="Mom" method="_on_exit_house_body_entered"]
