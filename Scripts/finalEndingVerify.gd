@@ -424,7 +424,7 @@ func matchEnding(ids, categories, tags):
 											
 		if not isEndingOk.has(false):
 			if ending["typeOfEnding"] == "Intermediate":
-				intermediateEndings.append({"id" : ending["id"], "name" : ending["name"], "story" : ending["story"]})
+				intermediateEndings.append({"id" : ending["id"], "name" : ending["name"], "story" : ending["story"], "coverImage" : ending["coverImage"]})
 			else:
 				possibleEndings.append({"id": ending["id"], "reference": ending["reference"], "conditions" : ending["conditions"]})
 	
@@ -464,8 +464,7 @@ func finalEndingSelect(endIds, conditionsArray):
 			if conditions.size() > biggest_size:
 				biggest_size = conditions.size()
 				biggest_index = i
-				
-				
+						
 	return endIds[biggest_index]
 	
 

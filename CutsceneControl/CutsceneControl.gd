@@ -9,6 +9,7 @@ extends Control
 @onready var labelEndingCount = $buttons/endingCount
 @onready var labelEndingLocked = $buttons/endingLocked
 
+
 var endIds = []
 var intermediateEndings
 var finalEnding
@@ -18,8 +19,6 @@ var speed_up = false
 func _ready() -> void:
 	endIds.clear()
 	image.custom_minimum_size = DisplayServer.screen_get_size()
-	image.size = DisplayServer.screen_get_size()
-	#image.global_position = 
 	
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
@@ -87,14 +86,15 @@ func skipIntermediate():
 		
 	
 func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_text_submit"): # ENTER
 		if speed_up:
 			anim.speed_scale = 1
-			speed_up = false
 		else:
 			anim.speed_scale = 3
-			speed_up = true
-
+		speed_up = !speed_up
+	
+	elif event.is_action_pressed("ui_select"):
+		anim.playback_active = !anim.playback_active
 
 func _on_button_menu_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
