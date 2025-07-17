@@ -32,6 +32,7 @@ enum TRACK_ALIAS {
 	AMB_2,
 	AMB_3,
 	AMB_4
+	Intermediate_Endings
 }
 
 func Play(Track_name: TRACK_ALIAS):
@@ -43,6 +44,16 @@ func Play(Track_name: TRACK_ALIAS):
 		print()
 		SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/Click_real.wav")
 		SFX_stream.play()
+
+func BGM(BGM_name: BGM_TYPE):
+	if BGM_name == BGM_TYPE.Results:
+		BGM_streamer.stream = load("res://Assets/Sounds/Music/Results.mp3")
+	elif BGM_name == BGM_TYPE.First_Minute:
+		BGM_streamer.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
+	elif BGM_name == BGM_TYPE.Intermediate_Endings:
+		BGM_streamer.stream = load("res://Assets/Sounds/Music/Your Son Life.mp3")
+	else:
+		print("Tried to play invalid track name:", BGM_name)
 		
 	elif Track_name == TRACK_ALIAS.Super_Click:
 		print()

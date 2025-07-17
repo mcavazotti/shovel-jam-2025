@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://fowpvqyus70l"]
+
+[ext_resource type="PackedScene" uid="uid://b7frf8yehlwcx" path="res://CutsceneControl/CutsceneControl.tscn" id="1_vwf5x"]
+[ext_resource type="Script" uid="uid://cl6qrnwaiae5y" path="res://Scripts/finalEndingVerify.gd" id="2_j8opk"]
+
+[node name="GameOverCutscenes" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="cutsceneControl" parent="CanvasLayer" instance=ExtResource("1_vwf5x")]
+
+[node name="verifyEnding" type="Node" parent="."]
+script = ExtResource("2_j8opk")

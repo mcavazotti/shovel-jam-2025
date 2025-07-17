@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var endingData = {}
 @onready var endingPath = "res://FinalEndings/endingEx.json"
-#var copiedEnding dont know if gonna need, since it will not be modified
+@onready var endingUnlocked = []
 
 
 func _ready() -> void:
@@ -22,3 +22,10 @@ func loadEnding(JsonPath):
 			
 	else:
 		print("Endings file doesn't exist!")
+
+
+func updateEndingUnlocked(arrayOfEndingIds):
+	for endId in arrayOfEndingIds:
+		if (endId in endingUnlocked) == false:
+			endingUnlocked.append(endId)
+			
