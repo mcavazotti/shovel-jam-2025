@@ -29,4 +29,3 @@ func updateList(categories):
 			_:
 				print("Unknown Category")
 				
-				
