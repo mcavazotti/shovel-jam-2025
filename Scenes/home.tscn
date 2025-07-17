@@ -194,3 +194,5 @@ player = NodePath("../Mom")
 [node name="BackpackController" parent="." instance=ExtResource("23_ayluw")]
 
 [node name="PauseGame" parent="." instance=ExtResource("14_smgrs")]
+
+[connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
