@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=34 format=3 uid="uid://bb2hl8tark6g3"]
 
 [ext_resource type="Texture2D" uid="uid://caps3eyvc0mt3" path="res://Assets/Art/undercloset.png" id="1_jjai4"]
 [ext_resource type="Texture2D" uid="uid://dtv6nhm71doil" path="res://Assets/Art/Kitchen.png" id="2_t7s13"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://65nugvsyg18p" path="res://Assets/Art/Mom_placehold.png" id="20_pkgvh"]
 [ext_resource type="PackedScene" uid="uid://cmppofskqyqet" path="res://Backpack/BackpackController.tscn" id="23_ayluw"]
 [ext_resource type="PackedScene" uid="uid://du5771snnb4p1" path="res://Items/HintList.tscn" id="23_guf2q"]
+[ext_resource type="Script" uid="uid://cnvjhwwxlf6kg" path="res://Scenes/ExitHouse.gd" id="25_0qnmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppvi3"]
 size = Vector2(594.5, 244)
@@ -202,10 +203,11 @@ player = NodePath("../Mom")
 [node name="HintList" parent="." instance=ExtResource("23_guf2q")]
 
 [node name="ExitHouse" type="Area2D" parent="."]
+script = ExtResource("25_0qnmp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitHouse"]
 position = Vector2(5222, -18)
 shape = SubResource("RectangleShape2D_guf2q")
 
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
-[connection signal="body_entered" from="ExitHouse" to="Mom" method="_on_exit_house_body_entered"]
+[connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]

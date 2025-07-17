@@ -17,6 +17,7 @@ func _ready() -> void:
 	itemsBackpack = FinalEndingLoad.itemsBackpack
 	clearEndings()
 	
+	print(itemsBackpack)
 	var finalId = verifyEnding()
 	print(finalId)
 	getEndInfo(finalId)

@@ -26,9 +26,3 @@ func _physics_process(_delta):
 
 func _on_backpack_controller_content_change(items:Array) -> void:
 	print(items.map(func(i): return i.Id))
-
-
-func _on_exit_house_body_entered(body: Node2D) -> void:
-	if body == self:
-		$"../HintList".getItems()
-		get_tree().change_scene_to_file("res://Scenes/gameOverCutscenes.tscn")
