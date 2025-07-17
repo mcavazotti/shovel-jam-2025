@@ -209,5 +209,9 @@ script = ExtResource("25_0qnmp")
 position = Vector2(5222, -18)
 shape = SubResource("RectangleShape2D_guf2q")
 
+[node name="Tracker" type="Sprite2D" parent="ExitHouse"]
+position = Vector2(5221, -62)
+texture = ExtResource("14_848r5")
+
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
 [connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]

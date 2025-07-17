@@ -14,6 +14,8 @@ var endIds = []
 var intermediateEndings
 var finalEnding
 var speed_up = false
+var paused = false
+var speedOriginal : int
 
 
 func _ready() -> void:
@@ -91,14 +93,30 @@ func skipIntermediate():
 	
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_text_submit"): # ENTER
-		if speed_up:
-			anim.speed_scale = 1
-		else:
-			anim.speed_scale = 3
 		speed_up = !speed_up
+		if not speed_up and not paused:
+			anim.speed_scale = 1
+			$GPUParticles2D_Right.speed_scale = 1
+			$GPUParticles2D_Left.speed_scale = 1
+			speedOriginal = $GPUParticles2D_Right.speed_scale
+		elif speed_up and not paused:
+			anim.speed_scale = 3
+			$GPUParticles2D_Right.speed_scale = 3
+			$GPUParticles2D_Left.speed_scale = 3
+			speedOriginal = $GPUParticles2D_Right.speed_scale	
+				
+		#dont place speedOriginal out of If, might mess with Particles
 	
 	elif event.is_action_pressed("ui_select"):
+		paused = !paused
+		if paused:
+			$GPUParticles2D_Right.speed_scale = 0.1
+			$GPUParticles2D_Left.speed_scale = 0.1
+		else:
+			$GPUParticles2D_Left.speed_scale = speedOriginal
+			$GPUParticles2D_Right.speed_scale = speedOriginal
 		anim.playback_active = !anim.playback_active
+		
 
 func _on_button_menu_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
