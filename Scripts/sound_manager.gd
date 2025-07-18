@@ -54,7 +54,10 @@ func Play(Track_name: TRACK_ALIAS):
 			BGM_stream.stream = load("res://Assets/Sounds/Music/Results.mp3")
 			BGM_stream.play()
 		TRACK_ALIAS.First_Minute:
-			BGM_stream.stream = load("res://Assets/Sounds/Music/Time and time again.mp3")
+			BGM_stream.stream = load("res://Assets/Sounds/Music/Time.wav")
+			BGM_stream.play()
+		TRACK_ALIAS.Second_Minute:
+			BGM_stream.stream = load("res://Assets/Sounds/Music/Time Again.wav")
 			BGM_stream.play()
 	# Ambience
 		TRACK_ALIAS.AMB_1:

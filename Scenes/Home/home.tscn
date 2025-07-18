@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=36 format=3 uid="uid://bb2hl8tark6g3"]
 
 [ext_resource type="Texture2D" uid="uid://caps3eyvc0mt3" path="res://Assets/Art/undercloset.png" id="1_0hlf5"]
 [ext_resource type="Texture2D" uid="uid://dtv6nhm71doil" path="res://Assets/Art/Kitchen.png" id="2_osqap"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://be5y6f8jhr140" path="res://Scenes/pause_game.tscn" id="23_5uo8w"]
 [ext_resource type="PackedScene" uid="uid://du5771snnb4p1" path="res://HintList/HintList.tscn" id="24_u6uem"]
 [ext_resource type="Script" uid="uid://cnvjhwwxlf6kg" path="res://Scripts/ExitHouse.gd" id="25_3x5mh"]
+[ext_resource type="Script" uid="uid://c1shquvjnnrbp" path="res://Scenes/Home/timer.gd" id="25_osqap"]
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="26_wjs62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppvi3"]
 size = Vector2(594.5, 244)
@@ -137,7 +139,7 @@ polygon = PackedVector2Array(1863, 2788, 1430, 2773, 1428, 2895, 426, 2861, 403,
 polygon = PackedVector2Array(6321, 1106, 6326, 1285, 7452, 1261, 7426, 1827, 7313, 1827, 7313, 2149, 7615, 2149, 7625, 1126)
 
 [node name="Friend" type="Sprite2D" parent="Level Collision"]
-position = Vector2(856, 555)
+position = Vector2(950, 540)
 scale = Vector2(5.52857, 5.52857)
 texture = ExtResource("14_8kj4n")
 
@@ -159,7 +161,7 @@ rotation = 4.71239
 texture = ExtResource("14_8kj4n")
 
 [node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
-position = Vector2(6109, 1775)
+position = Vector2(6257, 1721)
 speed = 500.0
 moving_bounce_speed = 13.0
 
@@ -199,8 +201,6 @@ player = NodePath("../Mom")
 
 [node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
 
-[node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
-
 [node name="HintList" parent="." instance=ExtResource("24_u6uem")]
 
 [node name="ExitHouse" type="Area2D" parent="."]
@@ -214,5 +214,25 @@ shape = SubResource("RectangleShape2D_guf2q")
 position = Vector2(5221, -62)
 texture = ExtResource("14_8kj4n")
 
+[node name="Timer" type="CanvasLayer" parent="."]
+script = ExtResource("25_osqap")
+
+[node name="TimerLabel" type="Label" parent="Timer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("26_wjs62")
+text = "timer"
+
+[node name="Timer" type="Timer" parent="Timer"]
+ignore_time_scale = true
+
+[node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
+
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
 [connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]

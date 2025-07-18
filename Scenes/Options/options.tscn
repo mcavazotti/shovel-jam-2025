@@ -93,20 +93,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 drag_and_drop_selection_enabled = false
 
-[node name="Return" type="Button" parent="TabContainer/General/General Buttons and Credits"]
+[node name="To Game" type="Button" parent="TabContainer/General/General Buttons and Credits"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_prnvy")
 text = "Return to Game"
 icon_alignment = 1
 
-[node name="Exit Game" type="Button" parent="TabContainer/General/General Buttons and Credits"]
+[node name="To Title" type="Button" parent="TabContainer/General/General Buttons and Credits"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 button_pressed = true
-text = "Exit Game"
+text = "Return to Title"
 icon_alignment = 1
 
 [node name="Video" type="Panel" parent="TabContainer"]
@@ -245,8 +245,8 @@ step = 0.1
 tick_count = 10
 
 [connection signal="tab_changed" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
-[connection signal="pressed" from="TabContainer/General/General Buttons and Credits/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="TabContainer/General/General Buttons and Credits/Exit Game" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="TabContainer/General/General Buttons and Credits/To Game" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="TabContainer/General/General Buttons and Credits/To Title" to="." method="_on_exit_game_pressed"]
 [connection signal="pressed" from="TabContainer/Video/Video Buttons/Fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="TabContainer/Video/Video Buttons/Maximized" to="." method="_on_maximized_pressed"]
 [connection signal="pressed" from="TabContainer/Video/Video Buttons/Windowed" to="." method="_on_windowed_pressed"]
