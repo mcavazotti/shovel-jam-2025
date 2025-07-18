@@ -3,6 +3,7 @@ extends CanvasLayer
 
 @onready var anim = $AnimationPlayer
 @onready var backpack = $"../BackpackController"
+var isHidden : bool = false
 
 #the labels are names after the ENUM of Categories
 func _ready() -> void:
@@ -29,3 +30,12 @@ func updateList(categories):
 			_:
 				print("Unknown Category")
 				
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("HideShowHintList"):
+		if isHidden:
+			$anim.play("ListDown")
+		else:
+			$anim.play("ListUp")
+		isHidden = !isHidden

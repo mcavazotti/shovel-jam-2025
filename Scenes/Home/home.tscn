@@ -159,7 +159,7 @@ rotation = 4.71239
 texture = ExtResource("14_8kj4n")
 
 [node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
-position = Vector2(6113, 1699)
+position = Vector2(6109, 1775)
 speed = 500.0
 moving_bounce_speed = 13.0
 

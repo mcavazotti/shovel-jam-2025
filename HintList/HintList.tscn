@@ -1,53 +1,116 @@
-[gd_scene load_steps=2 format=3 uid="uid://du5771snnb4p1"]
+[gd_scene load_steps=7 format=3 uid="uid://du5771snnb4p1"]
 
 [ext_resource type="Script" uid="uid://cpf2l01f74s50" path="res://HintList/HintList.gd" id="1_p5sf0"]
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="2_j05tw"]
+
+[sub_resource type="Animation" id="Animation_0afn5"]
+resource_name = "ListDown"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(26, -500), Vector2(26, 50), Vector2(26, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_j05tw"]
+resource_name = "ListUp"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(26, 25), Vector2(26, 50), Vector2(26, -500)]
+}
+
+[sub_resource type="Animation" id="Animation_xnp7d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(26, 25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0afn5"]
+_data = {
+&"ListDown": SubResource("Animation_0afn5"),
+&"ListUp": SubResource("Animation_j05tw"),
+&"RESET": SubResource("Animation_xnp7d")
+}
 
 [node name="HintList" type="CanvasLayer"]
 script = ExtResource("1_p5sf0")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 25.0
+self_modulate = Color(1, 1, 1, 0.701961)
+offset_left = 26.0
 offset_top = 25.0
-offset_right = 464.0
+offset_right = 465.0
 offset_bottom = 464.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("2_j05tw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = -2.0
-offset_right = -5.0
-offset_bottom = -3.0
+offset_left = 17.0
+offset_top = 33.0
+offset_right = -10.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
+mouse_filter = 2
+theme_override_constants/separation = 38
 
 [node name="Food" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme = ExtResource("2_j05tw")
+theme_override_font_sizes/font_size = 25
 text = "Your kid needs something to chew on his adventure."
 autowrap_mode = 2
 
 [node name="Cloathing" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 26
 text = "What if it gets cold on his Journey... "
 autowrap_mode = 2
 
 [node name="Weapon" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 text = "He needs some atack power to defend himself."
 autowrap_mode = 2
 
 [node name="Misc" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "And of course just a little extra to cheer him up."
+theme_override_font_sizes/font_size = 25
+text = "And of course just a little extra to cheer him up!"
 autowrap_mode = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0afn5")
+}
