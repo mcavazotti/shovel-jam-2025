@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Your Son Life.mp3-9dc2e00243f5b2f6a4a8622feda
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

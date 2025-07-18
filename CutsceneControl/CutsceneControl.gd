@@ -178,9 +178,13 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func _on_button_menu_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
 	get_tree().change_scene_to_file("res://Scenes/Title/title.tscn")
+	Audio.BGM_stream.stop()
 
 func _on_button_house_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
+	Audio.BGM_stream.stop()
+	Audio.Play(Audio.TRACK_ALIAS.First_Minute)
+	Audio.Play(Audio.TRACK_ALIAS.AMB_1)
 	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")
 
 func _on_button_replay_button_down() -> void:
