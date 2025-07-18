@@ -219,5 +219,6 @@ one_shot = true
 ignore_time_scale = true
 
 [node name="PauseGame" parent="." instance=ExtResource("14_smgrs")]
+visible = false
 
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]

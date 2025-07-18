@@ -1,6 +1,10 @@
 extends CanvasLayer
 
+var elapsed_time = 0
+
 func _ready():
-	pass #away
-	#$"2 Minute Timer".start()
-	#$"99 Seconds Timer".start()
+	$"1 Second Timer".start()
+
+func _process(delta):
+	elapsed_time += delta
+	$"Timer Label".text = str(elapsed_time)
