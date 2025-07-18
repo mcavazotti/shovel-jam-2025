@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7frf8yehlwcx"]
+[gd_scene load_steps=29 format=3 uid="uid://b7frf8yehlwcx"]
 
 [ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://CutsceneControl/CutsceneControl.gd" id="1_ovwsd"]
 [ext_resource type="Texture2D" uid="uid://cxaswokf0updv" path="res://Assets/Art/Hana Stare.png" id="2_w00vp"]
+[ext_resource type="Shader" uid="uid://b07qimfwjkav3" path="res://CutsceneControl/ImageCutsceneShader.gdshader" id="3_qhham"]
 
 [sub_resource type="Animation" id="Animation_dgoe4"]
 resource_name = "FinalEnding"
@@ -190,11 +191,35 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(17),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.9, 6, 9.7, 9.8, 14.9, 15, 17, 19.9, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
+"method": &"updateIntermediateImages"
+}, {
+"args": [],
+"method": &"playImages"
+}, {
+"args": [],
+"method": &"updateIntermediateImages"
+}, {
+"args": [],
+"method": &"playImages"
+}, {
+"args": [],
+"method": &"updateIntermediateImages"
+}, {
+"args": [],
+"method": &"playImages"
+}, {
+"args": [],
 "method": &"skipIntermediate"
+}, {
+"args": [],
+"method": &"updateIntermediateImages"
+}, {
+"args": [],
+"method": &"playImages"
 }]
 }
 tracks/3/type = "value"
@@ -424,6 +449,184 @@ _data = {
 &"RESET": SubResource("Animation_w00vp")
 }
 
+[sub_resource type="Animation" id="Animation_qhham"]
+resource_name = "ImagesFadeInOut"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/opacityImage")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:material:shader_parameter/opacityImage")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 2, 5.2, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:material:shader_parameter/opacityImage")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.3, 1.8, 4.8, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect4:material:shader_parameter/opacityImage")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1, 4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wj372"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/opacityImage")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:material:shader_parameter/opacityImage")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect3:material:shader_parameter/opacityImage")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect4:material:shader_parameter/opacityImage")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3okqo"]
+_data = {
+&"ImagesFadeInOut": SubResource("Animation_qhham"),
+&"RESET": SubResource("Animation_wj372")
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qhham"]
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wj372"]
+width = 400
+height = 400
+bump_strength = 0.0
+noise = SubResource("FastNoiseLite_qhham")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wj372"]
+shader = ExtResource("3_qhham")
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_wj372")
+shader_parameter/radius = 0.45
+shader_parameter/effectControl = 0.08
+shader_parameter/burnSpeed = 0.07
+shader_parameter/shape = 0.85
+shader_parameter/opacityImage = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wj372"]
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3okqo"]
+width = 400
+height = 400
+noise = SubResource("FastNoiseLite_wj372")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhham"]
+shader = ExtResource("3_qhham")
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_3okqo")
+shader_parameter/radius = 0.45
+shader_parameter/effectControl = 0.08
+shader_parameter/burnSpeed = 0.07
+shader_parameter/shape = 0.85
+shader_parameter/opacityImage = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3okqo"]
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nk1kc"]
+width = 400
+height = 400
+noise = SubResource("FastNoiseLite_3okqo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpr6r"]
+shader = ExtResource("3_qhham")
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_nk1kc")
+shader_parameter/radius = 0.45
+shader_parameter/effectControl = 0.08
+shader_parameter/burnSpeed = 0.07
+shader_parameter/shape = 0.85
+shader_parameter/opacityImage = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fi5rc"]
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6b2k8"]
+width = 400
+height = 400
+noise = SubResource("FastNoiseLite_fi5rc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1p1o"]
+shader = ExtResource("3_qhham")
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_6b2k8")
+shader_parameter/radius = 0.45
+shader_parameter/effectControl = 0.08
+shader_parameter/burnSpeed = 0.07
+shader_parameter/shape = 0.85
+shader_parameter/opacityImage = 0.0
+
 [sub_resource type="Curve" id="Curve_0x74h"]
 _data = [Vector2(0, 0.516854), 0.0, 0.0, 0, 0, Vector2(0.985294, 1), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -478,6 +681,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_dgoe4")
 }
 
+[node name="animImage" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3okqo")
+}
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -1153.0
@@ -497,6 +705,46 @@ offset_left = -640.0
 offset_right = 640.0
 offset_bottom = 720.0
 grow_horizontal = 2
+texture = ExtResource("2_w00vp")
+
+[node name="TextureRect" type="TextureRect" parent="." groups=["InterImages"]]
+material = SubResource("ShaderMaterial_wj372")
+custom_minimum_size = Vector2(480, 480)
+layout_mode = 0
+offset_left = 410.0
+offset_top = 66.0
+offset_right = 890.0
+offset_bottom = 546.0
+texture = ExtResource("2_w00vp")
+
+[node name="TextureRect2" type="TextureRect" parent="." groups=["InterImages"]]
+material = SubResource("ShaderMaterial_qhham")
+custom_minimum_size = Vector2(480, 480)
+layout_mode = 0
+offset_left = -881.0
+offset_top = 66.0
+offset_right = -401.0
+offset_bottom = 546.0
+texture = ExtResource("2_w00vp")
+
+[node name="TextureRect3" type="TextureRect" parent="." groups=["InterImages"]]
+material = SubResource("ShaderMaterial_kpr6r")
+custom_minimum_size = Vector2(480, 480)
+layout_mode = 0
+offset_left = 410.0
+offset_top = 550.0
+offset_right = 890.0
+offset_bottom = 1030.0
+texture = ExtResource("2_w00vp")
+
+[node name="TextureRect4" type="TextureRect" parent="." groups=["InterImages"]]
+material = SubResource("ShaderMaterial_y1p1o")
+custom_minimum_size = Vector2(480, 480)
+layout_mode = 0
+offset_left = -881.0
+offset_top = 550.0
+offset_right = -401.0
+offset_bottom = 1030.0
 texture = ExtResource("2_w00vp")
 
 [node name="intermediate" type="Label" parent="."]
