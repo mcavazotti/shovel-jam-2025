@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ItemDataLoad="*res://Scripts/itemDataLoad.gd"
 FinalEndingLoad="*res://Scripts/finalEndingLoad.gd"
 Audio="*res://Scripts/sound_manager.gd"
+SaveNLoad="*res://Scripts/SaveNLoad.gd"
 
 [display]
 

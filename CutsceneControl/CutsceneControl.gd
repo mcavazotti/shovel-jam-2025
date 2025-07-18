@@ -57,7 +57,8 @@ From time to time you heard a few news about him...”"
 	endIds.append(finalEnding["id"])
 	FinalEndingLoad.updateEndingUnlocked(endIds)
 	
-	var unlocked = FinalEndingLoad.endingUnlocked.size()
+	var unlocked = SaveNLoad.endingUnlocked
+	var sizeUnlocked = unlocked.size()
 	var total = FinalEndingLoad.endingData.size()
 	
 	labelIntermediate.text = stichedIntermediateEndings
@@ -65,8 +66,10 @@ From time to time you heard a few news about him...”"
 	labelFinalStory.text = finalEnding["story"]
 	
 	
-	labelEndingCount.text = "%s/%s" % [str(unlocked), str(total)]
-	labelEndingLocked.text = "There's still %s endings locked" % [total - unlocked]
+	labelEndingCount.text = "%s/%s" % [str(sizeUnlocked), str(total)]
+	labelEndingLocked.text = "There's still %s endings locked" % [total - sizeUnlocked]
+	print(SaveNLoad.endingUnlocked)
+	SaveNLoad.save_game()
 	startAnimation()
 	
 
