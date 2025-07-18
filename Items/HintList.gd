@@ -11,7 +11,6 @@ func _ready() -> void:
 
 func _on_BackpackContentChange(items:Array):
 	var categories = (items.map(func(i): return i.Category))
-	
 	updateList(categories)
 		
 	
