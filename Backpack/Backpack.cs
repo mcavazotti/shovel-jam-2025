@@ -124,16 +124,20 @@ public partial class Backpack : Node2D
 		var error = false;
 		foreach (var slotPos in itemSlots)
 		{
-			var localPos = slotPos - GlobalPosition;
-			var slotIndex = (Vector2I)((localPos + GridSize * SlotSize / 2) / SlotSize);
-			if (slotIndex.X >= 0 && slotIndex.Y >= 0 && slotIndex.X < GridSize.X && slotIndex.Y < GridSize.Y)
+			var pass = false; 
+			foreach (var slot in Slots)
 			{
-				if (Slots[slotIndex.X, slotIndex.Y].ItemId != 0) error = true;
-				slots.Add(Slots[slotIndex.X, slotIndex.Y]);
+				var rect = (slot.CollisionShape.Shape as RectangleShape2D).GetRect();
+				rect.Position = slot.GlobalPosition;
+				var isInside = rect.HasPoint(slotPos);
+				if (isInside)
+				{
+					pass = pass || isInside;
+					slots.Add(slot);
+				}
 			}
-			else error = true;
+			error = error || !pass;
 		}
-		error = error || slots.Count != itemSlots.Count;
 
 		intesectingSlots = slots;
 		return error;

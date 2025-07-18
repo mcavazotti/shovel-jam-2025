@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dsewlmpvsohbl" path="res://Scripts/mom.gd" id="1_1838s"]
 [ext_resource type="Texture2D" uid="uid://65nugvsyg18p" path="res://Assets/Art/Mom_placehold.png" id="1_jgf88"]
 [ext_resource type="Material" uid="uid://y5eoycmoultw" path="res://Assets/Mats/Bounce_shader.tres" id="2_5i5ap"]
-[ext_resource type="Shader" path="res://Scripts/breathe.gdshader" id="2_5m583"]
+[ext_resource type="Shader" uid="uid://dxef5pfxbekt3" path="res://Scripts/breathe.gdshader" id="2_5m583"]
 [ext_resource type="PackedScene" uid="uid://c2qe7q5vy61im" path="res://Scenes/ArrowTrackExit.tscn" id="5_w4s6d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w4s6d"]
