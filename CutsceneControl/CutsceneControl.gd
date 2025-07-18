@@ -23,18 +23,17 @@ func _ready() -> void:
 	image.custom_minimum_size = DisplayServer.screen_get_size()
 	
 
-func _on_anim_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "IntermediateEndings":
-		#image.texture = finalEnding["coverImage"]
-		anim.speed_scale = 1
-		speed_up = false
-		anim.play("FinalEnding")
-		labelFinalTitle.visible = true
-		labelFinalStory.visible = true
-		image.visible = true
-			
+func finalAnimStart() -> void:
+	#image.texture = finalEnding["coverImage"]
+	anim.speed_scale = anim.speed_scale
+	anim.play("FinalEnding")
+	labelFinalTitle.visible = true
+	labelFinalStory.visible = true
+	image.visible = true
+
 
 func treatEnding():
+	var endingsCount = 0
 	var stichedIntermediateEndings = ""
 	
 	if intermediateEndings:
@@ -42,6 +41,7 @@ func treatEnding():
 			stichedIntermediateEndings += "%s\n\n" % ending["story"]
 			endIds.append(ending["id"])
 			$son.text = "THE GREAT LIFE OF YOUR SON"
+			endingsCount += 1
 			
 	elif (not intermediateEndings) and FinalEndingLoad.itemsBackpack: #This will also trigger if there's no intermidiate ending
 		stichedIntermediateEndings +=  "You know too well the dangers of an adventure. But you decide to let your son life his adventures anyway.
@@ -70,6 +70,7 @@ From time to time you heard a few news about him...”"
 	labelEndingLocked.text = "There's still %s endings locked" % [total - sizeUnlocked]
 	print(SaveNLoad.endingUnlocked)
 	SaveNLoad.save_game()
+	skipIntermediateUpdate(endingsCount)
 	startAnimation()
 	
 
@@ -87,12 +88,30 @@ func startAnimation():
 	
 	
 func skipIntermediate():
-	if anim.current_animation == "IntermediateEndings" and not intermediateEndings:
-		anim.play("FinalEnding")
-		$finalTitle.visible = true
-		$finalStory.visible = true
-		$finalImage.visible = true
-		
+	finalAnimStart()
+	
+
+func skipIntermediateUpdate(iE):
+	if iE > 1:
+		var intermiediateAnimation = anim.get_animation("IntermediateEndings")
+		var methodTrackIndex := -1
+
+		for i in intermiediateAnimation.get_track_count():
+			if intermiediateAnimation.track_get_type(i) == Animation.TYPE_METHOD:
+				methodTrackIndex = i
+				break
+
+		if methodTrackIndex != -1:
+			var oldTime = 17
+			var newTime = int(oldTime + (2 * iE))
+
+			var keyIndex = intermiediateAnimation.track_find_key(methodTrackIndex, oldTime)
+			print(keyIndex)
+			
+			if keyIndex != -1:
+				intermiediateAnimation.track_set_key_time(methodTrackIndex, keyIndex, newTime)
+				print("Moved method key from", oldTime, "to", newTime)
+			
 	
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_text_submit"): # ENTER
@@ -124,8 +143,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func _on_button_menu_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
 	get_tree().change_scene_to_file("res://Scenes/Title/title.tscn")
-
-
 
 func _on_button_house_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)

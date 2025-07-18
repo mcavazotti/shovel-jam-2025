@@ -761,17 +761,10 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"coverImage": "....",
 		"conditions": [
 			{
-				"type": "id",
-				"value": 4201,
+				"type": "tag",
+				"value": "Cursed",
 				"count": 1,
-				"countType": "==",
-				"shouldBeTrue": true
-			},
-			{
-				"type": "id",
-				"value": 1003,
-				"count": 1,
-				"countType": "==",
+				"countType": ">=",
 				"shouldBeTrue": true
 			}
 		]

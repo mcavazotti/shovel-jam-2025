@@ -6,8 +6,8 @@
 		"tags": ["Fish", "Healthy", "Sea"],
 		"shape": [[1], [1]],
 		"description": "Fish.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 1002,
@@ -16,8 +16,8 @@
 		"tags": ["Elf", "Healthy", "Bread"],
 		"shape": [[1]],
 		"description": "It’s said that one will keep a traveler on his feet for a day of long labour. That’s just what your child need! And you can confirm from experience what they say about this bread is true.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 1003,
@@ -26,8 +26,8 @@
 		"tags": ["OnePiece", "Healthy", "Cursed"],
 		"shape": [[1,1],[1,1]],
 		"description": "You found in a chest in the closet, you remembered your husband brought from a long trip to the ocean one time, maybe your kid needs more than you.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/sword_sprite.png",
+		"icon": "res://Assets/sword_icon.png"
 	},
 	{
 		"id": 2001,
