@@ -2,7 +2,7 @@ extends Node
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	var options_menu = preload("res://Scenes/options.tscn").instantiate()
+	var options_menu = preload("res://Scenes/Options/options.tscn").instantiate()
 	
 	add_child(options_menu)
 	options_menu.visible = false;

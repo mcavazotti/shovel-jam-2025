@@ -123,13 +123,13 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _on_button_menu_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
-	get_tree().change_scene_to_file("res://Scenes/title.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Title/title.tscn")
 
 
 
 func _on_button_house_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
-	get_tree().change_scene_to_file("res://Scenes/home.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")
 
 
 func _on_button_replay_button_down() -> void:
