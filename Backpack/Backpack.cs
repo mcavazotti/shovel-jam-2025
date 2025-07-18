@@ -124,7 +124,7 @@ public partial class Backpack : Node2D
 		var error = false;
 		foreach (var slotPos in itemSlots)
 		{
-			var pass = false; 
+			var pass = false;
 			foreach (var slot in Slots)
 			{
 				var rect = (slot.CollisionShape.Shape as RectangleShape2D).GetRect();
@@ -132,8 +132,10 @@ public partial class Backpack : Node2D
 				var isInside = rect.HasPoint(slotPos);
 				if (isInside)
 				{
-					pass = pass || isInside;
 					slots.Add(slot);
+
+					if (slot.ItemId == 0)
+						pass = pass || isInside;
 				}
 			}
 			error = error || !pass;

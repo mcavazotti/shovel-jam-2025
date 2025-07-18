@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Security.Cryptography;
 
 public partial class HouseItem : Node2D
 {
@@ -8,6 +7,7 @@ public partial class HouseItem : Node2D
 	public PackedScene BagItemScene;
 
 	private bool InBounds = false;
+	private bool BackpackOpen = false;
 	private bool Dragging = false;
 	private Vector2 Offset;
 
@@ -27,6 +27,8 @@ public partial class HouseItem : Node2D
 		if (Data != null) ApplyData();
 
 		Controller.OpenBag += TransferItemToBackpackContext;
+		Controller.OpenBag += DisableDragging;
+		Controller.CloseBag += EnableDragging;
 	}
 
 
@@ -90,6 +92,7 @@ public partial class HouseItem : Node2D
 
 	public void CursorEnter()
 	{
+		if (BackpackOpen) return;
 		GetNode<Label>("Label").Visible = true;
 		InBounds = true;
 	}
@@ -118,8 +121,20 @@ public partial class HouseItem : Node2D
 		bagItem.ForceDraggingState(GlobalPosition);
 
 		Controller.OpenBag -= TransferItemToBackpackContext;
+		Controller.OpenBag -= DisableDragging;
+		Controller.CloseBag -= EnableDragging;
 		Free();
 
+	}
+	public void DisableDragging()
+	{
+		if (Dragging) return;
+		BackpackOpen = true;
+	}
+	public void EnableDragging()
+	{
+		if (Dragging) return;
+		BackpackOpen = false;
 	}
 
 	private string GetCategoryName(int category)
