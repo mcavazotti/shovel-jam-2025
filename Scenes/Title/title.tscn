@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://chkp5ltal2l4n"]
 
-[ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scripts/buttons_and_title.gd" id="1_ekrfg"]
-[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/new_theme.tres" id="1_q2qps"]
-[ext_resource type="Texture2D" uid="uid://c70r0ll0sbh6x" path="res://Assets/Art/Speaker_Icon.png" id="2_2qdx2"]
-[ext_resource type="PackedScene" uid="uid://3hso8cn4h0xh" path="res://Scenes/options.tscn" id="2_yosvi"]
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="1_c7cvr"]
+[ext_resource type="Script" uid="uid://bpgo2y51du13a" path="res://Scenes/Title/buttons_and_title.gd" id="2_0rqj8"]
+[ext_resource type="Texture2D" uid="uid://c70r0ll0sbh6x" path="res://Assets/Art/Speaker_Icon.png" id="3_po5g7"]
+[ext_resource type="PackedScene" uid="uid://3hso8cn4h0xh" path="res://Scenes/Options/options.tscn" id="4_iv8b7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4obfb"]
 font_size = 128
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_q2qps")
+theme = ExtResource("1_c7cvr")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -49,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
-script = ExtResource("1_ekrfg")
+script = ExtResource("2_0rqj8")
 
 [node name="You are the Mom" type="Label" parent="Buttons and Title"]
 layout_mode = 2
@@ -120,13 +120,13 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_2qdx2")
+texture = ExtResource("3_po5g7")
 expand_mode = 1
 
 [node name="Options_Menu" type="CanvasLayer" parent="Buttons and Title"]
 process_mode = 3
 
-[node name="Options" parent="Buttons and Title/Options_Menu" instance=ExtResource("2_yosvi")]
+[node name="Options" parent="Buttons and Title/Options_Menu" instance=ExtResource("4_iv8b7")]
 visible = false
 anchors_preset = 15
 anchor_left = 0.0
