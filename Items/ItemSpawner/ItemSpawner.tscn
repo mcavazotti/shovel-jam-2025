@@ -6,6 +6,7 @@
 size = Vector2(50, 50)
 
 [node name="ItemSpawner" type="Node2D" groups=["ItemSpawner"]]
+y_sort_enabled = true
 script = ExtResource("1_qvrqv")
 
 [node name="Area2D" type="Area2D" parent="."]

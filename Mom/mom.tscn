@@ -22,14 +22,17 @@ colors = PackedColorArray(0, 0, 0, 0.27451, 0, 0, 0, 0.27451)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_w4s6d"]
 gradient = SubResource("Gradient_5m583")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_w4s6d"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p46h7"]
 radius = 55.0
+height = 150.0
 
 [node name="Mom" type="CharacterBody2D" groups=["Player"]]
+y_sort_enabled = true
 motion_mode = 1
 script = ExtResource("1_1838s")
 
 [node name="Shadow" type="MeshInstance2D" parent="."]
+z_index = -1
 material = SubResource("ShaderMaterial_w4s6d")
 position = Vector2(-5, 131.5)
 scale = Vector2(1, 1.425)
@@ -43,7 +46,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_jgf88")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 106)
-shape = SubResource("CircleShape2D_w4s6d")
+position = Vector2(-5, 76)
+shape = SubResource("CapsuleShape2D_p46h7")
 
 [node name="ArrowTrackExit" parent="." instance=ExtResource("5_w4s6d")]

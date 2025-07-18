@@ -58,6 +58,7 @@ shader_parameter/size = 1.0
 size = Vector2(407, 82)
 
 [node name="Home" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Level Design" type="Node2D" parent="."]
 
