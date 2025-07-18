@@ -25,6 +25,7 @@ func _input(_event: InputEvent):
 
 func _on_exit_pressed():
 	Audio.Play(Audio.TRACK_ALIAS.Click)
+	SaveNLoad.save_game()
 	get_tree().quit()
 
 func _on_bgm_toggle_pressed():

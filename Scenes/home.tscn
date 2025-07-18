@@ -24,8 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://65nugvsyg18p" path="res://Assets/Art/Mom_placehold.png" id="20_pkgvh"]
 [ext_resource type="PackedScene" uid="uid://cmppofskqyqet" path="res://Backpack/BackpackController.tscn" id="23_ayluw"]
 [ext_resource type="PackedScene" uid="uid://du5771snnb4p1" path="res://Items/HintList.tscn" id="23_guf2q"]
-[ext_resource type="Script" uid="uid://b2mfkkj4wtgsf" path="res://Scenes/timer.gd" id="24_h6vkq"]
-[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/new_theme.tres" id="25_3crrv"]
+[ext_resource type="Script" uid="uid://cnvjhwwxlf6kg" path="res://Scenes/ExitHouse.gd" id="25_0qnmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppvi3"]
 size = Vector2(594.5, 244)
@@ -54,6 +53,9 @@ shader = ExtResource("16_ayluw")
 shader_parameter/speed = 25.0
 shader_parameter/inverse_amplitude = 2.0
 shader_parameter/size = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guf2q"]
+size = Vector2(407, 82)
 
 [node name="Home" type="Node2D"]
 
@@ -198,6 +200,17 @@ player = NodePath("../Mom")
 
 [node name="HintList" parent="." instance=ExtResource("23_guf2q")]
 
+[node name="ExitHouse" type="Area2D" parent="."]
+script = ExtResource("25_0qnmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitHouse"]
+position = Vector2(5222, -18)
+shape = SubResource("RectangleShape2D_guf2q")
+
+[node name="Tracker" type="Sprite2D" parent="ExitHouse"]
+position = Vector2(5221, -62)
+texture = ExtResource("14_848r5")
+
 [node name="Timer" type="CanvasLayer" parent="."]
 script = ExtResource("24_h6vkq")
 
@@ -222,3 +235,4 @@ ignore_time_scale = true
 visible = false
 
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
+[connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]
