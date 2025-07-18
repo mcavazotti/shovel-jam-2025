@@ -5,6 +5,7 @@ func _ready():
 	var options_menu = preload("res://Scenes/options.tscn").instantiate()
 	
 	add_child(options_menu)
+	options_menu.visible = false;
 	
 
 func _input(_event: InputEvent):
