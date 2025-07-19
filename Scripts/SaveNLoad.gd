@@ -31,8 +31,8 @@ func save_game():
 
 func load_game():
 	if not FileAccess.file_exists(SAVE_PATH):
-		print("No save file found.")
-		return
+		print("No save file found, creating Save_game()")
+		save_game()
 
 	var loaded = load(SAVE_PATH)
 	if loaded is Resource:
