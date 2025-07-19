@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3xchrsaj3p7s"]
+
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="1_3m5au"]
+[ext_resource type="Script" uid="uid://citpho51tvfmi" path="res://Scenes/achievements.gd" id="2_3m5au"]
+[ext_resource type="PackedScene" uid="uid://be5y6f8jhr140" path="res://Scenes/pause_game.tscn" id="2_frbbq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bcp42"]
+font_size = 128
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3m5au"]
+size = Vector2(70, 70)
+
+[node name="Achievements" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3m5au")
+script = ExtResource("2_3m5au")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("1_3m5au")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Achievements List" type="VBoxContainer" parent="ScrollContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="Achievements" type="Label" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+text = "Endings
+"
+label_settings = SubResource("LabelSettings_bcp42")
+horizontal_alignment = 1
+vertical_alignment = 1
+paragraph_separator = "\\"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
+[node name="PauseGame" parent="." instance=ExtResource("2_frbbq")]
