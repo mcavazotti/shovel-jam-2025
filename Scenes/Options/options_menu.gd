@@ -21,12 +21,6 @@ func _on_windowed_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
-func _on_tab_container_tab_changed(tab: int):
-	if tab == 3:
-		visible = false
-		$TabContainer.current_tab = 0
-
-
 func _on_bgm_slider_drag_ended(_BGM_value_changed: bool):
 	Audio.BGM_volume_set($"TabContainer/Audio/Buttons and Title/BGM Slider".value)
 
@@ -40,4 +34,6 @@ func _on_amb_slider_drag_ended(_AMB_value_changed: bool):
 
 
 func _on_to_title_pressed():
+	Audio.BGM_stream.stop()
+	Audio.AMB_stream.stop()
 	get_tree().change_scene_to_file("res://Scenes/Title/title.tscn")

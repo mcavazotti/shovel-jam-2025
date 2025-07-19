@@ -23,6 +23,7 @@ enum TRACK_ALIAS {
 	# SOUND EFFECTS
 	Click,
 	Super_Click,
+	Step,
 	# BACKGROUND MUSIC
 	Results,
 	First_Minute,
@@ -47,6 +48,10 @@ func Play(Track_name: TRACK_ALIAS):
 			SFX_stream.play()
 		TRACK_ALIAS.Super_Click:
 			SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/SuperClick_real.wav")
+			SFX_stream.play()
+		TRACK_ALIAS.Step:
+			SFX_stream.pitch_scale += randf_range(-0.5,0.5)
+			SFX_stream.stream = load("res://Assets/Sounds/Sound Effects/Step.wav")
 			SFX_stream.play()
 	# Background Music
 		TRACK_ALIAS.Intermediate_Endings:
@@ -82,6 +87,9 @@ func Play(Track_name: TRACK_ALIAS):
 			AMB_stream.play()
 		_:
 			print("Tried to play nonexistent track:", Track_name)
+
+func Play_Step():
+	Play(TRACK_ALIAS.Step)
 
 func BGM_toggle():
 	if BGM_stream.playing == true:

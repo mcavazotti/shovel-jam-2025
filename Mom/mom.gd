@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var footstep_timer = $FootstepTimer
+
 @export var speed: float = 300.0
 @export var moving_bounce_speed: float = 5
 
@@ -14,9 +16,15 @@ func get_input():
 	if input_direction == Vector2(0,0):
 		$MomPlacehold.material.set_shader_parameter("speed", 3.5)
 		$Shadow.material.set_shader_parameter("speed", 3.5)
+		Audio.SFX_stream.stop()
 	else:
 		$MomPlacehold.material.set_shader_parameter("speed", moving_bounce_speed)
 		$Shadow.material.set_shader_parameter("speed", moving_bounce_speed)
+		if not footstep_timer.is_stopped():
+			return
+		else:
+			Audio.Play_Step()
+			footstep_timer.start()
 
 
 func _physics_process(_delta):

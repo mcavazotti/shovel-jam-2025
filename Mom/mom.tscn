@@ -59,3 +59,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="FootstepTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
