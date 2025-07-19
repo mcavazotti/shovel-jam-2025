@@ -172,6 +172,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		anim.playback_active = !anim.playback_active
 		animImage.playback_active = !animImage.playback_active
 		
+		
 func _on_button_menu_button_down() -> void:
 	Audio.Play(Audio.TRACK_ALIAS.Click)
 	get_tree().change_scene_to_file("res://Scenes/Title/title.tscn")

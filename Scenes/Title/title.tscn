@@ -69,13 +69,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_4obfb")
 text = "Start"
 icon_alignment = 1
 
-[node name="Achievements" type="Button" parent="Buttons and Title"]
+[node name="Endings" type="Button" parent="Buttons and Title"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w31pl")
-text = "Achievemets"
+text = "Endings"
 icon_alignment = 1
 
 [node name="Options" type="Button" parent="Buttons and Title"]
@@ -137,9 +137,10 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+script = null
 
 [connection signal="pressed" from="Buttons and Title/Start" to="Buttons and Title" method="_on_start_pressed"]
-[connection signal="pressed" from="Buttons and Title/Achievements" to="Buttons and Title" method="_on_endings_pressed"]
+[connection signal="pressed" from="Buttons and Title/Endings" to="Buttons and Title" method="_on_endings_pressed"]
 [connection signal="pressed" from="Buttons and Title/Options" to="Buttons and Title" method="_on_options_pressed"]
 [connection signal="pressed" from="Buttons and Title/Exit" to="Buttons and Title" method="_on_exit_pressed"]
 [connection signal="pressed" from="Buttons and Title/BGM Toggle" to="Buttons and Title" method="_on_bgm_toggle_pressed"]
