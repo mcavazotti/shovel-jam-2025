@@ -52,3 +52,9 @@ shape = SubResource("CapsuleShape2D_p46h7")
 
 [node name="ArrowTrackExit" parent="." instance=ExtResource("5_w4s6d")]
 z_index = 99
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
