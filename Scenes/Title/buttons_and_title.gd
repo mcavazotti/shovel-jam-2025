@@ -6,9 +6,14 @@ func _ready():
 
 func _on_start_pressed():
 	Audio.Play(Audio.TRACK_ALIAS.Super_Click)
-	get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")
-	Audio.Play(Audio.TRACK_ALIAS.First_Minute)
-	Audio.Play(Audio.TRACK_ALIAS.AMB_1)
+	var tutorialCompleted = SaveNLoad.tutorialCompleted
+	if tutorialCompleted:
+		get_tree().change_scene_to_file("res://Scenes/Home/home.tscn")
+		Audio.Play(Audio.TRACK_ALIAS.First_Minute)
+		Audio.Play(Audio.TRACK_ALIAS.AMB_1)
+	else:
+		get_tree().change_scene_to_file("res://Tutorial/Tutorial.tscn")
+		Audio.Play(Audio.TRACK_ALIAS.Tutorial_Time)
 
 func _on_endings_pressed():
 	Audio.Play(Audio.TRACK_ALIAS.Click)

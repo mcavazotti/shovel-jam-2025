@@ -1,18 +1,5 @@
-[gd_scene load_steps=24 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=13 format=3 uid="uid://bb2hl8tark6g3"]
 
-[ext_resource type="Texture2D" uid="uid://caps3eyvc0mt3" path="res://Assets/Art/undercloset.png" id="1_0hlf5"]
-[ext_resource type="Texture2D" uid="uid://dtv6nhm71doil" path="res://Assets/Art/Kitchen.png" id="2_osqap"]
-[ext_resource type="Texture2D" uid="uid://cij3065fgcvc2" path="res://Assets/Art/Bathroom1.png" id="3_wjs62"]
-[ext_resource type="Texture2D" uid="uid://dl6dadmmkk3ro" path="res://Assets/Art/intomud.png" id="4_hui3d"]
-[ext_resource type="Texture2D" uid="uid://bdl1ejqhsrkfu" path="res://Assets/Art/mudroom.png" id="5_3i7e6"]
-[ext_resource type="Texture2D" uid="uid://bu7w24cbm6ybp" path="res://Assets/Art/Enter.png" id="6_6ijhe"]
-[ext_resource type="Texture2D" uid="uid://cc1xn4bgtvns0" path="res://Assets/Art/stairroom.png" id="7_4yqb0"]
-[ext_resource type="Texture2D" uid="uid://de5rckmrbd1i7" path="res://Assets/Art/bathunderbed.png" id="8_01b5g"]
-[ext_resource type="Texture2D" uid="uid://2uj05ci6tdjc" path="res://Assets/Art/bedenter.png" id="9_0xhxu"]
-[ext_resource type="Texture2D" uid="uid://3pyim44qgkra" path="res://Assets/Art/bed.png" id="10_cgcut"]
-[ext_resource type="Texture2D" uid="uid://br8y4j1uje8ww" path="res://Assets/Art/enterstairroom.png" id="11_t8v2m"]
-[ext_resource type="Texture2D" uid="uid://cgcqg1s53711j" path="res://Assets/Art/garage1.png" id="12_nsonk"]
-[ext_resource type="Texture2D" uid="uid://byu86u4b2o8s2" path="res://Assets/Art/garage2.png" id="13_dxdyy"]
 [ext_resource type="Texture2D" uid="uid://bli7oic53rpcv" path="res://Assets/Art/Friend.png" id="14_8kj4n"]
 [ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Mom/mom.tscn" id="18_rt3f5"]
 [ext_resource type="PackedScene" uid="uid://7q65lapufcsh" path="res://Items/ItemSpawner/ItemSpawnerController.tscn" id="19_8toki"]
@@ -22,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c6243srn1nh7k" path="res://Scenes/Home/TileMaps.tscn" id="23_p81q8"]
 [ext_resource type="PackedScene" uid="uid://du5771snnb4p1" path="res://HintList/HintList.tscn" id="24_u6uem"]
 [ext_resource type="Script" uid="uid://cnvjhwwxlf6kg" path="res://Scripts/ExitHouse.gd" id="25_3x5mh"]
+[ext_resource type="Script" path="res://Scenes/Home/timer.gd" id="25_osqap"]
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="26_wjs62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guf2q"]
 size = Vector2(407, 82)
@@ -29,63 +18,8 @@ size = Vector2(407, 82)
 [node name="Home" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Level Design" type="Node2D" parent="."]
-visible = false
-
-[node name="Undercloset" type="Sprite2D" parent="Level Design"]
-position = Vector2(4800, 1620)
-texture = ExtResource("1_0hlf5")
-
-[node name="Kitchen" type="Sprite2D" parent="Level Design"]
-position = Vector2(6720, 1620)
-texture = ExtResource("2_osqap")
-
-[node name="Bathroom1" type="Sprite2D" parent="Level Design"]
-position = Vector2(6720, 540)
-texture = ExtResource("3_wjs62")
-
-[node name="Intomud" type="Sprite2D" parent="Level Design"]
-position = Vector2(6720, 2700)
-texture = ExtResource("4_hui3d")
-
-[node name="Mudroom" type="Sprite2D" parent="Level Design"]
-position = Vector2(8640, 2700)
-texture = ExtResource("5_3i7e6")
-
-[node name="Enter" type="Sprite2D" parent="Level Design"]
-position = Vector2(4800, 540)
-texture = ExtResource("6_6ijhe")
-
-[node name="Stairroom" type="Sprite2D" parent="Level Design"]
-position = Vector2(4800, 2700)
-texture = ExtResource("7_4yqb0")
-
-[node name="Bathunderbed" type="Sprite2D" parent="Level Design"]
-position = Vector2(960, 2700)
-texture = ExtResource("8_01b5g")
-
-[node name="Bedenter" type="Sprite2D" parent="Level Design"]
-position = Vector2(2880, 1620)
-texture = ExtResource("9_0xhxu")
-
-[node name="Bed" type="Sprite2D" parent="Level Design"]
-position = Vector2(960, 1620)
-texture = ExtResource("10_cgcut")
-
-[node name="Enterstairroom" type="Sprite2D" parent="Level Design"]
-position = Vector2(2880, 2700)
-texture = ExtResource("11_t8v2m")
-
-[node name="Garage1" type="Sprite2D" parent="Level Design"]
-position = Vector2(8640, 1620)
-texture = ExtResource("12_nsonk")
-
-[node name="Garage2" type="Sprite2D" parent="Level Design"]
-position = Vector2(8640, 540)
-texture = ExtResource("13_dxdyy")
-
 [node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
-position = Vector2(6113, 1797)
+position = Vector2(1262, 685)
 speed = 500.0
 moving_bounce_speed = 13.0
 
@@ -94,32 +28,30 @@ moving_bounce_speed = 13.0
 [node name="ItemSpawners" type="Node2D" parent="."]
 
 [node name="SwordSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(5795, 2357)
+position = Vector2(800, 1321)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
 [node name="SwordSpawner2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(5526, 1953)
+position = Vector2(531, 917)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
 [node name="SwordSpawner3" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(5506, 1617)
+position = Vector2(511, 581)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
 [node name="SwordSpawner4" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(5903, 1906)
+position = Vector2(908, 870)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
 [node name="SwordSpawner5" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(6253, 2148)
+position = Vector2(1258, 1112)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
 [node name="SwordSpawner6" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(6583, 2155)
+position = Vector2(1588, 1119)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
 [node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
-
-[node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
 
 [node name="HintList" parent="." instance=ExtResource("24_u6uem")]
 
@@ -127,14 +59,34 @@ IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 script = ExtResource("25_3x5mh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitHouse"]
-position = Vector2(5222, -18)
+position = Vector2(1203, 165)
 shape = SubResource("RectangleShape2D_guf2q")
 
 [node name="Tracker" type="Sprite2D" parent="ExitHouse"]
 position = Vector2(5221, -62)
 texture = ExtResource("14_8kj4n")
 
+[node name="Timer" type="CanvasLayer" parent="."]
+script = ExtResource("25_osqap")
+
+[node name="TimerLabel" type="Label" parent="Timer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("26_wjs62")
+text = "timer"
+
+[node name="Timer" type="Timer" parent="Timer"]
+ignore_time_scale = true
+
+[node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
+
 [node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
 
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
 [connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
