@@ -52,7 +52,7 @@ func treatEnding():
 			interImages.append(ending["coverImage"])
 			
 	elif (not intermediateEndings) and FinalEndingLoad.itemsBackpack: #This will also trigger if there's no intermidiate ending
-		stichedIntermediateEndings +=  "You know too well the dangers of an adventure. But you decide to let your son life his adventures anyway.
+		stichedIntermediateEndings +=  "You know all too well the dangers of adventure. However, you decide to let your son journey on a quest of his own in hopes he finds his place in the world.
 		
 From time to time you heard a few news about him...”"
 		
