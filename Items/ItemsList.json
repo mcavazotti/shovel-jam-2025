@@ -23,11 +23,21 @@
 		"id": 1003,
 		"name": "Weird Fruit",
 		"category": 1000,
-		"tags": ["OnePiece", "Healthy", "Cursed"],
+		"tags": ["Anime", "Healthy", "Cursed"],
 		"shape": [[1,1],[1,1]],
 		"description": "You found in a chest in the closet, you remembered your husband brought from a long trip to the ocean one time, maybe your kid needs more than you.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/1003.png",
+		"icon": "res://Assets/Art/Items/1003.png"
+	},
+	{
+		"id": 1004,
+		"name": "Jelly Filled Donuts",
+		"category": 1000,
+		"tags": ["Anime", "Snack"],
+		"shape": [[1,1],[1,1]],
+		"description": "That’s some wacky looking jelly filled donuts… kinda looks like some oniginis, anyways your son won’t complain about such a treat.",
+		"image": "res://Assets/Art/Items/1004.png",
+		"icon": "res://Assets/Art/Items/1004.png"
 	},
 	{
 		"id": 2001,
@@ -86,8 +96,8 @@
 		"tags": ["Sea", "Head"],
 		"shape": [[1,1], [1,1]],
 		"description": "Ahoy! Get yourself a sea-dog look!",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2201.png",
+		"icon": "res://Assets/Art/Items/2201.png"
 	},
 	{
 		"id": 2202,
@@ -96,8 +106,8 @@
 		"tags": ["Head", "Disguise"],
 		"shape": [[1,1], [1,1]],
 		"description": "Sometimes you just want to look bald. Your husband was using it when you first met.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2202.png",
+		"icon": "res://Assets/Art/Items/2202h.png"
 	},
 	{
 		"id": 2203,
@@ -110,14 +120,34 @@
 		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
+		"id": 2301,
+		"name": "Cool Headband",
+		"category": 2000,
+		"tags": ["Head", "Ninja", "Anime"],
+		"shape": [[1,1]],
+		"description": "A bandana with a symbol on the head, you suddenly wonder how good would be to clone yourself.",
+		"image": "res://Assets/Art/Items/2301.png",
+		"icon": "res://Assets/Art/Items/2301.png"
+	},
+	{
+		"id": 2302,
+		"name": "Padded Cloathing",
+		"category": 2000,
+		"tags": ["Torso", "Alien", "Anime", "Armor"],
+		"shape": [[1,1,1], [1,1,1], [1,1,1]],
+		"description": "Your husband used to train with these from time to time, they’re really heavy for a normal person.",
+		"image": "res://Assets/Art/Items/2302.png",
+		"icon": "res://Assets/Art/Items/2302.png"
+	},
+	{
 		"id": 3001,
 		"name": "Dagger",
 		"category": 3000,
 		"tags": ["Melee", "Stealth", "Dagger"],
 		"shape": [[1], [1]],
 		"description": "A dagger that can be hidden in your clothes, good for stealth attacks. You have fond memories of it.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/3001.png",
+		"icon": "res://Assets/Art/Items/3001.png"
 	},
 	{
 		"id": 3002,
@@ -126,8 +156,8 @@
 		"tags": ["Melee", "Big", "Gold", "Half-blod", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of gold. Some say gold is too soft of a metal to be used to make a blade, however, you know cases when one would specifically needs a blade made of gold.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/3002.png",
+		"icon": "res://Assets/Art/Items/3002.png"
 	},
 	{
 		"id": 3003,
@@ -136,8 +166,8 @@
 		"tags": ["Melee", "Big", "Silver", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of silver. You don’t know how different it is from a regular sword, but your husband did know.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/3003.png",
+		"icon": "res://Assets/Art/Items/3003.png"
 	},
 	{
 		"id": 3004,
@@ -146,8 +176,8 @@
 		"tags": ["Melee", "Big", "Bronze", "Sword", "Half-blood"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of bronze. Ancient warriors used bronze weapons. Some young people nowadays still use them, you think to yourself.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/3004.png",
+		"icon": "res://Assets/Art/Items/3004.png"
 	},
 	{
 		"id": 3005,
@@ -156,8 +186,8 @@
 		"tags": ["Melee", "Big", "Steel", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A big sword made of steel. Just a regular sword.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/3005.png",
+		"icon": "res://Assets/Art/Items/3005.png"
 	},
 	{
 		"id": 3006,
@@ -176,8 +206,8 @@
 		"tags": ["Melee", "Jedi", "Sword", "Geek"],
 		"shape": [[1], [1]],
 		"description": "It’s very handy to have a retractable sword that defies laws of physics and can cut through reinforced steel instantly! You still wonder where your husband found it…",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/3007.png",
+		"icon": "res://Assets/Art/Items/3007.png"
 	},
 	{
 		"id": 3008,
@@ -186,8 +216,8 @@
 		"tags": ["Ranged", "Stealth", "Spy", "Pistol"],
 		"shape": [[1,1,1], [1,0,0]],
 		"description": "A Pistol with silencer from your husband stuff, you don’t know much why he has it, but you know it was a gift from a friend.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/3008.png",
+		"icon": "res://Assets/Art/Items/3008.png"
 	},
 	{
 		"id": 3009,
@@ -200,14 +230,24 @@
 		"icon": "res://Assets/Hana Stare.png"
 	},
 	{
+		"id": 3010,
+		"name": "Kunai",
+		"category": 3000,
+		"tags": ["Ranged", "Melee", "Ninja", "Stealth", "Anime"],
+		"shape": [[1], [1]],
+		"description": "A short blade that can be Thrown or used at short range. It is a bit worned out, but it clearly shows the way of a true Ninja.",
+		"image": "res://Assets/Art/Items/3010.png",
+		"icon": "res://Assets/Art/Items/3010.png"
+	},
+	{
 		"id": 4001,
 		"name": "Medallion",
 		"category": 4000,
 		"tags": ["Necklace"],
 		"shape": [[1]],
 		"description": "It might be magic, it might be cursed, or it might be just a regular medallion, you don’t know. All you know is that your husband brought it home after a trip.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4001.png",
+		"icon": "res://Assets/Art/Items/4001h.png"
 	},
 	{
 		"id": 4002,
@@ -216,8 +256,8 @@
 		"tags": ["Ring", "Gold"],
 		"shape": [[1]],
 		"description": "A golden ring that turns the wearer invisible. It might do other things too, but you’re not sure. Your husband got it after a game of riddles in the dark.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4002.png",
+		"icon": "res://Assets/Art/Items/4002h.png"
 	},
 	{
 		"id": 4101,
@@ -226,8 +266,8 @@
 		"tags": ["Elf"],
 		"shape": [[0,1,0], [1,1,1], [0,1,0]],
 		"description": "An ancient sword, or at least what remains of it, which is not really useful by itself. Your husband received it as an inheritance.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4101.png",
+		"icon": "res://Assets/Art/Items/4101.png"
 	},
 	{
 		"id": 4102,
@@ -236,8 +276,8 @@
 		"tags": ["Elf"],
 		"shape": [[1], [1]],
 		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4102.png",
+		"icon": "res://Assets/Art/Items/4102.png"
 	},
 	{
 		"id": 4103,
@@ -246,8 +286,8 @@
 		"tags": ["Elf"],
 		"shape": [[1], [1]],
 		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4103.png",
+		"icon": "res://Assets/Art/Items/4103.png"
 	},
 	{
 		"id": 4104,
@@ -256,8 +296,8 @@
 		"tags": ["Elf"],
 		"shape": [[1]],
 		"description": "Part of the blade of an ancient sword. Not really useful by itself. Your husband received it as an inheritance.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4104.png",
+		"icon": "res://Assets/Art/Items/4104.png"
 	},
 	{
 		"id": 4201,
@@ -266,8 +306,8 @@
 		"tags": ["Memory", "Friend", "Relationship", "Paper"],
 		"shape": [[1,1]],
 		"description": "It’s good to remember people who are important to us. It might be useful for your child during his adventure.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4201.png",
+		"icon": "res://Assets/Art/Items/4201.png"
 	},
 	{
 		"id": 4202,
@@ -276,8 +316,8 @@
 		"tags": ["Memory", "Love", "Relationship", "Paper"],
 		"shape": [[1,1]],
 		"description": "It’s good to remember people who are important to us. It might be useful for your child during his adventure.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4202.png",
+		"icon": "res://Assets/Art/Items/4202.png"
 	},
 	{
 		"id": 4203,
@@ -286,8 +326,8 @@
 		"tags": ["Certificate", "Paper"],
 		"shape": [[1,1]],
 		"description": "Everyone should know that your child is the chosen one!",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4203.png",
+		"icon": "res://Assets/Art/Items/4203.png"
 	},
 	{
 		"id": 4204,
@@ -306,8 +346,8 @@
 		"tags": ["Book", "Paper"],
 		"shape": [[1], [1]],
 		"description": "Very useful in case your child has to build something.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4205.png",
+		"icon": "res://Assets/Art/Items/4205.png"
 	},
 	{
 		"id": 4206,
@@ -316,8 +356,8 @@
 		"tags": ["Book", "Paper"],
 		"shape": [[1], [1]],
 		"description": "Very useful in case your child has to pilot something.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4206.png",
+		"icon": "res://Assets/Art/Items/4206.png"
 	},
 	{
 		"id": 4207,
@@ -326,8 +366,8 @@
 		"tags": ["Book", "Paper"],
 		"shape": [[1], [1]],
 		"description": "Very useful if your child has to brew something or do some chemical reactions.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4207.png",
+		"icon": "res://Assets/Art/Items/4207.png"
 	},
 	{
 		"id": 4208,
@@ -336,8 +376,8 @@
 		"tags": ["Localization", "Paper"],
 		"shape": [[1,1], [1,1]],
 		"description": "People say that maps are a thing from the past, but you’re a mom, you know better.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4208.png",
+		"icon": "res://Assets/Art/Items/4208.png"
 	},
 	{
 		"id": 4209,
