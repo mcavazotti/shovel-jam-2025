@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6wu3x2s6dlyn"]
+
+[ext_resource type="Texture2D" uid="uid://p4lwdl8x407m" path="res://Assets/Art/Props/Sofa.png" id="1_drwmu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_arfad"]
+
+[sub_resource type="Gradient" id="Gradient_7gv0h"]
+colors = PackedColorArray(0, 0, 0, 0.27451, 0, 0, 0, 0.27451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_81yhf"]
+gradient = SubResource("Gradient_7gv0h")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3txt0"]
+size = Vector2(233, 470)
+
+[node name="Sofa" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(0.999994, 27)
+scale = Vector2(224, 468)
+mesh = SubResource("QuadMesh_arfad")
+texture = SubResource("GradientTexture1D_81yhf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_drwmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, 27)
+shape = SubResource("RectangleShape2D_3txt0")
