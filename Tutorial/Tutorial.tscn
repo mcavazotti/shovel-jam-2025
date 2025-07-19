@@ -1,13 +1,13 @@
 [gd_scene load_steps=21 format=3 uid="uid://cg0jtdevy877f"]
 
-[ext_resource type="Script" path="res://Tutorial/tutorial.gd" id="1_hgldx"]
+[ext_resource type="Script" uid="uid://ctexesmuaxjia" path="res://Tutorial/tutorial.gd" id="1_hgldx"]
 [ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Mom/mom.tscn" id="2_jm7vr"]
 [ext_resource type="Texture2D" uid="uid://ds222moaccjjy" path="res://Assets/Art/Cursor.png" id="3_x3xat"]
 [ext_resource type="Script" uid="uid://dp6kqo21d8sh3" path="res://Scripts/camera_2d.gd" id="4_p46jp"]
 [ext_resource type="PackedScene" uid="uid://cmppofskqyqet" path="res://Backpack/BackpackController.tscn" id="6_ebtrj"]
 [ext_resource type="PackedScene" uid="uid://7q65lapufcsh" path="res://Items/ItemSpawner/ItemSpawnerController.tscn" id="7_ma1tk"]
 [ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="8_hgldx"]
-[ext_resource type="Script" path="res://Tutorial/ObjectivesList.gd" id="8_jm7vr"]
+[ext_resource type="Script" uid="uid://c1346q7qr705o" path="res://Tutorial/ObjectivesList.gd" id="8_jm7vr"]
 [ext_resource type="PackedScene" uid="uid://c4lk76dkkl632" path="res://Items/ItemSpawner/ItemSpawner.tscn" id="8_x1p7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bloo"]
