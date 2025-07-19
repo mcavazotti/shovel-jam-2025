@@ -1,6 +1,5 @@
 extends Control
 
-
 @onready var anim = $anim
 @onready var animImage = $animImage
 @onready var image = $finalImage
@@ -9,7 +8,6 @@ extends Control
 @onready var labelFinalStory = $finalStory
 @onready var labelEndingCount = $buttons/endingCount
 @onready var labelEndingLocked = $buttons/endingLocked
-
 
 var endIds = []
 var intermediateEndings
@@ -21,18 +19,18 @@ var indexImages: int = 0
 var interImages:Array 
 var textureRects:Array
 
-
 func _ready() -> void:
 	endIds.clear()
 	image.custom_minimum_size = DisplayServer.screen_get_size()
 	textureRects = get_tree().get_nodes_in_group("InterImages")
 	print("Texture Rects: ", textureRects)
 	speedOriginal = 1.0
-	
+
 
 func finalAnimStart() -> void:
 	#image.texture = finalEnding["coverImage"]
 	anim.speed_scale = anim.speed_scale
+	Audio.Play(Audio.TRACK_ALIAS.Final_Ending)
 	anim.play("FinalEnding")
 	labelFinalTitle.visible = true
 	labelFinalStory.visible = true
@@ -87,8 +85,8 @@ From time to time you heard a few news about him...”"
 	
 	updateIntermediateImages() #FIRST RUN IN SCENE. (IMPORTANT BE HERE)
 	startAnimation()
-	
-	
+
+
 func updateIntermediateImages():
 	print("InterImages: ", interImages)
 	for texRect in textureRects:
@@ -101,7 +99,7 @@ func updateIntermediateImages():
 
 func playImages():
 	animImage.play("ImagesFadeInOut")
-		
+
 
 func startAnimation():
 	$buttons/buttonMenu.visible = false
@@ -114,11 +112,11 @@ func startAnimation():
 	labelEndingLocked.set_modulate("ffffff00")
 	anim.play("IntermediateEndings")
 	Audio.Play(Audio.TRACK_ALIAS.Intermediate_Endings)
-	
-	
+
+
 func skipIntermediate():
 	finalAnimStart()
-	
+
 
 func skipIntermediateUpdate(iE):
 	if iE > 1:
@@ -140,8 +138,8 @@ func skipIntermediateUpdate(iE):
 			if keyIndex != -1:
 				intermiediateAnimation.track_set_key_time(methodTrackIndex, keyIndex, newTime)
 				print("Moved method key from", oldTime, "to", newTime)
-			
-	
+
+
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_text_submit"): # ENTER
 		speed_up = !speed_up

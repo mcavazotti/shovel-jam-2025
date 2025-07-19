@@ -27,7 +27,9 @@ enum TRACK_ALIAS {
 	Results,
 	First_Minute,
 	Second_Minute,
+	Tutorial_Time,
 	Intermediate_Endings,
+	Final_Ending,
 	# AMBIENCE
 	AMB_1,
 	AMB_2,
@@ -49,6 +51,12 @@ func Play(Track_name: TRACK_ALIAS):
 	# Background Music
 		TRACK_ALIAS.Intermediate_Endings:
 			BGM_stream.stream = load("res://Assets/Sounds/Music/Your Son Life.mp3")
+			BGM_stream.play()
+		TRACK_ALIAS.Final_Ending:
+			BGM_stream.stream = load("res://Assets/Sounds/Music/The-Journey.ogg")
+			BGM_stream.play()
+		TRACK_ALIAS.Tutorial_Time:
+			BGM_stream.stream = load("res://Assets/Sounds/Music/The-Journey-_sleepy.ogg")
 			BGM_stream.play()
 		TRACK_ALIAS.Results:
 			BGM_stream.stream = load("res://Assets/Sounds/Music/Results.mp3")

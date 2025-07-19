@@ -1,5 +1,6 @@
 extends CanvasLayer
-var elapsed_time: int = 0
+
+@onready var elapsed_time: int = 0
 
 func _ready():
 	$Timer.start()
@@ -11,7 +12,7 @@ func _on_timer_timeout():
 		Audio.Play(Audio.TRACK_ALIAS.Second_Minute)
 	if elapsed_time == 120:
 		$Timer.stop()
-	if elasped_time == 123:
+	if elapsed_time == 123:
 		Audio.BGM_stream.stop()
 		Audio.AMB_stream.stop()
 		$"../ExitHouse".getItems()

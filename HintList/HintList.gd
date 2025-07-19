@@ -12,7 +12,6 @@ func _ready() -> void:
 
 func _on_BackpackContentChange(items:Array):
 	var categories = (items.map(func(i): return i.Category))
-	
 	updateList(categories)
 		
 	
@@ -29,7 +28,6 @@ func updateList(categories):
 				$Panel/VBoxContainer/Misc.set_modulate("ffffff13")
 			_:
 				print("Unknown Category")
-				
 
 
 func _unhandled_input(event: InputEvent) -> void:
