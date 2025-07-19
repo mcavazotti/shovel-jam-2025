@@ -1,5 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=15 format=3 uid="uid://bb2hl8tark6g3"]
 
+[ext_resource type="PackedScene" uid="uid://c6wu3x2s6dlyn" path="res://Props/Sofa.tscn" id="12_qvnyp"]
+[ext_resource type="Texture2D" uid="uid://ddaj73momkbvo" path="res://Assets/Art/Props/Carpet.png" id="13_dqu5y"]
 [ext_resource type="Texture2D" uid="uid://bli7oic53rpcv" path="res://Assets/Art/Friend.png" id="14_8kj4n"]
 [ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Mom/mom.tscn" id="18_rt3f5"]
 [ext_resource type="PackedScene" uid="uid://7q65lapufcsh" path="res://Items/ItemSpawner/ItemSpawnerController.tscn" id="19_8toki"]
@@ -26,6 +28,14 @@ moving_bounce_speed = 13.0
 [node name="itemSpawnerControler" parent="." instance=ExtResource("19_8toki")]
 
 [node name="ItemSpawners" type="Node2D" parent="."]
+
+[node name="CloakSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4673, 90)
+IdsToAccept = PackedInt32Array(2001, 2002)
+
+[node name="CloakSpawner2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4981, 94)
+IdsToAccept = PackedInt32Array(2001, 2002)
 
 [node name="SwordSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(800, 1321)
@@ -87,6 +97,15 @@ ignore_time_scale = true
 [node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
 
 [node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
+
+[node name="Sofa" parent="." instance=ExtResource("12_qvnyp")]
+position = Vector2(814, 675)
+
+[node name="Carpet" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(406, 722)
+rotation = 1.5708
+texture = ExtResource("13_dqu5y")
 
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
 [connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]

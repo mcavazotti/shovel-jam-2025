@@ -28,6 +28,7 @@ height = 171.44
 
 [node name="Mom" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_1838s")
 

@@ -1,21 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2qe7q5vy61im"]
+[gd_scene load_steps=3 format=3 uid="uid://c2qe7q5vy61im"]
 
 [ext_resource type="Script" uid="uid://m6f5k5gfkk8v" path="res://Components/Arrow/ArrowTrackExit.gd" id="1_3stbk"]
-[ext_resource type="Texture2D" uid="uid://ienk5f5o8yio" path="res://Assets/Art/ArrowTrackExit.png" id="2_mbu6m"]
-[ext_resource type="Texture2D" uid="uid://vdud42mxn63j" path="res://Assets/Art/DoorTrack.png" id="3_mbu6m"]
+[ext_resource type="Texture2D" uid="uid://budyvangwemfq" path="res://Assets/Art/Arrow.png" id="2_7j2ok"]
 
 [node name="ArrowTrackExit" type="Node2D"]
 script = ExtResource("1_3stbk")
 
 [node name="Arrow" type="Sprite2D" parent="."]
-modulate = Color(1, 0.871101, 0.595961, 1)
+modulate = Color(0.52, 1, 0.52, 1)
 texture_filter = 1
 position = Vector2(222, 6.29425e-05)
 rotation = 1.5708
-texture = ExtResource("2_mbu6m")
-
-[node name="Door" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(204, 6.29425e-05)
-rotation = 1.5708
-texture = ExtResource("3_mbu6m")
+texture = ExtResource("2_7j2ok")
