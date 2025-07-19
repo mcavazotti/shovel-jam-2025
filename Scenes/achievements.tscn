@@ -1,8 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3xchrsaj3p7s"]
+[gd_scene load_steps=8 format=3 uid="uid://b3xchrsaj3p7s"]
 
 [ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="1_3m5au"]
 [ext_resource type="Script" uid="uid://citpho51tvfmi" path="res://Scenes/achievements.gd" id="2_3m5au"]
 [ext_resource type="PackedScene" uid="uid://be5y6f8jhr140" path="res://Scenes/pause_game.tscn" id="2_frbbq"]
+[ext_resource type="Texture2D" uid="uid://clh261p5r107" path="res://Assets/Art/Frame_under.png" id="3_g04om"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_38hx6"]
+texture = ExtResource("3_g04om")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_bcp42"]
 font_size = 128
@@ -21,14 +29,40 @@ theme = ExtResource("1_3m5au")
 script = ExtResource("2_3m5au")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme = ExtResource("1_3m5au")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+theme = ExtResource("1_3m5au")
+theme_override_styles/panel = SubResource("StyleBoxTexture_38hx6")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -720.0
+offset_top = -540.0
+offset_right = 720.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3m5au")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -720.0
+offset_top = -529.0
+offset_right = 720.0
+offset_bottom = 529.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Achievements List" type="VBoxContainer" parent="ScrollContainer"]
 process_mode = 3
@@ -38,19 +72,24 @@ theme_override_constants/separation = 40
 
 [node name="Achievements" type="Label" parent="ScrollContainer/Achievements List"]
 layout_mode = 2
-text = "Endings
-"
+text = "Endings"
 label_settings = SubResource("LabelSettings_bcp42")
 horizontal_alignment = 1
 vertical_alignment = 1
 paragraph_separator = "\\"
 
+[node name="HBoxContainer9" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+alignment = 1
+
+[node name="To Title" type="Button" parent="ScrollContainer/Achievements List/HBoxContainer9"]
+layout_mode = 2
+text = "Return to Title"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
 layout_mode = 2
 theme_override_constants/separation = 20
-
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer"]
-layout_mode = 2
+alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer"]
 layout_mode = 2
@@ -61,4 +100,104 @@ stretch_mode = 5
 layout_mode = 2
 text = "Lorum Ipsum - Get the Elven Ending"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer2"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer3"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer3"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer4"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer4"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer5"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer5"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer6"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer6"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer7"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer7"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="ScrollContainer/Achievements List"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/Achievements List/HBoxContainer8"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_3m5au")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Achievements List/HBoxContainer8"]
+layout_mode = 2
+text = "Lorum Ipsum - Get the Elven Ending"
+
 [node name="PauseGame" parent="." instance=ExtResource("2_frbbq")]
+
+[connection signal="pressed" from="ScrollContainer/Achievements List/HBoxContainer9/To Title" to="." method="_on_to_title_pressed"]

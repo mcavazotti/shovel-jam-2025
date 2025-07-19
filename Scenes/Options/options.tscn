@@ -246,7 +246,7 @@ tick_count = 10
 
 [connection signal="tab_changed" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="TabContainer/General/General Buttons and Credits/To Game" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="TabContainer/General/General Buttons and Credits/To Title" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="TabContainer/General/General Buttons and Credits/To Title" to="." method="_on_to_title_pressed"]
 [connection signal="pressed" from="TabContainer/Video/Video Buttons/Fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="TabContainer/Video/Video Buttons/Maximized" to="." method="_on_maximized_pressed"]
 [connection signal="pressed" from="TabContainer/Video/Video Buttons/Windowed" to="." method="_on_windowed_pressed"]
