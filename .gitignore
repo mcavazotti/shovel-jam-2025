@@ -3,3 +3,5 @@
 /android/
 **/*.tmp
 .vscode/settings.json
+**/*.kra
+**/*.kra~

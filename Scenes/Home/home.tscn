@@ -28,7 +28,14 @@ moving_bounce_speed = 13.0
 [node name="itemSpawnerControler" parent="." instance=ExtResource("19_8toki")]
 
 [node name="ItemSpawners" type="Node2D" parent="."]
-visible = false
+
+[node name="CloakSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4673, 90)
+IdsToAccept = PackedInt32Array(2001, 2002)
+
+[node name="CloakSpawner2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4981, 94)
+IdsToAccept = PackedInt32Array(2001, 2002)
 
 [node name="SwordSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(800, 1321)

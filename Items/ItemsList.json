@@ -6,8 +6,8 @@
 		"tags": ["Fish", "Healthy", "Sea"],
 		"shape": [[1], [1]],
 		"description": "Fish.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/1001.png",
+		"icon": "res://Assets/Art/Items/1001h.png"
 	},
 	{
 		"id": 1002,
@@ -16,8 +16,8 @@
 		"tags": ["Elf", "Healthy", "Bread"],
 		"shape": [[1]],
 		"description": "It’s said that one will keep a traveler on his feet for a day of long labour. That’s just what your child need! And you can confirm from experience what they say about this bread is true.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/1002.png",
+		"icon": "res://Assets/Art/Items/1002.png"
 	},
 	{
 		"id": 1003,
@@ -36,8 +36,8 @@
 		"tags": ["Head", "Stealth", "Cloak"],
 		"shape": [[1,1], [1,1]],
 		"description": "A cloak that hides your face and gives you a mysterious and stealthy look. You remember using it when you were young.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2001.png",
+		"icon": "res://Assets/Art/Items/2001h.png"
 	},
 	{
 		"id": 2002,
@@ -46,8 +46,8 @@
 		"tags": ["Head", "Stealth", "Cloak", "Elf", "Geek"],
 		"shape": [[1,1], [1,1]],
 		"description": "Perfect for camouflaging against unfriendly eyes.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2002.png",
+		"icon": "res://Assets/Art/Items/2002h.png"
 	},
 	{
 		"id": 2101,
@@ -56,8 +56,8 @@
 		"tags": ["Torso", "Camping", "T-shirt"],
 		"shape": [[1,1], [1,1]],
 		"description": "A T-shirt used for camping. You used to have one of it when you were young.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2101.png",
+		"icon": "res://Assets/Art/Items/2101.png"
 	},
 	{
 		"id": 2102,
@@ -66,8 +66,8 @@
 		"tags": ["Torso", "Armor", "Dwarf", "Mithril"],
 		"shape": [[1,1], [1,1]],
 		"description": "A very sturdy chain mail coat. Your husband used it all the time, now it’s time for your child to use it.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2102.png",
+		"icon": "res://Assets/Art/Items/2102.png"
 	},
 	{
 		"id": 2103,
@@ -76,8 +76,8 @@
 		"tags": ["Torso", "Robe", "Jedi", "Geek"],
 		"shape": [[1,1], [1,1], [1,1]],
 		"description": "A robe worn by a specific group of space monk warriors a long time ago in a far, far away galaxy. You still wonder how your husband got his hands on that…",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2103.png",
+		"icon": "res://Assets/Art/Items/2103.png"
 	},
 	{
 		"id": 2201,
@@ -174,7 +174,7 @@
 		"name": "Retractable Light Sword",
 		"category": 3000,
 		"tags": ["Melee", "Jedi", "Sword", "Geek"],
-		"shape": [[1], [1], [1]],
+		"shape": [[1], [1]],
 		"description": "It’s very handy to have a retractable sword that defies laws of physics and can cut through reinforced steel instantly! You still wonder where your husband found it…",
 		"image": "res://Assets/sword_sprite.png",
 		"icon": "res://Assets/sword_icon.png"
