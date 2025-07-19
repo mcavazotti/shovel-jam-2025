@@ -17,7 +17,7 @@ func _on_start_pressed():
 
 func _on_endings_pressed():
 	Audio.Play(Audio.TRACK_ALIAS.Click)
-	get_tree().change_scene_to_file("res://Scenes/achievements.tscn")
+	get_tree().change_scene_to_file("res://Scenes/endings.tscn")
 
 func _on_options_pressed():
 	Audio.Play(Audio.TRACK_ALIAS.Click)
