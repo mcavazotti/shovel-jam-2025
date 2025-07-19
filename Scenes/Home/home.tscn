@@ -63,7 +63,8 @@ position = Vector2(1203, 165)
 shape = SubResource("RectangleShape2D_guf2q")
 
 [node name="Tracker" type="Sprite2D" parent="ExitHouse"]
-position = Vector2(5221, -62)
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1202, 121)
 texture = ExtResource("14_8kj4n")
 
 [node name="Timer" type="CanvasLayer" parent="."]

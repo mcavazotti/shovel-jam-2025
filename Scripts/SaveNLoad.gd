@@ -13,6 +13,8 @@ func _ready():
 	load_game()
 	if endingUnlocked:
 		print(save_data.endingUnlocked)
+	if tutorialCompleted:
+		print("Skipping Tutorial: ", save_data.tutorialCompleted)
 	
 func save_game():
 	save_data = SaveData.new()

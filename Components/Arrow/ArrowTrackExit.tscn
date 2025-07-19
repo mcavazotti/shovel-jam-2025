@@ -8,6 +8,7 @@
 script = ExtResource("1_3stbk")
 
 [node name="Arrow" type="Sprite2D" parent="."]
+modulate = Color(1, 0.871101, 0.595961, 1)
 texture_filter = 1
 position = Vector2(222, 6.29425e-05)
 rotation = 1.5708
