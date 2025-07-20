@@ -1,5 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=19 format=3 uid="uid://bb2hl8tark6g3"]
 
+[ext_resource type="Texture2D" uid="uid://b858sulxoob2b" path="res://Scenes/Home/kitchen side.png" id="6_cb0am"]
+[ext_resource type="Texture2D" uid="uid://i3l6oc714ckx" path="res://Scenes/Home/kitchen top.png" id="7_vh0vi"]
 [ext_resource type="PackedScene" uid="uid://c6wu3x2s6dlyn" path="res://Props/Sofa.tscn" id="12_qvnyp"]
 [ext_resource type="Texture2D" uid="uid://ddaj73momkbvo" path="res://Assets/Art/Props/Carpet.png" id="13_dqu5y"]
 [ext_resource type="Texture2D" uid="uid://bli7oic53rpcv" path="res://Assets/Art/Friend.png" id="14_8kj4n"]
@@ -32,11 +34,6 @@ offset_top = -786.0
 offset_right = 7571.0
 offset_bottom = 5844.0
 color = Color(0.639216, 1, 0.603922, 1)
-
-[node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
-position = Vector2(1262, 685)
-speed = 500.0
-moving_bounce_speed = 13.0
 
 [node name="itemSpawnerControler" parent="." instance=ExtResource("19_8toki")]
 
@@ -74,10 +71,6 @@ IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 position = Vector2(1588, 1119)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
-
-[node name="HintList" parent="." instance=ExtResource("24_u6uem")]
-
 [node name="ExitHouse" type="Area2D" parent="."]
 script = ExtResource("25_3x5mh")
 
@@ -89,6 +82,76 @@ shape = SubResource("RectangleShape2D_guf2q")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1202, 121)
 texture = ExtResource("14_8kj4n")
+
+[node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
+
+[node name="Kitchen" type="StaticBody2D" parent="."]
+position = Vector2(1788, 866)
+scale = Vector2(0.878906, 0.841406)
+
+[node name="Kitchen" type="Sprite2D" parent="Kitchen"]
+y_sort_enabled = true
+position = Vector2(976.214, -388.635)
+scale = Vector2(1, 1)
+texture = ExtResource("6_cb0am")
+
+[node name="ColorRect" type="ColorRect" parent="Kitchen"]
+z_index = 1
+offset_left = 1055.72
+offset_top = -712.0
+offset_right = 1095.72
+offset_bottom = -72.0001
+color = Color(0.866667, 0.682353, 0.501961, 1)
+
+[node name="KitchenTop" type="Sprite2D" parent="Kitchen"]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(254.862, -681.3)
+scale = Vector2(1.14257, 1.0095)
+texture = ExtResource("7_vh0vi")
+
+[node name="ColorRect3" type="ColorRect" parent="Kitchen"]
+z_index = 1
+offset_left = -192.0
+offset_top = -870.0
+offset_right = 811.0
+offset_bottom = -757.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Kitchen"]
+z_index = 1
+offset_left = -181.0
+offset_top = -860.0
+offset_right = 812.0
+offset_bottom = -748.0
+color = Color(0.866667, 0.682353, 0.501961, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Kitchen"]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-184.32, -859.276, -187.733, -534.819, 798.72, -549.081, 798.72, 127.168, 1092.27, 130.733, 1092.27, -872.349)
+
+[node name="BrokenWallNoMore" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_dqu5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenWallNoMore"]
+position = Vector2(2795.5, 2246.5)
+shape = SubResource("RectangleShape2D_pen4i")
+
+[node name="Sofa" parent="." instance=ExtResource("12_qvnyp")]
+position = Vector2(814, 675)
+
+[node name="Carpet" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(406, 722)
+rotation = 1.5708
+texture = ExtResource("13_dqu5y")
+
+[node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
+position = Vector2(1262, 685)
+speed = 500.0
+moving_bounce_speed = 13.0
+
+[node name="HintList" parent="." instance=ExtResource("24_u6uem")]
 
 [node name="Timer" type="CanvasLayer" parent="."]
 script = ExtResource("25_osqap")
@@ -119,26 +182,10 @@ text = "120"
 [node name="Timer" type="Timer" parent="Timer"]
 ignore_time_scale = true
 
-[node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
-
-[node name="BrokenWallNoMore" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_dqu5y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenWallNoMore"]
-position = Vector2(2795.5, 2246.5)
-shape = SubResource("RectangleShape2D_pen4i")
-
-[node name="Sofa" parent="." instance=ExtResource("12_qvnyp")]
-position = Vector2(814, 675)
-
-[node name="Carpet" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(406, 722)
-rotation = 1.5708
-texture = ExtResource("13_dqu5y")
+[node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
 
 [node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
 
-[connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
 [connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
+[connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
