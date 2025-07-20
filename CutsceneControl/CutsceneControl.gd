@@ -80,6 +80,7 @@ From time to time you heard a few news about him...”"
 	labelEndingCount.text = "%s/%s" % [str(sizeUnlocked), str(total)]
 	labelEndingLocked.text = "There's still %s endings locked" % [total - sizeUnlocked]
 
+	SaveNLoad.firstTime = false
 	SaveNLoad.save_game()
 	skipIntermediateUpdate(endingsCount)
 	
