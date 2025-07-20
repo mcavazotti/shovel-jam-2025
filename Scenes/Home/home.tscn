@@ -109,7 +109,6 @@ texture = ExtResource("6_mwapa")
 
 [node name="LightsAndHooks" type="Sprite2D" parent="Bedroom"]
 position = Vector2(-174.371, -1047.28)
-scale = Vector2(1, 1)
 texture = ExtResource("7_vife6")
 
 [node name="Rug" type="Sprite2D" parent="Bedroom"]
@@ -120,7 +119,6 @@ texture = ExtResource("8_6vjbm")
 
 [node name="Drawer" type="Sprite2D" parent="Bedroom"]
 position = Vector2(22.9066, 734.7)
-scale = Vector2(1, 1)
 texture = ExtResource("9_p81q8")
 
 [node name="Carpet" type="Sprite2D" parent="Bedroom"]
@@ -139,7 +137,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom"]
 position = Vector2(509.088, -732.575)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_erpel")
 
 [node name="ColorRect2" type="ColorRect" parent="Bedroom"]
@@ -152,7 +149,6 @@ color = Color(0.431373, 0.643137, 0.392157, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bedroom"]
 position = Vector2(7.94718, 698.814)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_erpel")
 
 [node name="Kitchen" type="StaticBody2D" parent="."]
@@ -205,7 +201,6 @@ polygon = PackedVector2Array(-184.32, -859.276, -187.733, -534.819, 798.72, -549
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen"]
 position = Vector2(756.847, 1472.54)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6vjbm")
 
 [node name="BrokenWallNoMore" type="StaticBody2D" parent="."]

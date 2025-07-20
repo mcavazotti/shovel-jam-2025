@@ -28,7 +28,8 @@ func _ready() -> void:
 
 
 func finalAnimStart() -> void:
-	#image.texture = finalEnding["coverImage"]
+	var newImage = load(finalEnding["coverImage"]) as Texture2D
+	image.set_texture(newImage)
 	anim.speed_scale = anim.speed_scale
 	Audio.Play(Audio.TRACK_ALIAS.Final_Ending)
 	anim.play("FinalEnding")
@@ -52,18 +53,13 @@ func treatEnding():
 			interImages.append(ending["coverImage"])
 			
 	elif (not intermediateEndings) and FinalEndingLoad.itemsBackpack: #This will also trigger if there's no intermidiate ending
-		stichedIntermediateEndings +=  "You know all too well the dangers of adventure. However, you decide to let your son journey on a quest of his own in hopes he finds his place in the world.
-		
-From time to time you heard a few news about him...”"
+		stichedIntermediateEndings +=  "”He just stepped outside, the begining of his adventure... is about to start...”"
 		
 	elif not intermediateEndings:
-		interImages.append("")
 		stichedIntermediateEndings += "You know too well the dangers of an adventure. You’re not letting your child be in harm’s way, no matter what!
 
 ”Mom! Why you never let me do anything?!”"
 
-		
-		
 		
 	endIds.append(finalEnding["id"])
 	FinalEndingLoad.updateEndingUnlocked(endIds)
@@ -92,8 +88,9 @@ func updateIntermediateImages():
 	print("InterImages: ", interImages)
 	for texRect in textureRects:
 		if indexImages < interImages.size():
+			var newImage = load(interImages[indexImages]) as Texture2D
 			print("Texture Rect", texRect)
-			#texRect.texture = interImages[indexImages]
+			texRect.set_texture(newImage)
 			print("TEXTURE RECT CHANGED IMAGE OK")
 			indexImages += 1
 
