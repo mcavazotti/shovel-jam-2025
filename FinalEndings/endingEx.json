@@ -1,10 +1,10 @@
 [
 	{
 		"id": 0000,
-		"name": "Just a regular adventurer",
+		"name": "A Journey to be Started",
 		"typeOfEnding": "Final",
 		"reference" : "Normal",
-		"story": "Lorem ipsum.....",
+		"story": "Your child took his first step to become a great adventurer.",
 		"coverImage": "....",
 		"conditions": [
 			{
