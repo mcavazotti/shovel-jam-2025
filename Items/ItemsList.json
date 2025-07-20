@@ -393,7 +393,7 @@
 		"id": 4301,
 		"name": "GPS",
 		"category": 4000,
-		"tags": ["Localization", "Eletronics"],
+		"tags": ["Localization", "Eletronics", "Anime"],
 		"shape": [[1]],
 		"description": "Let’s make use of what technology gives us! Your child will never get lost with this device!",
 		"image": "res://Assets/Art/Items/4301.png",

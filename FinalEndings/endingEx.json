@@ -725,29 +725,41 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		]
 	},
 	{
-		"id": 0602,
-		"name": "Getting a new crew",
+		"id": 0701,
+		"name": "Meeting Comics",
 		"typeOfEnding": "Intermediate",
-		"reference" : "OnePiece",
-		"story": "Your kid gathered some good friends and formated a crew to adventure around the world, in search of the Lengendary lost treasure.
+		"reference" : "ComicCon",
+		"story": "Your kid has become quite popular with all his accessories and have been invited to multiples events.
 
-”Mom! I’m going to be king of the-” *he falls into the water, 3 friends jump after him and rescue him*",
+”Mom look! I’m just like that one character we watched.”",
 		"coverImage": "....",
 		"conditions": [
 			{
-				"type": "id",
-				"value": 4201,
-				"count": 1,
-				"countType": "==",
+				"type": "tag",
+				"value": "Geek",
+				"count": 4,
+				"countType": ">=",
 				"shouldBeTrue": true
 			},
+		]
+	},
+	{
+		"id": 0702,
+		"name": "Anime and Friends",
+		"typeOfEnding": "Intermediate",
+		"reference" : "AnimeFriends",
+		"story": "Your kid got the attention of many people, his skills and gadgets really put up a show, he got invited to a Anime exposition.
+
+”Mom, I am now… John Anime.”",
+		"coverImage": "....",
+		"conditions": [
 			{
-				"type": "id",
-				"value": 1003,
-				"count": 1,
-				"countType": "==",
+				"type": "tag",
+				"value": "Anime",
+				"count": 4,
+				"countType": ">=",
 				"shouldBeTrue": true
-			}
+			},
 		]
 	},
 	{
