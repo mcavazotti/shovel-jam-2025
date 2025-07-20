@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @export var moving_bounce_speed: float = 5
+@onready var camera = $Camera2D
 
 func get_input():
 	var input_direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")

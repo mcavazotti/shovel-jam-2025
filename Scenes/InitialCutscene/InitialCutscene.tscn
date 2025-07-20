@@ -1,0 +1,313 @@
+[gd_scene load_steps=14 format=3 uid="uid://d2baknogdx3sw"]
+
+[ext_resource type="Script" uid="uid://bmakna6qt3e3k" path="res://Scenes/InitialCutscene/initialCutscene.gd" id="1_4lrqq"]
+[ext_resource type="PackedScene" uid="uid://c6243srn1nh7k" path="res://Scenes/Home/TileMaps.tscn" id="2_6aa77"]
+[ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Mom/mom.tscn" id="3_6aa77"]
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="4_bghnv"]
+[ext_resource type="PackedScene" uid="uid://c6wu3x2s6dlyn" path="res://Props/Sofa.tscn" id="5_7b3s7"]
+[ext_resource type="AudioStream" uid="uid://dgi8v5a76ht6a" path="res://Assets/Sounds/Sound Effects/MomText.MP3" id="6_f4kvq"]
+[ext_resource type="AudioStream" uid="uid://s4j2ovfjcik5" path="res://Assets/Sounds/Sound Effects/SonText1.MP3" id="7_f4kvq"]
+
+[sub_resource type="Animation" id="Animation_j544m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cover:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.913725)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mom:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(929, 1058)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MomLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bob01"]
+resource_name = "coverFade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cover:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.913725), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(929, 1058), Vector2(936, 792)]
+}
+
+[sub_resource type="Animation" id="Animation_6aa77"]
+resource_name = "Dialogue"
+length = 18.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 16.0333, 18),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.123, 0.123, 0.2676]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 14, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(936, 792), Vector2(936, 617), Vector2(936, 617), Vector2(-820, 617)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 4, 6, 8, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"dialogechangeSon"
+}, {
+"args": [],
+"method": &"dialogechangeMom"
+}, {
+"args": [],
+"method": &"dialogechangeSon"
+}, {
+"args": [],
+"method": &"dialogechangeMom"
+}, {
+"args": [],
+"method": &"dialogechangeSon"
+}, {
+"args": [],
+"method": &"dialogechangeMom"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MomLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(14),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("cover:color")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(16, 18),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f4kvq"]
+resource_name = "Skipped"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cover:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"toTitle"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u8ota"]
+_data = {
+&"Dialogue": SubResource("Animation_6aa77"),
+&"RESET": SubResource("Animation_j544m"),
+&"Skipped": SubResource("Animation_f4kvq"),
+&"coverFade": SubResource("Animation_bob01")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_6aa77"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 949, 934, 0, 0, 0, 0, 948, 606, 0, 0, 0, 0, -267, 610, 0, 0, 0, 0, -1443, -220)
+}
+point_count = 4
+
+[node name="InitialCutscene" type="Node2D"]
+script = ExtResource("1_4lrqq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TileMaps" parent="Control" instance=ExtResource("2_6aa77")]
+position = Vector2(-2668, -698)
+
+[node name="cover" type="ColorRect" parent="Control"]
+z_index = 5
+offset_left = -6126.0
+offset_top = -1263.0
+offset_right = 4531.0
+offset_bottom = 4453.0
+color = Color(0, 0, 0, 0.913725)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+&"": SubResource("AnimationLibrary_u8ota")
+}
+
+[node name="Mom" parent="Control" instance=ExtResource("3_6aa77")]
+position = Vector2(929, 1058)
+
+[node name="ArrowTrackExit" parent="Control/Mom" index="3"]
+visible = false
+
+[node name="Path2D" type="Path2D" parent="Control"]
+curve = SubResource("Curve2D_6aa77")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Control/Path2D"]
+position = Vector2(949, 934)
+rotation = -1.57385
+loop = false
+
+[node name="camerafollower" type="Camera2D" parent="Control/Path2D/PathFollow2D"]
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = -2
+layout_mode = 0
+offset_left = -5058.0
+offset_top = -1411.0
+offset_right = 5790.0
+offset_bottom = 4292.0
+color = Color(0.639216, 1, 0.603922, 1)
+
+[node name="SonLabel" type="Label" parent="Control"]
+visible = false
+z_index = 5
+layout_mode = 0
+offset_left = 44.0
+offset_top = 306.0
+offset_right = 670.0
+offset_bottom = 493.0
+theme = ExtResource("4_bghnv")
+theme_override_colors/font_color = Color(0.942745, 0.63111, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.468327, 1.10099e-06, 1.68458e-07, 1)
+theme_override_colors/font_outline_color = Color(0.681993, 0.0475666, 0.498949, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+text = "MOOOOOM! WE'RE GONNA BE LATE!"
+autowrap_mode = 2
+
+[node name="MomLabel" type="Label" parent="Control"]
+visible = false
+z_index = 5
+offset_left = 119.0
+offset_top = 370.0
+offset_right = 865.0
+offset_bottom = 557.0
+theme = ExtResource("4_bghnv")
+theme_override_colors/font_color = Color(0.608528, 0.875178, 0.217188, 1)
+theme_override_colors/font_shadow_color = Color(0.0696477, 0.197084, 2.88785e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0.47924, 0.107875, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+text = "Did you pack your backpack, dear?"
+autowrap_mode = 2
+
+[node name="Sofa" parent="." instance=ExtResource("5_7b3s7")]
+position = Vector2(-1997, -53)
+
+[node name="MomText" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_f4kvq")
+
+[node name="SonText" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_f4kvq")
+
+[connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Control/Mom"]
