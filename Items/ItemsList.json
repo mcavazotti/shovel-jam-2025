@@ -114,10 +114,10 @@
 		"name": "Blue Helmet",
 		"category": 2000,
 		"tags": ["Head"],
-		"shape": [[1,1,1], [1,0,1]],
+		"shape": [[1,1,1], [1,1,1]],
 		"description": "A perfect peice of armor for a knightly adventurer. Somehow, it doesn’t reveil the face at all despite the T-shaped hole in it.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/2203.png",
+		"icon": "res://Assets/Art/Items/2203.png"
 	},
 	{
 		"id": 2301,
@@ -196,8 +196,8 @@
 		"tags": ["Melee", "Elf", "Sword"],
 		"shape": [[0,1,0], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A small sword from very ancient times. Your husband found it during one of his trips.",
-		"image": "res://Assets/sword_sprite.png",
-		"icon": "res://Assets/sword_icon.png"
+		"image": "res://Assets/Art/Items/3006.png",
+		"icon": "res://Assets/Art/Items/3006.png"
 	},
 	{
 		"id": 3007,
@@ -226,8 +226,8 @@
 		"tags": ["Big", "Melee"],
 		"shape": [[1,1,1], [1,1,1], [0,1,0], [1,1,1], [0,1,0]],
 		"description": "A long, trusty blue shovel. It’s seen countless battles against knights. According to your husband, he also used to have a red sheild, however he didn’t have enough space in his bag to bring it home.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/3009.png",
+		"icon": "res://Assets/Art/Items/3009.png"
 	},
 	{
 		"id": 3010,
@@ -336,8 +336,8 @@
 		"tags": ["Certificate", "Paper"],
 		"shape": [[1,1]],
 		"description": "Everyone should know that your child doesn’t know who his father is.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4204",
+		"icon": "res://Assets/Art/Items/4204"
 	},
 	{
 		"id": 4205,
@@ -386,8 +386,8 @@
 		"tags": ["Certificate", "Paper", "Spy"],
 		"shape": [[1,1]],
 		"description": "You really dont know how and why there’s this kind of license with your child’s name, but it could be handy.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4209.png",
+		"icon": "res://Assets/Art/Items/4209.png"
 	},
 	{
 		"id": 4301,
@@ -396,8 +396,8 @@
 		"tags": ["Localization", "Eletronics"],
 		"shape": [[1]],
 		"description": "Let’s make use of what technology gives us! Your child will never get lost with this device!",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4301.png",
+		"icon": "res://Assets/Art/Items/4301h.png"
 	},
 	{
 		"id": 4302,
@@ -406,8 +406,8 @@
 		"tags": ["Vehicle"],
 		"shape": [[1]],
 		"description": "Trailers are the best: the speed of a car with the comfort of a home!",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4302.png",
+		"icon": "res://Assets/Art/Items/4302.png"
 	},
 	{
 		"id": 4303,
@@ -416,8 +416,8 @@
 		"tags": ["Dirt"],
 		"shape": [[1]],
 		"description": "Why is there dirt in the house?! Was it meant for a plant? There is no pot. Maybe your child deserves a dirty bag as retribution for bringing this inside. There is no way your husband would bring just dirt inside.",
-		"image": "res://Assets/Hana Stare.png",
-		"icon": "res://Assets/Hana Stare.png"
+		"image": "res://Assets/Art/Items/4303.png",
+		"icon": "res://Assets/Art/Items/4303.png"
 	}
 ]
   
