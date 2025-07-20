@@ -74,9 +74,9 @@ IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 position = Vector2(1588, 1119)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
-
 [node name="HintList" parent="." instance=ExtResource("24_u6uem")]
+
+[node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
 
 [node name="ExitHouse" type="Area2D" parent="."]
 script = ExtResource("25_3x5mh")

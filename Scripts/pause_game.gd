@@ -7,7 +7,7 @@ func _ready():
 	add_child(options_menu)
 	options_menu.visible = false;
 	
-	if SaveNLoad.firstTime:
+	if SaveNLoad.firstTime and get_tree().current_scene == get_node("res://Scenes/Home/home.tscn"):
 		print("here")
 		showTutorials()
 	
