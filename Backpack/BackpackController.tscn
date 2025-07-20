@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmppofskqyqet"]
+[gd_scene load_steps=12 format=3 uid="uid://cmppofskqyqet"]
 
 [ext_resource type="PackedScene" uid="uid://bg7yiecy1rhsc" path="res://Backpack/backpack.tscn" id="1_kjw0n"]
 [ext_resource type="Script" uid="uid://3duyqj2tx3gd" path="res://Backpack/BackpackController.cs" id="1_uo260"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://8v3eam21uedy" path="res://Backpack/AnimationPlayer.cs" id="2_klxdi"]
 [ext_resource type="Texture2D" uid="uid://8e6qph8vwf6i" path="res://Assets/Art/BagClosed.png" id="3_7qisf"]
 [ext_resource type="Texture2D" uid="uid://ovucqd15tb78" path="res://Assets/Art/BagOpened.png" id="4_cma8p"]
+[ext_resource type="Texture2D" uid="uid://b0u1xkuv1p47p" path="res://Assets/Art/Untitled729_20250720121417.png" id="5_iiiuo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo260"]
 bg_color = Color(0, 0, 0, 0)
@@ -21,9 +22,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.307786, 1),
 "update": 0,
-"values": [Vector2(1500, 1400), Vector2(1500, 500)]
+"values": [Vector2(1500, 1600), Vector2(1500, 700)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -48,6 +49,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.588235)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UiArea/Reminder:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.267944, 1),
+"update": 0,
+"values": [-3.14159, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_hd504"]
@@ -88,6 +101,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UiArea/Reminder:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7qisf"]
 _data = {
@@ -102,7 +127,6 @@ script = ExtResource("1_uo260")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -128,10 +152,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -240.0
-offset_top = -240.0
+offset_left = -165.0
+offset_top = -165.0
 offset_right = -20.0
-offset_bottom = -20.0
+offset_bottom = -20.0001
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
@@ -171,12 +195,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -203.0
-offset_top = -226.0
-offset_right = -50.0
-offset_bottom = -134.0
+offset_left = -167.0
+offset_top = -133.0
+offset_right = -14.0
+offset_bottom = -41.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/outline_size = 15
 text = "Open"
 
 [node name="CloseArea" type="Control" parent="UiArea"]
@@ -196,12 +221,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -207.0
-offset_top = 109.0
-offset_right = -54.0
-offset_bottom = 201.0
+offset_left = -164.0
+offset_top = 28.0
+offset_right = -11.0
+offset_bottom = 120.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/outline_size = 15
 text = "Close"
 
 [node name="Panel" type="Panel" parent="UiArea/CloseArea"]
@@ -211,10 +237,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -240.0
-offset_top = -240.0
+offset_left = -154.0
+offset_top = -220.0
 offset_right = -20.0
-offset_bottom = -20.0
+offset_bottom = -86.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
@@ -229,6 +255,12 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_cma8p")
 expand_mode = 1
+
+[node name="Reminder" type="Sprite2D" parent="UiArea"]
+position = Vector2(0, 156)
+scale = Vector2(0.626562, 0.570703)
+texture = ExtResource("5_iiiuo")
+centered = false
 
 [node name="Backpack" parent="." instance=ExtResource("1_kjw0n")]
 z_index = 1

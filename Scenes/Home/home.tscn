@@ -93,6 +93,17 @@ texture = ExtResource("14_8kj4n")
 [node name="Timer" type="CanvasLayer" parent="."]
 script = ExtResource("25_osqap")
 
+[node name="Panel" type="Panel" parent="Timer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme = ExtResource("26_wjs62")
+
 [node name="TimerLabel" type="Label" parent="Timer"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -102,6 +113,7 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme = ExtResource("26_wjs62")
+theme_override_constants/outline_size = 15
 text = "120"
 
 [node name="Timer" type="Timer" parent="Timer"]

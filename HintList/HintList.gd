@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-@onready var anim = $AnimationPlayer
+
 @onready var backpack = $"../BackpackController"
 var isHidden : bool = false
 

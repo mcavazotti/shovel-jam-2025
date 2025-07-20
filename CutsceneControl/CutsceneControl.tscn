@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://b7frf8yehlwcx"]
+[gd_scene load_steps=30 format=3 uid="uid://b7frf8yehlwcx"]
 
 [ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://CutsceneControl/CutsceneControl.gd" id="1_ovwsd"]
+[ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="1_wj372"]
 [ext_resource type="Texture2D" uid="uid://cxaswokf0updv" path="res://Assets/Art/Hana Stare.png" id="2_w00vp"]
 [ext_resource type="Shader" uid="uid://b07qimfwjkav3" path="res://CutsceneControl/ImageCutsceneShader.gdshader" id="3_qhham"]
 
@@ -674,6 +675,7 @@ anchor_right = 0.5
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_wj372")
 script = ExtResource("1_ovwsd")
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -767,10 +769,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -116.0
+offset_left = -125.5
 offset_top = 600.0
-offset_right = 317.0
-offset_bottom = 642.0
+offset_right = 326.5
+offset_bottom = 644.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
 text = "THE GREAT LIFE OF YOUR SON"
@@ -832,9 +834,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -300.0
-offset_right = -89.0
-offset_bottom = 91.0
+offset_left = -300.5
+offset_right = -70.5
+offset_bottom = 126.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 60
 text = "MENU"
@@ -845,9 +847,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 95.0
-offset_right = 306.0
-offset_bottom = 91.0
+offset_left = 54.0
+offset_right = 307.0
+offset_bottom = 126.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 60
 text = "HOUSE"
@@ -859,9 +861,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -300.0
-offset_top = 100.0
+offset_top = 143.0
 offset_right = 305.0
-offset_bottom = 191.0
+offset_bottom = 269.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 60
 text = "REPLAY ENDINGS"
