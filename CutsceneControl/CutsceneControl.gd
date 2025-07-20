@@ -73,8 +73,8 @@ func treatEnding():
 	labelFinalStory.text = finalEnding["story"]
 	
 	
-	labelEndingCount.text = "%s/%s" % [str(sizeUnlocked), str(total)]
-	labelEndingLocked.text = "There's still %s endings locked" % [total - sizeUnlocked]
+	labelEndingCount.text = "%s/%s" % [str(sizeUnlocked), str(total+1)]
+	labelEndingLocked.text = "There's still %s endings locked" % [(total+1) - sizeUnlocked]
 
 	SaveNLoad.firstTime = false
 	SaveNLoad.save_game()
