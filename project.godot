@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="Shovel Jam 2025"
-run/main_scene="uid://chkp5ltal2l4n"
+run/main_scene="uid://d2baknogdx3sw"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
