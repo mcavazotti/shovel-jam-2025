@@ -24,7 +24,7 @@ func _ready() -> void:
 	image.custom_minimum_size = DisplayServer.screen_get_size()
 	textureRects = get_tree().get_nodes_in_group("InterImages")
 	print("Texture Rects: ", textureRects)
-	speedOriginal = 1.0
+	speedOriginal = 1
 
 
 func finalAnimStart() -> void:

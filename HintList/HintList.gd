@@ -19,13 +19,13 @@ func updateList(categories):
 	for category in categories:
 		match category:
 			1000:
-				$Panel/VBoxContainer/Food.set_modulate("ffffff13")
+				$Panel/VBoxContainer/Food.set_modulate("11ff11")
 			2000:
-				$Panel/VBoxContainer/Cloathing.set_modulate("ffffff13")
+				$Panel/VBoxContainer/Cloathing.set_modulate("11ff11")
 			3000:
-				$Panel/VBoxContainer/Weapon.set_modulate("ffffff13")
+				$Panel/VBoxContainer/Weapon.set_modulate("11ff11")
 			4000:
-				$Panel/VBoxContainer/Misc.set_modulate("ffffff13")
+				$Panel/VBoxContainer/Misc.set_modulate("11ff11")
 			_:
 				print("Unknown Category")
 

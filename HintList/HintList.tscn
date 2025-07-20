@@ -61,9 +61,9 @@ script = ExtResource("1_p5sf0")
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.701961)
 offset_left = 26.0
-offset_top = -500.0
+offset_top = 25.0
 offset_right = 465.0
-offset_bottom = -61.0
+offset_bottom = 464.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
@@ -84,6 +84,7 @@ mouse_filter = 2
 theme_override_constants/separation = 38
 
 [node name="Food" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("2_j05tw")
 theme_override_font_sizes/font_size = 25
@@ -91,24 +92,27 @@ text = "Your kid needs something to chew on his adventure."
 autowrap_mode = 2
 
 [node name="Cloathing" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "What if it gets cold on his Journey... "
 autowrap_mode = 2
 
 [node name="Weapon" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "He needs some atack power to defend himself."
 autowrap_mode = 2
 
 [node name="Misc" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "And of course just a little extra to cheer him up!"
 autowrap_mode = 2
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_0afn5")
 }

@@ -14,7 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 		Audio.BGM_stream.stop()
 		Audio.AMB_stream.stop()
 		getItems()
-		get_tree().change_scene_to_file("res://Scenes/gameOverCutscenes.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://Scenes/gameOverCutscenes.tscn")
 
 
 func getItems():
