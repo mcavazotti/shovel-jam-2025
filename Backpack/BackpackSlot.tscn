@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyi5whut1x6f1"]
 
 [ext_resource type="Script" uid="uid://bsl4helha4v8m" path="res://Backpack/BackpackSlot.cs" id="1_2o6fh"]
+[ext_resource type="Texture2D" uid="uid://dy53rsysck557" path="res://Assets/Art/Grid.png" id="2_t8k6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8k6d"]
 size = Vector2(50, 50)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7s6td"]
-size = Vector2(45, 45)
 
 [node name="BackpackSlot" type="Node2D"]
 script = ExtResource("1_2o6fh")
@@ -19,7 +17,7 @@ ErrorColor = Color(1, 0, 0, 0.666667)
 shape = SubResource("RectangleShape2D_t8k6d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_7s6td")
+texture = ExtResource("2_t8k6d")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="MouseEnter"]
 [connection signal="mouse_exited" from="Area2D" to="." method="MouseLeave"]
