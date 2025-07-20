@@ -1,6 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=27 format=3 uid="uid://bb2hl8tark6g3"]
 
+[ext_resource type="Texture2D" uid="uid://b858sulxoob2b" path="res://Scenes/Home/kitchen side.png" id="6_cb0am"]
+[ext_resource type="Texture2D" uid="uid://ckll3kqa3ymin" path="res://Assets/Art/abed.png" id="6_mwapa"]
+[ext_resource type="Texture2D" uid="uid://i3l6oc714ckx" path="res://Scenes/Home/kitchen top.png" id="7_vh0vi"]
+[ext_resource type="Texture2D" uid="uid://u6wmfjn0ikuo" path="res://Assets/Art/lights and hooks.png" id="7_vife6"]
+[ext_resource type="Texture2D" uid="uid://dp6tpw857novp" path="res://Assets/Art/rug.png" id="8_6vjbm"]
+[ext_resource type="Texture2D" uid="uid://vgoyw60pxk7p" path="res://Assets/Art/drawer.png" id="9_p81q8"]
+[ext_resource type="Texture2D" uid="uid://cc3vxv5hixq1q" path="res://Assets/Art/carpet.png" id="10_kthle"]
 [ext_resource type="PackedScene" uid="uid://c6wu3x2s6dlyn" path="res://Props/Sofa.tscn" id="12_qvnyp"]
+[ext_resource type="Texture2D" uid="uid://xoqqqck3j2db" path="res://Assets/Art/Table.png" id="12_vife6"]
 [ext_resource type="Texture2D" uid="uid://ddaj73momkbvo" path="res://Assets/Art/Props/Carpet.png" id="13_dqu5y"]
 [ext_resource type="Texture2D" uid="uid://bli7oic53rpcv" path="res://Assets/Art/Friend.png" id="14_8kj4n"]
 [ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Mom/mom.tscn" id="18_rt3f5"]
@@ -17,6 +25,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guf2q"]
 size = Vector2(407, 82)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erpel"]
+size = Vector2(405.119, 821.107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vjbm"]
+size = Vector2(462.387, 1190.86)
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dqu5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pen4i"]
@@ -32,11 +46,6 @@ offset_top = -786.0
 offset_right = 7571.0
 offset_bottom = 5844.0
 color = Color(0.639216, 1, 0.603922, 1)
-
-[node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
-position = Vector2(1262, 685)
-speed = 500.0
-moving_bounce_speed = 13.0
 
 [node name="itemSpawnerControler" parent="." instance=ExtResource("19_8toki")]
 
@@ -74,10 +83,6 @@ IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 position = Vector2(1588, 1119)
 IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
 
-[node name="HintList" parent="." instance=ExtResource("24_u6uem")]
-
-[node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
-
 [node name="ExitHouse" type="Area2D" parent="."]
 script = ExtResource("25_3x5mh")
 
@@ -89,6 +94,142 @@ shape = SubResource("RectangleShape2D_guf2q")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1202, 121)
 texture = ExtResource("14_8kj4n")
+
+[node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
+z_index = -1
+
+[node name="Bedroom" type="StaticBody2D" parent="."]
+position = Vector2(-1197.5, 1936)
+scale = Vector2(1.06956, 1.05894)
+
+[node name="bed" type="Sprite2D" parent="Bedroom"]
+position = Vector2(521.242, -661.985)
+scale = Vector2(0.934964, 0.944344)
+texture = ExtResource("6_mwapa")
+
+[node name="LightsAndHooks" type="Sprite2D" parent="Bedroom"]
+position = Vector2(-174.371, -1047.28)
+scale = Vector2(1, 1)
+texture = ExtResource("7_vife6")
+
+[node name="Rug" type="Sprite2D" parent="Bedroom"]
+z_index = -1
+position = Vector2(157.541, -585.491)
+scale = Vector2(1, 0.799056)
+texture = ExtResource("8_6vjbm")
+
+[node name="Drawer" type="Sprite2D" parent="Bedroom"]
+position = Vector2(22.9066, 734.7)
+scale = Vector2(1, 1)
+texture = ExtResource("9_p81q8")
+
+[node name="Carpet" type="Sprite2D" parent="Bedroom"]
+z_index = -1
+position = Vector2(28.5164, 738.477)
+scale = Vector2(1.37379, 1.37379)
+texture = ExtResource("10_kthle")
+
+[node name="ColorRect" type="ColorRect" parent="Bedroom"]
+z_index = 1
+offset_left = 688.959
+offset_top = -941.0
+offset_right = 697.959
+offset_bottom = -376.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom"]
+position = Vector2(509.088, -732.575)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_erpel")
+
+[node name="ColorRect2" type="ColorRect" parent="Bedroom"]
+z_index = 1
+offset_left = 678.0
+offset_top = -874.0
+offset_right = 687.0
+offset_bottom = -376.0
+color = Color(0.431373, 0.643137, 0.392157, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bedroom"]
+position = Vector2(7.94718, 698.814)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_erpel")
+
+[node name="Kitchen" type="StaticBody2D" parent="."]
+position = Vector2(1788, 866)
+scale = Vector2(0.878906, 0.841406)
+
+[node name="Kitchen" type="Sprite2D" parent="Kitchen"]
+y_sort_enabled = true
+position = Vector2(976.214, -388.635)
+texture = ExtResource("6_cb0am")
+
+[node name="Table" type="Sprite2D" parent="Kitchen"]
+position = Vector2(755.485, 1496.3)
+scale = Vector2(1.13778, 1.18849)
+texture = ExtResource("12_vife6")
+
+[node name="ColorRect" type="ColorRect" parent="Kitchen"]
+z_index = 1
+offset_left = 1055.72
+offset_top = -712.0
+offset_right = 1095.72
+offset_bottom = -72.0001
+color = Color(0.866667, 0.682353, 0.501961, 1)
+
+[node name="KitchenTop" type="Sprite2D" parent="Kitchen"]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(254.862, -681.3)
+scale = Vector2(1.14257, 1.0095)
+texture = ExtResource("7_vh0vi")
+
+[node name="ColorRect3" type="ColorRect" parent="Kitchen"]
+z_index = 1
+offset_left = -192.0
+offset_top = -870.0
+offset_right = 811.0
+offset_bottom = -757.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Kitchen"]
+z_index = 1
+offset_left = -181.0
+offset_top = -860.0
+offset_right = 812.0
+offset_bottom = -748.0
+color = Color(0.866667, 0.682353, 0.501961, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Kitchen"]
+polygon = PackedVector2Array(-184.32, -859.276, -187.733, -534.819, 798.72, -549.081, 798.72, 127.168, 1092.27, 130.733, 1092.27, -872.349)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen"]
+position = Vector2(756.847, 1472.54)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6vjbm")
+
+[node name="BrokenWallNoMore" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_dqu5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenWallNoMore"]
+position = Vector2(2795.5, 2246.5)
+shape = SubResource("RectangleShape2D_pen4i")
+
+[node name="Sofa" parent="." instance=ExtResource("12_qvnyp")]
+position = Vector2(814, 675)
+
+[node name="Carpet" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(406, 722)
+rotation = 1.5708
+texture = ExtResource("13_dqu5y")
+
+[node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
+position = Vector2(1262, 685)
+speed = 500.0
+moving_bounce_speed = 13.0
+
+[node name="HintList" parent="." instance=ExtResource("24_u6uem")]
 
 [node name="Timer" type="CanvasLayer" parent="."]
 script = ExtResource("25_osqap")
@@ -119,26 +260,10 @@ text = "120"
 [node name="Timer" type="Timer" parent="Timer"]
 ignore_time_scale = true
 
-[node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
-
-[node name="BrokenWallNoMore" type="StaticBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_dqu5y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenWallNoMore"]
-position = Vector2(2795.5, 2246.5)
-shape = SubResource("RectangleShape2D_pen4i")
-
-[node name="Sofa" parent="." instance=ExtResource("12_qvnyp")]
-position = Vector2(814, 675)
-
-[node name="Carpet" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(406, 722)
-rotation = 1.5708
-texture = ExtResource("13_dqu5y")
+[node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
 
 [node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
 
-[connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
 [connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
+[connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
