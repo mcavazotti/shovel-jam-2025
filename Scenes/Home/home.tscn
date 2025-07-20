@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=17 format=3 uid="uid://bb2hl8tark6g3"]
 
 [ext_resource type="PackedScene" uid="uid://c6wu3x2s6dlyn" path="res://Props/Sofa.tscn" id="12_qvnyp"]
 [ext_resource type="Texture2D" uid="uid://ddaj73momkbvo" path="res://Assets/Art/Props/Carpet.png" id="13_dqu5y"]
@@ -17,8 +17,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guf2q"]
 size = Vector2(407, 82)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dqu5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pen4i"]
+size = Vector2(105, 1585)
+
 [node name="Home" type="Node2D"]
 y_sort_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -3799.0
+offset_top = -786.0
+offset_right = 7571.0
+offset_bottom = 5844.0
+color = Color(0.639216, 1, 0.603922, 1)
 
 [node name="Mom" parent="." instance=ExtResource("18_rt3f5")]
 position = Vector2(1262, 685)
@@ -94,9 +107,14 @@ text = "120"
 [node name="Timer" type="Timer" parent="Timer"]
 ignore_time_scale = true
 
-[node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
-
 [node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
+
+[node name="BrokenWallNoMore" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_dqu5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BrokenWallNoMore"]
+position = Vector2(2795.5, 2246.5)
+shape = SubResource("RectangleShape2D_pen4i")
 
 [node name="Sofa" parent="." instance=ExtResource("12_qvnyp")]
 position = Vector2(814, 675)
@@ -106,6 +124,8 @@ z_index = -1
 position = Vector2(406, 722)
 rotation = 1.5708
 texture = ExtResource("13_dqu5y")
+
+[node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
 
 [connection signal="ContentChange" from="BackpackController" to="Mom" method="_on_backpack_controller_content_change"]
 [connection signal="body_entered" from="ExitHouse" to="ExitHouse" method="_on_body_entered"]
