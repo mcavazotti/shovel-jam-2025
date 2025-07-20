@@ -7,6 +7,7 @@ var isHidden : bool = false
 
 #the labels are names after the ENUM of Categories
 func _ready() -> void:
+	$anim.play("ListDown")
 	backpack.connect("ContentChange", Callable(self, "_on_BackpackContentChange"))
 
 
