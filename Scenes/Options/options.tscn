@@ -118,33 +118,38 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 23.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.971372, 0.950938)
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Credits" type="RichTextLabel" parent="TabContainer/Controls/Guide"]
+[node name="Label" type="Label" parent="TabContainer/Controls/Guide"]
 layout_mode = 2
-theme_override_font_sizes/bold_italics_font_size = 50
-theme_override_font_sizes/italics_font_size = 50
-theme_override_font_sizes/mono_font_size = 50
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 50
-text = "Move with WASD or Arrow Keys
+text = "Move with WASD or Arrow Keys"
+autowrap_mode = 2
 
-Click and Drag items your bag
+[node name="Label2" type="Label" parent="TabContainer/Controls/Guide"]
+layout_mode = 2
+text = "Click and Drag items to  your bag"
+autowrap_mode = 2
 
-Q and E can be used to rotate items inside the bag
+[node name="Label3" type="Label" parent="TabContainer/Controls/Guide"]
+layout_mode = 2
+text = "Rotate Items in bag with R/Q"
+autowrap_mode = 2
 
- Escape key can be used to open the options menu at any time!
+[node name="Label4" type="Label" parent="TabContainer/Controls/Guide"]
+layout_mode = 2
+text = "Hide/Show list of hints with H"
+autowrap_mode = 2
 
-The Enter Key speeds up the results scene."
-fit_content = true
-scroll_active = false
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-drag_and_drop_selection_enabled = false
+[node name="Label5" type="Label" parent="TabContainer/Controls/Guide"]
+layout_mode = 2
+text = "During results, hit Enter to speed up or Space to Pause."
+autowrap_mode = 2
 
 [node name="Video" type="Panel" parent="TabContainer"]
 visible = false
@@ -280,6 +285,29 @@ min_value = -30.0
 max_value = 4.0
 step = 0.1
 tick_count = 10
+
+[node name="Credits" type="RichTextLabel" parent="."]
+visible = false
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 50
+text = "Move with WASD or Arrow Keys
+
+Click and Drag items your bag
+
+Q and E can be used to rotate items inside the bag
+
+ Escape key can be used to open the options menu at any time!
+
+The Enter Key speeds up the results scene."
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+drag_and_drop_selection_enabled = false
 
 [connection signal="tab_changed" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="TabContainer/General/General Buttons and Credits/To Game" to="." method="_on_return_pressed"]
