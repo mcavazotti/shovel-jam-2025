@@ -23,7 +23,7 @@ colors = PackedColorArray(0, 0, 0, 0.27451, 0, 0, 0, 0.27451)
 gradient = SubResource("Gradient_5m583")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p46h7"]
-radius = 65.0
+radius = 74.0
 height = 171.44
 
 [node name="Mom" type="CharacterBody2D" groups=["Player"]]
@@ -42,11 +42,12 @@ texture = SubResource("GradientTexture1D_w4s6d")
 
 [node name="MomPlacehold" type="Sprite2D" parent="."]
 material = ExtResource("2_5i5ap")
-position = Vector2(5.5, -51.5)
+position = Vector2(5.5, -52.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_jgf88")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(-4, 40)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_p46h7")
