@@ -77,44 +77,6 @@ offset_right = 7571.0
 offset_bottom = 5844.0
 color = Color(0.639216, 1, 0.603922, 1)
 
-[node name="itemSpawnerControler" parent="." instance=ExtResource("19_8toki")]
-visible = false
-
-[node name="ItemSpawners" type="Node2D" parent="."]
-visible = false
-
-[node name="CloakSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(4673, 90)
-IdsToAccept = PackedInt32Array(2001, 2002)
-
-[node name="CloakSpawner2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(4981, 94)
-IdsToAccept = PackedInt32Array(2001, 2002)
-
-[node name="SwordSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(800, 1321)
-IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
-
-[node name="SwordSpawner2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(531, 917)
-IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
-
-[node name="SwordSpawner3" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(511, 581)
-IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
-
-[node name="SwordSpawner4" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(908, 870)
-IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
-
-[node name="SwordSpawner5" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(1258, 1112)
-IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
-
-[node name="SwordSpawner6" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
-position = Vector2(1588, 1119)
-IdsToAccept = PackedInt32Array(3002, 3003, 3004, 3005, 3006, 3007)
-
 [node name="ExitHouse" type="Area2D" parent="."]
 script = ExtResource("25_3x5mh")
 
@@ -129,6 +91,75 @@ texture = ExtResource("14_8kj4n")
 
 [node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
 z_index = -1
+
+[node name="itemSpawnerControler" parent="." instance=ExtResource("19_8toki")]
+
+[node name="ItemSpawners" type="Node2D" parent="."]
+
+[node name="LowerBathroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(2455, 3630)
+IdsToAccept = PackedInt32Array(2001, 1001, 3010, 4001, 4002, 4302, 4101, 4102, 4103)
+
+[node name="Sofa1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(806, 940)
+IdsToAccept = PackedInt32Array(2101, 2102, 2103, 2201, 3008, 4201, 4203, 4204, 4206, 4207, 4208, 4302, 4303, 4104, 4102)
+
+[node name="Sofa2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+z_index = 2
+position = Vector2(700, 700)
+IdsToAccept = PackedInt32Array(2101, 2102, 2103, 2201, 4201, 4203, 4204, 4206, 4207, 4208, 4302, 4303, 4104, 4102)
+
+[node name="Kitchen1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(2602, 991)
+IdsToAccept = PackedInt32Array(1001, 1002, 1003, 1004, 3001, 3006, 4101, 4102, 4103, 4104, 4207, 4208, 4302)
+
+[node name="Dinning1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(2450, 1800)
+IdsToAccept = PackedInt32Array(1001, 1002, 1003, 1004, 4205, 4101, 4104)
+
+[node name="UpperBedroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4862, 557)
+IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 4001, 4002, 4101, 4102, 4103, 4104, 4201, 4202, 4203, 4204, 4206, 4207, 4208, 4209, 4301, 4302, 4303, 4303)
+
+[node name="UpperBedroom2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(6500, 500)
+IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 4001, 4002, 4101, 4102, 4103, 4104, 4201, 4202, 4203, 4204, 4206, 4207, 4208, 4209, 4301, 4302, 4303)
+
+[node name="Laundry1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4605, 1796)
+IdsToAccept = PackedInt32Array(2001, 2002, 2101)
+
+[node name="Laundry2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4771, 1796)
+IdsToAccept = PackedInt32Array(2001, 2002, 2101)
+
+[node name="Laundry3" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(5888, 1859)
+IdsToAccept = PackedInt32Array(2001, 2002, 2101, 2102, 2301, 2302, 3009, 3010, 4001, 4002, 4201, 4201, 4204, 4205, 4206, 4208, 4209, 4301, 4302, 4303, 4104, 4103)
+
+[node name="LowerBedroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(-750, 1550)
+IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 4001, 4002, 4101, 4102, 4103, 4104, 4201, 4202, 4203, 4204, 4206, 4207, 4208, 4209, 4301, 4302, 4303)
+
+[node name="LowerBedroom2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(-1174, 959)
+IdsToAccept = PackedInt32Array(1003, 2001, 2002, 2101, 2102, 2202, 2203, 2301)
+
+[node name="Odd1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(3426, 1979)
+IdsToAccept = PackedInt32Array(2202, 2203, 2302, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 4101, 4102, 4103, 4104, 4202, 4203, 4204, 4205, 4206, 4207, 4209, 4301, 4303)
+
+[node name="Odd2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4000, 2040)
+IdsToAccept = PackedInt32Array(2202, 2203, 2302, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 4101, 4102, 4103, 4104, 4202, 4203, 4204, 4205, 4206, 4207, 4209, 4301, 4303)
+
+[node name="Odd3" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(3027, 2125)
+IdsToAccept = PackedInt32Array(2202, 2203, 2302, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 4101, 4102, 4103, 4104, 4202, 4203, 4204, 4205, 4206, 4207, 4209, 4301, 4303)
+
+[node name="UpperBathroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4047, 268)
+IdsToAccept = PackedInt32Array(4001, 4002, 4302, 4303, 4101, 4104, 4102, 4103)
 
 [node name="Beef Room" type="StaticBody2D" parent="."]
 position = Vector2(-1197.5, 1936)
@@ -263,16 +294,13 @@ polygon = PackedVector2Array(5185, 106, 5185, 363, 4859, 361, 4863, 724, 4475, 7
 
 [node name="Laundry" type="StaticBody2D" parent="."]
 position = Vector2(814, 675)
-scale = Vector2(1, 1)
 
 [node name="Hooks" type="Sprite2D" parent="Laundry"]
 position = Vector2(3880, 996)
-scale = Vector2(1, 1)
 texture = ExtResource("17_3i7e6")
 
 [node name="Landrdry" type="Sprite2D" parent="Laundry"]
 position = Vector2(5452, 1136)
-scale = Vector2(1, 1)
 texture = ExtResource("18_6ijhe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Laundry"]
@@ -353,10 +381,8 @@ speed = 500.0
 moving_bounce_speed = 13.0
 
 [node name="HintList" parent="." instance=ExtResource("24_u6uem")]
-visible = false
 
 [node name="Timer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("25_osqap")
 
 [node name="Panel" type="Panel" parent="Timer"]
@@ -386,7 +412,6 @@ text = "120"
 ignore_time_scale = true
 
 [node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
-visible = false
 
 [node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
 
