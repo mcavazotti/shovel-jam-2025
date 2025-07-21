@@ -1,11 +1,11 @@
 [
 	{
 		"id": 0000,
-		"name": "Just a regular adventurer",
+		"name": "A Journey to be Started",
 		"typeOfEnding": "Final",
 		"reference" : "Normal",
-		"story": "Lorem ipsum.....",
-		"coverImage": "....",
+		"story": "Your child took his first step to become a great adventurer.",
+		"coverImage": "res://Assets/Art/Endings/0000.png",
 		"conditions": [
 			{
 				"type": "category",
@@ -45,7 +45,7 @@
 		"story": "You know too well the dangers of an adventure. You’re not letting your child be in harm’s way, no matter what!
 
 ”Mom! Why you never let me do anything?!”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0001.png",
 		"conditions": [
 			{
 				"type": "category",
@@ -85,7 +85,7 @@
 		"story": "Worried that he might not leave enough money for family, your child drove to the desert to cook some illegal stuff and make money.
 
 ”Mom, I did it for my family!”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0002.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -118,7 +118,7 @@
 		"story": "During his adventures, your child took a few “contratcs” to help get him some cash to his adventures, making roles in major “accidents”, of course, involving villans.
 
 ”Mom! Check out this coin cool I have it”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0003.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -144,7 +144,7 @@
 		"story": "On his grand journey your child learned the magical world of the mines where he strengthened his craft.
 
 ”I. Am. A miner.”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0004.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -170,7 +170,7 @@
 		"story": "Your child learns the glory of vanquishing your enemies with the drop of a spade on their heads. Who would have thought that shovels are so… bouncey? And for some reason he found himself battleing the most eclectic, and ego rot knights of an evil tower!
 
 ”Mom, have you ever met a dancing apple trout?”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0005.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -196,7 +196,7 @@
 		"story": "During his adventures, your child spent a summer in a camp. There he made friends, learned classical history and fought mythological creatures. It made you remember your youth days doing the same.
 
 ”Mom… I have a question… who really was dad?”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/00101.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -229,7 +229,7 @@
 		"story": "During his adventures, your child met a crew of cursed undead pirates looking for a medallion. Your husband will have some explaining to do when he’s back…
 
 ”This is the day you will remember as the day you almost captured…”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0201.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -255,7 +255,7 @@
 		"story": "At some point during his adventures, your child started a side hustle of killing monsters for money. People started calling him something related to witches…
 
 ”Mom, this world doesn't need a hero. It needs a professional.”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0202.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -283,7 +283,7 @@
 However, your child was corrupted by the evil influence of the ring. The Dark Lord rose to power again and brought terror and destruction to all the land!
 
 If your child only stayed at home…",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0401.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -332,7 +332,7 @@ If your child only stayed at home…",
 Your child was almost corrupted by the evil influence of the ring, but the memory of his friends made him overcome it.
 
 He will now travel west and rest in the eternal lands.",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0402.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -386,7 +386,7 @@ He will now travel west and rest in the eternal lands.",
 		"story": "The broken sword was reforged, the evil of this era was defeated, and your child sits on the throne that is rightfully his!
 
 ”Mom, the blade that was broken shall return…”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0403.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -442,7 +442,7 @@ He will now travel west and rest in the eternal lands.",
 The ring corrupted your child! After defeating the Dark Lord, he became a tyrant! Our hope turned into despair as he had become a Dark Lord himself!
 
 If your child only stayed at home…",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0404.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -503,7 +503,7 @@ If your child only stayed at home…",
 		"story": "Your child found out some interior power and started training with a group of space monk warriors. After some years of training, he became a master.
 
 ”Mom, may the forc… inner power be with you!”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0501.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -531,7 +531,7 @@ If your child only stayed at home…",
 Your child saved the day, but now you are a widow.
 
 ”Mom, why did you never tell me who my father was?”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0502.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -562,7 +562,7 @@ Your child saved the day, but now you are a widow.
 		"typeOfEnding": "Final",
 		"reference" : "StarWars",
 		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He brought balance to the inner power and peace to the galaxy.",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0503.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -595,7 +595,7 @@ Your child saved the day, but now you are a widow.
 		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He was supposed to bring balance to the inner power, but he couldn’t detach from his fear of losing relationships.
 
 His master said: “Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering”. Unfortunately that’s what happened. To make things worse, he couldn’t find the high ground.",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0504.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -635,7 +635,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He was supposed to bring balance to the inner power, but he couldn’t detach from his fear of losing relationships.
 
 His master said: “Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering”. Unfortunately that’s what happened. At least he found the high ground.",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0505.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -680,7 +680,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"typeOfEnding": "Final",
 		"reference" : "StarWars",
 		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He brought balance to the inner power and peace to the galaxy.",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0506.png",
 		"conditions": [
 			{
 				"type": "id",
@@ -713,7 +713,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"story": "In his journey, your child mastered the art of swordfight, with his 3 swords technic no one was a match to him, however he returned home… earlier than expected.
 
 ”Mom? I swear I turned the right corner!”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0601.png",
 		"conditions": [
 			{
 				"type": "tag",
@@ -732,7 +732,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"story": "Your kid has become quite popular with all his accessories and have been invited to multiples events.
 
 ”Mom look! I’m just like that one character we watched.”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0701.png",
 		"conditions": [
 			{
 				"type": "tag",
@@ -751,7 +751,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"story": "Your kid got the attention of many people, his skills and gadgets really put up a show, he got invited to a Anime exposition.
 
 ”Mom, I am now… John Anime.”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/0702.png",
 		"conditions": [
 			{
 				"type": "tag",
@@ -770,7 +770,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"story": "Your kid had been cursed with a Demon Pie, and had lost the hability to swim... Luckly, on his adventures he found a temple of healing and the curse was removed.
 
 ”Mom, I told you I'd be fineeee”",
-		"coverImage": "....",
+		"coverImage": "res://Assets/Art/Endings/9999.png",
 		"conditions": [
 			{
 				"type": "tag",

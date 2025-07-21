@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var endingData = {}
-@onready var endingPath = "res://FinalEndings/endingEx.json"
+@onready var endingPath = "res://FinalEndings/Endings.json"
 @onready var itemsBackpack:Array
 
 
