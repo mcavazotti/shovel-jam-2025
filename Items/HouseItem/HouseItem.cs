@@ -84,7 +84,6 @@ public partial class HouseItem : Node2D
 		var label = GetNode<Label>("Label");
 		label.Text = $"{Data.Name}\n{GetCategoryName(Data.Category)}";
 		label.Visible = false;
-		label.Position = new Vector2(0, imageSize.Y / 2 + 15);
 
 		var collisionShape2D = GetNode<CollisionShape2D>("Area2D/CollisionShape2D");
 		((RectangleShape2D)collisionShape2D.Shape).Size = imageSize;
