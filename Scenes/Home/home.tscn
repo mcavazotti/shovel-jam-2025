@@ -1,16 +1,24 @@
-[gd_scene load_steps=27 format=3 uid="uid://bb2hl8tark6g3"]
+[gd_scene load_steps=42 format=3 uid="uid://bb2hl8tark6g3"]
 
 [ext_resource type="Texture2D" uid="uid://b858sulxoob2b" path="res://Scenes/Home/kitchen side.png" id="6_cb0am"]
 [ext_resource type="Texture2D" uid="uid://ckll3kqa3ymin" path="res://Assets/Art/abed.png" id="6_mwapa"]
+[ext_resource type="Texture2D" uid="uid://0c2jm37tgn8v" path="res://Assets/Art/for hands.png" id="6_wjs62"]
+[ext_resource type="Texture2D" uid="uid://bpfi3pgyk55u7" path="res://Assets/Art/for souls.png" id="7_hui3d"]
 [ext_resource type="Texture2D" uid="uid://i3l6oc714ckx" path="res://Scenes/Home/kitchen top.png" id="7_vh0vi"]
 [ext_resource type="Texture2D" uid="uid://u6wmfjn0ikuo" path="res://Assets/Art/lights and hooks.png" id="7_vife6"]
+[ext_resource type="Texture2D" uid="uid://bsys0r4figxo6" path="res://Assets/Art/water closet.png" id="8_3i7e6"]
 [ext_resource type="Texture2D" uid="uid://dp6tpw857novp" path="res://Assets/Art/rug.png" id="8_6vjbm"]
 [ext_resource type="Texture2D" uid="uid://vgoyw60pxk7p" path="res://Assets/Art/drawer.png" id="9_p81q8"]
 [ext_resource type="Texture2D" uid="uid://cc3vxv5hixq1q" path="res://Assets/Art/carpet.png" id="10_kthle"]
 [ext_resource type="PackedScene" uid="uid://c6wu3x2s6dlyn" path="res://Props/Sofa.tscn" id="12_qvnyp"]
 [ext_resource type="Texture2D" uid="uid://xoqqqck3j2db" path="res://Assets/Art/Table.png" id="12_vife6"]
 [ext_resource type="Texture2D" uid="uid://ddaj73momkbvo" path="res://Assets/Art/Props/Carpet.png" id="13_dqu5y"]
+[ext_resource type="Texture2D" uid="uid://qsdi35xlbiig" path="res://Assets/Art/estudiar.png" id="14_6ijhe"]
 [ext_resource type="Texture2D" uid="uid://bli7oic53rpcv" path="res://Assets/Art/Friend.png" id="14_8kj4n"]
+[ext_resource type="Texture2D" uid="uid://caro5b67qinds" path="res://Assets/Art/bedsidestoo.png" id="15_4yqb0"]
+[ext_resource type="Texture2D" uid="uid://ccwux2b16km5h" path="res://Assets/Art/edside.png" id="16_01b5g"]
+[ext_resource type="Texture2D" uid="uid://bvp8mlmp2kxmr" path="res://Assets/Art/hooks.png" id="17_3i7e6"]
+[ext_resource type="Texture2D" uid="uid://c5ptne7106ae4" path="res://Assets/Art/landrdry.png" id="18_6ijhe"]
 [ext_resource type="PackedScene" uid="uid://bsqhqkxu74jve" path="res://Mom/mom.tscn" id="18_rt3f5"]
 [ext_resource type="PackedScene" uid="uid://7q65lapufcsh" path="res://Items/ItemSpawner/ItemSpawnerController.tscn" id="19_8toki"]
 [ext_resource type="PackedScene" uid="uid://c4lk76dkkl632" path="res://Items/ItemSpawner/ItemSpawner.tscn" id="20_exgj1"]
@@ -25,8 +33,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guf2q"]
 size = Vector2(407, 82)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yqb0"]
+size = Vector2(596.553, 332.075)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01b5g"]
+size = Vector2(381.557, 656.317)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xhxu"]
+size = Vector2(299.188, 225.031)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_erpel"]
 size = Vector2(405.119, 821.107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgcut"]
+size = Vector2(601.835, 1226.1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8v2m"]
+size = Vector2(609.31, 431.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsonk"]
+size = Vector2(306.5, 644.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxdyy"]
+size = Vector2(941.5, 311)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vjbm"]
 size = Vector2(462.387, 1190.86)
@@ -40,6 +69,7 @@ size = Vector2(105, 1585)
 y_sort_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -1
 offset_left = -3799.0
 offset_top = -786.0
@@ -48,8 +78,10 @@ offset_bottom = 5844.0
 color = Color(0.639216, 1, 0.603922, 1)
 
 [node name="itemSpawnerControler" parent="." instance=ExtResource("19_8toki")]
+visible = false
 
 [node name="ItemSpawners" type="Node2D" parent="."]
+visible = false
 
 [node name="CloakSpawner" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(4673, 90)
@@ -98,6 +130,37 @@ texture = ExtResource("14_8kj4n")
 [node name="TileMaps" parent="." instance=ExtResource("23_p81q8")]
 z_index = -1
 
+[node name="Beef Room" type="StaticBody2D" parent="."]
+position = Vector2(-1197.5, 1936)
+scale = Vector2(1.06956, 1.05894)
+
+[node name="ForHands" type="Sprite2D" parent="Beef Room"]
+position = Vector2(2586.58, 2107.77)
+scale = Vector2(0.611744, 0.617879)
+texture = ExtResource("6_wjs62")
+
+[node name="ForSouls" type="Sprite2D" parent="Beef Room"]
+position = Vector2(3501.91, 1423.12)
+scale = Vector2(0.651432, 0.657965)
+texture = ExtResource("7_hui3d")
+
+[node name="WaterCloset" type="Sprite2D" parent="Beef Room"]
+position = Vector2(2473.45, 1522.28)
+scale = Vector2(0.529256, 0.534564)
+texture = ExtResource("8_3i7e6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beef Room"]
+position = Vector2(2560.42, 2147.6)
+shape = SubResource("RectangleShape2D_4yqb0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Beef Room"]
+position = Vector2(3501.02, 1420.76)
+shape = SubResource("RectangleShape2D_01b5g")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Beef Room"]
+position = Vector2(2477.19, 1524.97)
+shape = SubResource("RectangleShape2D_0xhxu")
+
 [node name="Bedroom" type="StaticBody2D" parent="."]
 position = Vector2(-1197.5, 1936)
 scale = Vector2(1.06956, 1.05894)
@@ -109,7 +172,6 @@ texture = ExtResource("6_mwapa")
 
 [node name="LightsAndHooks" type="Sprite2D" parent="Bedroom"]
 position = Vector2(-174.371, -1047.28)
-scale = Vector2(1, 1)
 texture = ExtResource("7_vife6")
 
 [node name="Rug" type="Sprite2D" parent="Bedroom"]
@@ -120,7 +182,6 @@ texture = ExtResource("8_6vjbm")
 
 [node name="Drawer" type="Sprite2D" parent="Bedroom"]
 position = Vector2(22.9066, 734.7)
-scale = Vector2(1, 1)
 texture = ExtResource("9_p81q8")
 
 [node name="Carpet" type="Sprite2D" parent="Bedroom"]
@@ -139,7 +200,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom"]
 position = Vector2(509.088, -732.575)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_erpel")
 
 [node name="ColorRect2" type="ColorRect" parent="Bedroom"]
@@ -152,8 +212,72 @@ color = Color(0.431373, 0.643137, 0.392157, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bedroom"]
 position = Vector2(7.94718, 698.814)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_erpel")
+
+[node name="WonderBath" type="StaticBody2D" parent="."]
+position = Vector2(5019, 228)
+scale = Vector2(0.535032, 0.535032)
+
+[node name="WaterCloset" type="Sprite2D" parent="WonderBath"]
+position = Vector2(-3697.44, 136.908)
+scale = Vector2(1.00957, 1.04633)
+texture = ExtResource("8_3i7e6")
+
+[node name="ForHands" type="Sprite2D" parent="WonderBath"]
+position = Vector2(-1575.61, 343.905)
+rotation = -1.5708
+scale = Vector2(1.13077, 1.34338)
+texture = ExtResource("6_wjs62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WonderBath"]
+position = Vector2(-1540.1, 426.143)
+shape = SubResource("RectangleShape2D_cgcut")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WonderBath"]
+position = Vector2(-3695.11, 154.196)
+shape = SubResource("RectangleShape2D_t8v2m")
+
+[node name="BluedRoom" type="StaticBody2D" parent="."]
+
+[node name="Estudiar" type="Sprite2D" parent="BluedRoom"]
+position = Vector2(6580, 476)
+scale = Vector2(0.476879, 0.476879)
+texture = ExtResource("14_6ijhe")
+
+[node name="Bedsidestoo" type="Sprite2D" parent="BluedRoom"]
+position = Vector2(4671, 418.5)
+scale = Vector2(0.650888, 0.664191)
+texture = ExtResource("15_4yqb0")
+
+[node name="Edside" type="Sprite2D" parent="BluedRoom"]
+position = Vector2(5019, 228)
+scale = Vector2(0.535032, 0.535032)
+texture = ExtResource("16_01b5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluedRoom"]
+position = Vector2(6584.25, 464.75)
+shape = SubResource("RectangleShape2D_nsonk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BluedRoom"]
+polygon = PackedVector2Array(5185, 106, 5185, 363, 4859, 361, 4863, 724, 4475, 729, 4464, 79)
+
+[node name="Laundry" type="StaticBody2D" parent="."]
+position = Vector2(814, 675)
+scale = Vector2(1, 1)
+
+[node name="Hooks" type="Sprite2D" parent="Laundry"]
+position = Vector2(3880, 996)
+scale = Vector2(1, 1)
+texture = ExtResource("17_3i7e6")
+
+[node name="Landrdry" type="Sprite2D" parent="Laundry"]
+position = Vector2(5452, 1136)
+scale = Vector2(1, 1)
+texture = ExtResource("18_6ijhe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laundry"]
+position = Vector2(5462.75, 1159)
+shape = SubResource("RectangleShape2D_dxdyy")
 
 [node name="Kitchen" type="StaticBody2D" parent="."]
 position = Vector2(1788, 866)
@@ -205,7 +329,6 @@ polygon = PackedVector2Array(-184.32, -859.276, -187.733, -534.819, 798.72, -549
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen"]
 position = Vector2(756.847, 1472.54)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6vjbm")
 
 [node name="BrokenWallNoMore" type="StaticBody2D" parent="."]
@@ -230,8 +353,10 @@ speed = 500.0
 moving_bounce_speed = 13.0
 
 [node name="HintList" parent="." instance=ExtResource("24_u6uem")]
+visible = false
 
 [node name="Timer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("25_osqap")
 
 [node name="Panel" type="Panel" parent="Timer"]
@@ -261,6 +386,7 @@ text = "120"
 ignore_time_scale = true
 
 [node name="BackpackController" parent="." instance=ExtResource("22_vsuxi")]
+visible = false
 
 [node name="PauseGame" parent="." instance=ExtResource("23_5uo8w")]
 
