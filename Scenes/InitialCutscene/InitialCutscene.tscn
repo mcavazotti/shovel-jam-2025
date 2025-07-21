@@ -280,11 +280,12 @@ offset_top = 306.0
 offset_right = 670.0
 offset_bottom = 493.0
 theme = ExtResource("4_bghnv")
-theme_override_colors/font_color = Color(0.942745, 0.63111, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.468327, 1.10099e-06, 1.68458e-07, 1)
-theme_override_colors/font_outline_color = Color(0.681993, 0.0475666, 0.498949, 1)
+theme_override_colors/font_color = Color(1.34766e-06, 0.80555, 0.794402, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.266955, 0.333189, 1)
+theme_override_colors/font_outline_color = Color(0.0721061, 0.253098, 1, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 15
 text = "MOOOOOM! WE'RE GONNA BE LATE!"
 autowrap_mode = 2
 
@@ -302,6 +303,7 @@ theme_override_colors/font_shadow_color = Color(0.0696477, 0.197084, 2.88785e-07
 theme_override_colors/font_outline_color = Color(0, 0.47924, 0.107875, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 15
 text = "Did you pack your backpack, dear?"
 autowrap_mode = 2
 

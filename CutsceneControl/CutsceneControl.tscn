@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d07u4x1adq6ul" path="res://CutsceneControl/CutsceneControl.gd" id="1_ovwsd"]
 [ext_resource type="Theme" uid="uid://djb6iany7t78l" path="res://Assets/UiTheme.tres" id="1_wj372"]
-[ext_resource type="Texture2D" uid="uid://cxaswokf0updv" path="res://Assets/Art/Hana Stare.png" id="2_w00vp"]
 [ext_resource type="Shader" uid="uid://b07qimfwjkav3" path="res://CutsceneControl/ImageCutsceneShader.gdshader" id="3_qhham"]
 
 [sub_resource type="Animation" id="Animation_dgoe4"]
@@ -559,6 +558,9 @@ _data = {
 &"RESET": SubResource("Animation_wj372")
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qhham"]
+load_path = "res://.godot/imported/Hana Stare.png-78ee1993626a192e8f9a0ba32cdf14ac.ctex"
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qhham"]
 frequency = 0.04
 
@@ -707,7 +709,7 @@ offset_left = -640.0
 offset_right = 640.0
 offset_bottom = 720.0
 grow_horizontal = 2
-texture = ExtResource("2_w00vp")
+texture = SubResource("CompressedTexture2D_qhham")
 
 [node name="TextureRect" type="TextureRect" parent="." groups=["InterImages"]]
 material = SubResource("ShaderMaterial_wj372")
@@ -717,7 +719,7 @@ offset_left = 410.0
 offset_top = 66.0
 offset_right = 890.0
 offset_bottom = 546.0
-texture = ExtResource("2_w00vp")
+texture = SubResource("CompressedTexture2D_qhham")
 
 [node name="TextureRect2" type="TextureRect" parent="." groups=["InterImages"]]
 material = SubResource("ShaderMaterial_qhham")
@@ -727,7 +729,7 @@ offset_left = -881.0
 offset_top = 66.0
 offset_right = -401.0
 offset_bottom = 546.0
-texture = ExtResource("2_w00vp")
+texture = SubResource("CompressedTexture2D_qhham")
 
 [node name="TextureRect3" type="TextureRect" parent="." groups=["InterImages"]]
 material = SubResource("ShaderMaterial_kpr6r")
@@ -737,7 +739,7 @@ offset_left = 410.0
 offset_top = 550.0
 offset_right = 890.0
 offset_bottom = 1030.0
-texture = ExtResource("2_w00vp")
+texture = SubResource("CompressedTexture2D_qhham")
 
 [node name="TextureRect4" type="TextureRect" parent="." groups=["InterImages"]]
 material = SubResource("ShaderMaterial_y1p1o")
@@ -747,7 +749,7 @@ offset_left = -881.0
 offset_top = 550.0
 offset_right = -401.0
 offset_bottom = 1030.0
-texture = ExtResource("2_w00vp")
+texture = SubResource("CompressedTexture2D_qhham")
 
 [node name="intermediate" type="Label" parent="."]
 layout_mode = 1
