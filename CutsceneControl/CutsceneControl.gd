@@ -113,6 +113,7 @@ func startAnimation():
 
 
 func skipIntermediate():
+	$animImage.play("RESET")
 	finalAnimStart()
 
 

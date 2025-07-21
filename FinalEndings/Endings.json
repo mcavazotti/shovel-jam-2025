@@ -380,7 +380,7 @@ He will now travel west and rest in the eternal lands.",
 	},
 	{
 		"id": 0403,
-		"name": "The return of a king",
+		"name": "The Return of a King",
 		"typeOfEnding": "Final",
 		"reference" : "TheLordoftheRings",
 		"story": "The broken sword was reforged, the evil of this era was defeated, and your child sits on the throne that is rightfully his!
@@ -434,7 +434,7 @@ He will now travel west and rest in the eternal lands.",
 	},
 	{
 		"id": 0404,
-		"name": "A new dark lord",
+		"name": "A New Dark Lord",
 		"typeOfEnding": "Final",
 		"reference" : "TheLordoftheRings",
 		"story": "The broken sword was reforged, and your child sits on the throne that is rightfully his, but not as a benevolent king, nor have the evil been purged.
@@ -523,7 +523,7 @@ If your child only stayed at home…",
 	},
 	{
 		"id": 0502,
-		"name": "Family issues resolved",
+		"name": "Family Issues Resolved",
 		"typeOfEnding": "Final",
 		"reference" : "StarWars",
 		"story": "Your child found out that his father was one of the top officials of the evil galactic empire. After some fighting, they worked together to defeat the evil emperor, thus saving the galaxy!
@@ -558,7 +558,7 @@ Your child saved the day, but now you are a widow.
 	},
 	{
 		"id": 0503,
-		"name": "The Chosen One in space",
+		"name": "The Chosen One in Space",
 		"typeOfEnding": "Final",
 		"reference" : "StarWars",
 		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He brought balance to the inner power and peace to the galaxy.",
@@ -676,7 +676,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 	},
 	{
 		"id": 0506,
-		"name": "The Fall of the Death Moon, and The return of the Son",
+		"name": "The Fall of the Death Moon, and The Return of the Son",
 		"typeOfEnding": "Final",
 		"reference" : "StarWars",
 		"story": "Your child, being the chosen one, exceeded in his training as a space monk warrior. He brought balance to the inner power and peace to the galaxy.",

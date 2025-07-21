@@ -100,6 +100,10 @@ z_index = -1
 position = Vector2(2455, 3630)
 IdsToAccept = PackedInt32Array(2001, 1001, 3010, 4001, 4002, 4302, 4101, 4102, 4103)
 
+[node name="LowerBathroom2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(2170, 4096)
+IdsToAccept = PackedInt32Array(2001, 1001, 3010, 4001, 4002, 4302, 4101, 4102, 4103)
+
 [node name="Sofa1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(806, 940)
 IdsToAccept = PackedInt32Array(2101, 2102, 2103, 2201, 3008, 4201, 4203, 4204, 4206, 4207, 4208, 4302, 4303, 4104, 4102)
@@ -113,8 +117,20 @@ IdsToAccept = PackedInt32Array(2101, 2102, 2103, 2201, 4201, 4203, 4204, 4206, 4
 position = Vector2(2602, 991)
 IdsToAccept = PackedInt32Array(1001, 1002, 1003, 1004, 3001, 3006, 4101, 4102, 4103, 4104, 4207, 4208, 4302)
 
+[node name="Kitchen2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(2086, 429)
+IdsToAccept = PackedInt32Array(1001, 1002, 1003, 1004, 3001, 3006, 4101, 4102, 4103, 4104, 4207, 4208, 4302)
+
 [node name="Dinning1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(2450, 1800)
+IdsToAccept = PackedInt32Array(1001, 1002, 1003, 1004, 4205, 4101, 4104)
+
+[node name="Dinning2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(2446, 2669)
+IdsToAccept = PackedInt32Array(1001, 1002, 1003, 1004, 4205, 4101, 4104)
+
+[node name="Dinning3" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(91, 2800)
 IdsToAccept = PackedInt32Array(1001, 1002, 1003, 1004, 4205, 4101, 4104)
 
 [node name="UpperBedroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
@@ -123,6 +139,10 @@ IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3
 
 [node name="UpperBedroom2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(6500, 500)
+IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 4001, 4002, 4101, 4102, 4103, 4104, 4201, 4202, 4203, 4204, 4206, 4207, 4208, 4209, 4301, 4302, 4303)
+
+[node name="UpperBedroom3" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(5423, 383)
 IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 4001, 4002, 4101, 4102, 4103, 4104, 4201, 4202, 4203, 4204, 4206, 4207, 4208, 4209, 4301, 4302, 4303)
 
 [node name="Laundry1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
@@ -137,6 +157,14 @@ IdsToAccept = PackedInt32Array(2001, 2002, 2101)
 position = Vector2(5888, 1859)
 IdsToAccept = PackedInt32Array(2001, 2002, 2101, 2102, 2301, 2302, 3009, 3010, 4001, 4002, 4201, 4201, 4204, 4205, 4206, 4208, 4209, 4301, 4302, 4303, 4104, 4103)
 
+[node name="Laundry4" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(6518, 2133)
+IdsToAccept = PackedInt32Array(2001, 2002, 2101, 2102, 2301, 2302, 3009, 3010, 4001, 4002, 4201, 4201, 4204, 4205, 4206, 4208, 4209, 4301, 4302, 4303, 4104, 4103)
+
+[node name="Laundry5" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(4614, 2089)
+IdsToAccept = PackedInt32Array(2202, 2203, 2302, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 4101, 4102, 4103, 4104, 4202, 4203, 4204, 4205, 4206, 4207, 4209, 4301, 4303)
+
 [node name="LowerBedroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(-750, 1550)
 IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 4001, 4002, 4101, 4102, 4103, 4104, 4201, 4202, 4203, 4204, 4206, 4207, 4208, 4209, 4301, 4302, 4303)
@@ -144,6 +172,14 @@ IdsToAccept = PackedInt32Array(1003, 2101, 2102, 2103, 2201, 2202, 2203, 2301, 3
 [node name="LowerBedroom2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(-1174, 959)
 IdsToAccept = PackedInt32Array(1003, 2001, 2002, 2101, 2102, 2202, 2203, 2301)
+
+[node name="LowerBedroom3" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(-1678, 2782)
+IdsToAccept = PackedInt32Array(1003, 2001, 2002, 2101, 2102, 2203, 2301, 3006, 3008, 4202, 0)
+
+[node name="LowerBedroom4" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(-709, 2739)
+IdsToAccept = PackedInt32Array(1003, 2001, 2002, 2101, 2102, 2202, 2203, 2301, 3006, 3008, 3010, 4202)
 
 [node name="Odd1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(3426, 1979)
@@ -159,6 +195,10 @@ IdsToAccept = PackedInt32Array(2202, 2203, 2302, 3002, 3003, 3004, 3005, 3006, 3
 
 [node name="UpperBathroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(4047, 268)
+IdsToAccept = PackedInt32Array(4001, 4002, 4302, 4303, 4101, 4104, 4102, 4103)
+
+[node name="UpperBathroom2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
+position = Vector2(3073, 565)
 IdsToAccept = PackedInt32Array(4001, 4002, 4302, 4303, 4101, 4104, 4102, 4103)
 
 [node name="Beef Room" type="StaticBody2D" parent="."]
