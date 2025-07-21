@@ -39,12 +39,12 @@
 	},
 	{
 		"id": 0001,
-		"name": "You are staying here!",
+		"name": "You're staying right here!",
 		"typeOfEnding": "Final",
 		"reference" : "Normal",
-		"story": "You know too well the dangers of an adventure. You’re not letting your child be in harm’s way, no matter what!
+		"story": "You know far too well the dangers of an adventure. You're child will stay at home, where it is safe.
 
-”Mom! Why you never let me do anything?!”",
+”Mom! Why can't I ever do anything?!”",
 		"coverImage": "res://Assets/Art/Endings/0001.png",
 		"conditions": [
 			{
@@ -79,12 +79,12 @@
 	},
 	{
 		"id": 0002,
-		"name": "Badly Broken",
+		"name": "Broken Bad",
 		"typeOfEnding": "Intermediate",
 		"reference" : "BreakingBad",
-		"story": "Worried that he might not leave enough money for family, your child drove to the desert to cook some illegal stuff and make money.
+		"story": "Worried that he might not leave enough money behind for family, your child drove to the desert to cook some illegal stuff and make money.
 
-”Mom, I did it for my family!”",
+”Mom, I did it for the family!”",
 		"coverImage": "res://Assets/Art/Endings/0002.png",
 		"conditions": [
 			{
@@ -115,9 +115,9 @@
 		"name": "You sure like to Hit them Man",
 		"typeOfEnding": "Intermediate",
 		"reference" : "Hitman",
-		"story": "During his adventures, your child took a few “contratcs” to help get him some cash to his adventures, making roles in major “accidents”, of course, involving villans.
+		"story": "During his adventures, your child took a few “contracts” upon himself for some good money, playing key roles in major “accidents.”
 
-”Mom! Check out this coin cool I have it”",
+”Mom, let me spend some money on you!”",
 		"coverImage": "res://Assets/Art/Endings/0003.png",
 		"conditions": [
 			{
@@ -141,7 +141,7 @@
 		"name": "You yearn for the mines",
 		"typeOfEnding": "Intermediate",
 		"reference" : "Minecraft",
-		"story": "On his grand journey your child learned the magical world of the mines where he strengthened his craft.
+		"story": "On his grand journey, your child discovered the magical world of the mines where he strengthened his craft.
 
 ”I. Am. A miner.”",
 		"coverImage": "res://Assets/Art/Endings/0004.png",
@@ -169,7 +169,7 @@
 		"reference" : "ShovelKnight",
 		"story": "Your child learns the glory of vanquishing your enemies with the drop of a spade on their heads. Who would have thought that shovels are so… bouncey? And for some reason he found himself battleing the most eclectic, and ego rot knights of an evil tower!
 
-”Mom, have you ever met a dancing apple trout?”",
+”Mom... you're not secretly a knight too, right?”",
 		"coverImage": "res://Assets/Art/Endings/0005.png",
 		"conditions": [
 			{
@@ -193,7 +193,7 @@
 		"name": "Summer Camp with Friends",
 		"typeOfEnding": "Intermediate",
 		"reference" : "PercyJackson",
-		"story": "During his adventures, your child spent a summer in a camp. There he made friends, learned classical history and fought mythological creatures. It made you remember your youth days doing the same.
+		"story": "During his adventures, your child spent some time at a summer camp. There he made friends, learned classical history and fought mythological creatures. It made you remember your youth days doing the same.
 
 ”Mom… I have a question… who really was dad?”",
 		"coverImage": "res://Assets/Art/Endings/00101.png",
@@ -500,7 +500,7 @@ If your child only stayed at home…",
 		"name": "Joining a club",
 		"typeOfEnding": "Intermediate",
 		"reference" : "StarWars",
-		"story": "Your child found out some interior power and started training with a group of space monk warriors. After some years of training, he became a master.
+		"story": "Your child found out some inner power and started training with a group of space monk warriors. After years of training, he became a master.
 
 ”Mom, may the forc… inner power be with you!”",
 		"coverImage": "res://Assets/Art/Endings/0501.png",
@@ -710,7 +710,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"name": "The Lost Swordmaster",
 		"typeOfEnding": "Intermediate",
 		"reference" : "OnePiece",
-		"story": "In his journey, your child mastered the art of swordfight, with his 3 swords technic no one was a match to him, however he returned home… earlier than expected.
+		"story": "In his journey, your child mastered the art of swordfight, with his 3 swords technique, no one was a match to him, however he returned home… earlier than expected.
 
 ”Mom? I swear I turned the right corner!”",
 		"coverImage": "res://Assets/Art/Endings/0601.png",
@@ -750,7 +750,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"reference" : "AnimeFriends",
 		"story": "Your kid got the attention of many people, his skills and gadgets really put up a show, he got invited to a Anime exposition.
 
-”Mom, I am now… John Anime.”",
+”Mom, I am now… John Anime. Yes. I must have God AND Anime on my side!”",
 		"coverImage": "res://Assets/Art/Endings/0702.png",
 		"conditions": [
 			{
@@ -767,7 +767,7 @@ His master said: “Fear is the path to the dark side. Fear leads to anger. Ange
 		"name": "Temple of the healing",
 		"typeOfEnding": "Intermediate",
 		"reference" : "Normal",
-		"story": "Your kid had been cursed with a Demon Pie, and had lost the hability to swim... Luckly, on his adventures he found a temple of healing and the curse was removed.
+		"story": "Your kid had been cursed with a Demon Pie, and had lost the ability to swim... Luckly, on his adventures he found a temple of healing and the curse was removed.
 
 ”Mom, I told you I'd be fineeee”",
 		"coverImage": "res://Assets/Art/Endings/9999.png",
