@@ -5,7 +5,8 @@ func _ready():
 	var options_menu = preload("res://Scenes/Options/options.tscn").instantiate()
 	
 	add_child(options_menu)
-	options_menu.visible = false;
+	options_menu.visible = false
+	get_tree().paused = false
 	
 	if SaveNLoad.firstTime and get_tree().current_scene == get_node("res://Scenes/Home/home.tscn"):
 		print("here")
