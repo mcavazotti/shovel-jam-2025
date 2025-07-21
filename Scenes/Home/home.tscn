@@ -98,11 +98,11 @@ z_index = -1
 
 [node name="LowerBathroom1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(2455, 3630)
-IdsToAccept = PackedInt32Array(2001, 1001, 3010, 4001, 4002, 4302, 4101, 4102, 4103)
+IdsToAccept = PackedInt32Array(1001, 3010, 4001, 4002, 4302, 4101, 4102, 4103)
 
 [node name="LowerBathroom2" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(2170, 4096)
-IdsToAccept = PackedInt32Array(2001, 1001, 3010, 4001, 4002, 4302, 4101, 4102, 4103)
+IdsToAccept = PackedInt32Array(1001, 3010, 4001, 4002, 4302, 4101, 4102, 4103)
 
 [node name="Sofa1" parent="ItemSpawners" instance=ExtResource("20_exgj1")]
 position = Vector2(806, 940)

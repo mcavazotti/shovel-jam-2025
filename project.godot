@@ -15,9 +15,10 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="Shovel Jam 2025"
+config/description="The day finally arrived when a new adventure begins, your Kid's Adventure! Prepare his backpack to help him."
 run/main_scene="uid://d2baknogdx3sw"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bxsk0hf17no04"
 
 [autoload]
 
